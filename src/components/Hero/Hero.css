@@ -1,0 +1,13 @@
+.spanStyle {
+    padding: '20px';
+    background-color: '#efefef';
+    color: '#000000'
+  }
+  
+.divStyle {
+    display: 'flex';
+    align-items: 'center';
+    justify-content: 'center';
+    background-size: 'cover';
+    height: '400px'
+  }
