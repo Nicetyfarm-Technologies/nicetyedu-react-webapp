@@ -6,6 +6,7 @@ import {
 import Navbar from './components/NavBar/index';
 import Hero from './components/Hero/Hero';
 import About from './components/About/About';
+import Products from './components/Products/Products';
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
        <Navbar />
        <Hero />
        <About />
+       <Products />
       </Router>
     );
   }

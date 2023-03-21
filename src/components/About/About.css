@@ -50,6 +50,8 @@ p {
         flex-direction: row;
         gap: 20px;
         width: 100%;
+        align-items: center;
+        padding: 20px 50px;
     }
     .description {
         width: 50%;
