@@ -4,7 +4,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import "./Products.css";
 import nicetyfarmPic from "../Images/nicetyfarm-pic.png";
-import nicetyeduPic from "../Images/nicetyedu-pic.png";
+import nicetyTech from "../Images/nicetyedu-pic.png";
+import nicetyeduPic from "../Images/nicetytech.png";
 
 function Products() {
   var settings = {
@@ -64,7 +65,7 @@ function Products() {
         <div className="card">
           <h3>NicetyHealth</h3>
           <div className="data">
-          <img src={nicetyfarmPic}></img>
+          <img src={nicetyTech}></img>
           <div className="innerData">
           <p>
             Nicetyfarm Technology is a revolutionary farming management system
@@ -85,7 +86,7 @@ function Products() {
         <div className="card">
           <h3>NicetyTech</h3>
           <div className="data">
-          <img src={nicetyfarmPic}></img>
+          <img src={nicetyTech}></img>
           <div className="innerData">
           <p>
             Nicetyfarm Technology is a revolutionary farming management system
