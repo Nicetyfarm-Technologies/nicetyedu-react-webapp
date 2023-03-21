@@ -8,7 +8,7 @@
 
 .nav {
     padding: 3%;
-    background-color: #bbb;
+    background-color: rgb(118, 156, 240);
     width: 100%;
     /* position: fixed; */
 }
@@ -92,6 +92,9 @@ a:hover {
 
 
 @media  (min-width: 768px) {
+    .nav {
+        background-color: #bbb;
+    }
     .primary-nav {
         display: flex;
         justify-content: space-between;
