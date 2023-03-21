@@ -3,6 +3,7 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
+    box-sizing: border-box;
 }
 
 .nav {
@@ -23,7 +24,8 @@ span {
 .main-nav {
     display: flex;
     justify-content: space-between;
-    width: 94%;
+    width: 100%;
+    align-items: center;
 }
 
 .btn  {

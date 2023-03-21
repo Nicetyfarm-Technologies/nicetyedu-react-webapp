@@ -1,10 +1,11 @@
 import React from 'react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
+import './Hero.css'
 const spanStyle = {
   padding: '20px',
-//   background: '#efefef',
-  color: 'blue'
+  background: 'rgba(16, 15, 15, 0.38)',
+  color: 'white'
 //   fontSize: '10px',
 }
 
@@ -36,8 +37,9 @@ const Hero = () => {
         <Slide>
          {slideImages.map((slideImage, index)=> (
             <div key={index}>
-              <div style={{ ...divStyle, 'backgroundImage': `url(${slideImage.url})` }}>
-                <span style={spanStyle}>{slideImage.caption}</span>
+              <div className='container' style={{ ...divStyle, 'backgroundImage': `url(${slideImage.url})` }}>
+                <span className='span' style={spanStyle}>{slideImage.caption}</span>
+                <button className='btn1'>Get Started</button>
               </div>
             </div>
           ))} 
