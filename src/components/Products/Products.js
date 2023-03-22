@@ -6,6 +6,7 @@ import "./Products.css";
 import nicetyfarmPic from "../Images/nicetyfarm-pic.png";
 import nicetyTech from "../Images/nicetyedu-pic.png";
 import nicetyeduPic from "../Images/nicetytech.png";
+import { Link } from "react-router-dom";
 
 function Products() {
   var settings = {
@@ -56,7 +57,7 @@ function Products() {
             and pests, as well as information on the best practices for
             preventing and treating them. 
           </p>
-          <a className="btn2" href="https//wwww.nicetyfarm.com/">View Product</a>
+          <Link to={{ pathname: "https//wwww.nicetyfarm.com/" }} target="_blank" className="btn2" >View Product</Link>
           </div>
           
           </div>

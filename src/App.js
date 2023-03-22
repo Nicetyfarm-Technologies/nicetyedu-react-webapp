@@ -5,8 +5,9 @@ import {
 } from 'react-router-dom';
 import Navbar from './components/NavBar/index';
 import Home from './components/Pages/Home';
-import About from './components/About/About';
-import Products from './components/Products/Products';
+import AboutPage from './components/Pages/About';
+import ProductsPage from './components/Pages/Products';
+import LoginPage from './components/Pages/Login';
 
 class App extends Component {
   render() {
@@ -15,8 +16,9 @@ class App extends Component {
         <Navbar />
        <Routes>
         <Route path="/" element={<Home />} />
-				<Route path="/about" element={<About />} />
-				<Route path="/services" element={<Products />} />
+				<Route path="/about" element={<AboutPage />} />
+				<Route path="/products" element={<ProductsPage />} />
+        <Route path="/signin" element={<LoginPage />} />
 			</Routes>
       </Router>
     );
