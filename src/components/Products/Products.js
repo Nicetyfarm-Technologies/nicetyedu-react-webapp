@@ -3,9 +3,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import "./Products.css";
-import nicetyfarmPic from "../Images/nicetyfarm-pic.png";
-import nicetyTech from "../Images/nicetyedu-pic.png";
-import nicetyeduPic from "../Images/nicetytech.png";
+import nicetyfarmPic from "../Assets/Images/nicetyfarm-pic.png";
+import nicetyTech from "../Assets/Images/nicetyedu-pic.png";
+import nicetyeduPic from "../Assets/Images/nicetytech.png";
 import { Link } from "react-router-dom";
 
 function Products() {

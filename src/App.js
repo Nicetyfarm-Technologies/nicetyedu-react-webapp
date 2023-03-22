@@ -8,6 +8,7 @@ import Home from './components/Pages/Home';
 import AboutPage from './components/Pages/About';
 import ProductsPage from './components/Pages/Products';
 import LoginPage from './components/Pages/Login';
+import Footer from './components/Footer/Footer';
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
 				<Route path="/products" element={<ProductsPage />} />
         <Route path="/signin" element={<LoginPage />} />
 			</Routes>
+      <Footer />
       </Router>
     );
   }

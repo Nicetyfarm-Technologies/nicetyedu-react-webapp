@@ -53,6 +53,7 @@ input {
 .log-btn {
     padding: 14px;
     border-radius: 8px;
-    background-color: blue;
+    background-color: rgb(1, 10, 29);
     border: none;
+    color: #eeebeb;
 }

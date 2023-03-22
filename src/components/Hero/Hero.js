@@ -2,9 +2,9 @@ import React from 'react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 import './Hero.css'
-import sc1 from "../Images/st10.jpeg";
-import sc2 from "../Images/school3.jpeg";
-import sc3 from "../Images/school2.jpg";
+import sc1 from "../Assets/Images/st10.jpeg";
+import sc2 from "../Assets/Images/school3.jpeg";
+import sc3 from "../Assets/Images/school2.jpg";
 const spanStyle = {
   padding: '20px',
   background: 'rgba(16, 15, 15, 0.38)',

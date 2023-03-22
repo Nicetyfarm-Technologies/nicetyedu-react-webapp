@@ -8,13 +8,13 @@
 
 .nav {
     padding: 3%;
-    background-color: rgb(118, 156, 240);
+    background-color: rgb(1, 13, 37);
     width: 100%;
     /* position: fixed; */
 }
 
 .logo {
-    color: #000;
+    color: #fff;
 }
 
 span {
@@ -62,7 +62,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    background-color: rgb(91, 141, 250);
+    background-color: rgb(1, 10, 29);
     align-items: center;
     padding: 20px 0;
     text-align: center;
@@ -71,6 +71,7 @@ a:hover {
 
 .humburger, .close {
     font-size: 25px;
+    color: #fff;
 }
 
 .none {
@@ -92,9 +93,9 @@ a:hover {
 
 
 @media  (min-width: 768px) {
-    .nav {
+    /* .nav {
         background-color: #bbb;
-    }
+    } */
     .primary-nav {
         display: flex;
         justify-content: space-between;
