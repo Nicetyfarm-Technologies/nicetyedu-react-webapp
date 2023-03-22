@@ -1,6 +1,7 @@
 .container {
   flex-direction: column;
   gap: 40px;
+  background-color: #0c2dbd0a;
 }
   
   .span {
@@ -14,3 +15,11 @@
     border-radius: 12px;
     border: none;
   }
+
+
+
+  @media  (min-width: 768px) {
+    .container {
+      min-height: 600px;
+    }
+ }

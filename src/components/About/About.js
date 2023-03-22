@@ -4,8 +4,6 @@ import { NavLink } from "react-router-dom";
 import "./About.css";
 import sc from "../Images/sc.jpeg";
 
-// const img = import "../Images/sc.jpeg";
-
 function About() {
 
     const moreRef = useRef();
