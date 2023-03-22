@@ -1,6 +1,7 @@
 .container {
   flex-direction: column;
   gap: 40px;
+  background-color: #0c2dbd0a;
 }
   
   .span {
