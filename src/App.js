@@ -7,6 +7,7 @@ import Home from './components/Pages/Home';
 import AboutPage from './components/Pages/About';
 import ProductsPage from './components/Pages/Products';
 import TractionPage from './components/Pages/Traction';
+import ContactPage from './components/Pages/Contact';
 import LoginPage from './components/Pages/Login';
 import Footer from './components/Footer/Footer';
 
@@ -20,6 +21,7 @@ class App extends Component {
 				<Route path="/about" element={<AboutPage />} />
 				<Route path="/products" element={<ProductsPage />} />
         <Route path="/traction" element={<TractionPage />} />
+        <Route path="/contact" element={<ContactPage />} />
         <Route path="/signin" element={<LoginPage />} />
 			</Routes>
       <Footer />

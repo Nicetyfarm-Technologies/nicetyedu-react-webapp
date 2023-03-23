@@ -48,7 +48,7 @@ function NavBar() {
 								<NavLink to="/" activestyle="true">Home</NavLink>
 							</li>
 							<li className="">
-								<NavLink to="/about" activestyle="true">About</NavLink>
+								<NavLink to="/about" activestyle="true">About Us</NavLink>
 							</li>
 							<li className="">
 								<NavLink to="/products" activestyle="true">Products</NavLink>
@@ -57,7 +57,7 @@ function NavBar() {
 								<NavLink to="/traction" activestyle="true">Traction</NavLink>
 							</li>
 							<NavLink to="/contact" activestyle="true">
-								<li className="">Contact</li>
+								<li className="">Contact Us</li>
 							</NavLink>
 						</ul>
 						<div className="">
