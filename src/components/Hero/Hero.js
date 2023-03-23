@@ -9,7 +9,6 @@ const spanStyle = {
   padding: '20px',
   background: 'rgba(16, 15, 15, 0.38)',
   color: 'white'
-//   fontSize: '10px',
 }
 
 const divStyle = {

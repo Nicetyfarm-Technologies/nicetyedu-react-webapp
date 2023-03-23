@@ -57,6 +57,9 @@
 
 
 @media  (min-width: 768px) {
+    .footer {
+        bottom: 0;
+    }
     .container1 {
         flex-direction: row;
         justify-content: space-between;

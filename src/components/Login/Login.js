@@ -1,13 +1,7 @@
-import React, { useState } from "react";
-import { useRef } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
 import logo from "../Assets/Images/icon2.png";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faEye } from '@fortawesome/free-solid-svg-icons'
-
-const EmailIcon = <FontAwesomeIcon icon={faEnvelope} />
-const EyeIcon = <FontAwesomeIcon icon={faEye} />
 
 function Login() {
 

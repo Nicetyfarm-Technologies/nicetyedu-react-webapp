@@ -10,7 +10,6 @@
     padding: 3%;
     background-color: rgb(1, 13, 37);
     width: 100%;
-    /* position: fixed; */
 }
 
 .logo {
@@ -55,7 +54,6 @@ a:hover {
     gap: 50px;
     width: 100%;
     transition: 2s;
-    /* transform: translateY(-100vh); */
 }
 
 .block {
@@ -86,9 +84,10 @@ a:hover {
 
 .login-btn {
     background-color: #fff;
-    padding: 10px 50px;
-    border-radius: 15px;
+    padding: 15px 50px;
+    border-radius: 35px;
     color: #000;
+    font-weight: bold;
 }
 
 

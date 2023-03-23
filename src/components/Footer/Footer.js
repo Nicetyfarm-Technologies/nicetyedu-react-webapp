@@ -1,6 +1,5 @@
 import React from "react";
-import { useRef } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Footer.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faLinkedinIn, faWhatsapp, faInstagram, faTwitter } from "@fortawesome/free-brands-svg-icons";
