@@ -45,8 +45,8 @@ function Products() {
                rel="noopener"
                aria-label='View Product'
              >
-      View Product
-        </a>
+               View Product
+          </a>
           </div>
           
           </div>
@@ -67,7 +67,15 @@ function Products() {
             and pests, as well as information on the best practices for
             preventing and treating them. 
           </p>
-          <Link to={{ pathname: "https//wwww.nicetyfarm.com/" }} target="_blank" className="btn2" >View Product</Link>
+          <a
+               className="btn2"
+               href="https://nicetyfarm.com"
+               target='_blank'
+               rel="noopener"
+               aria-label='View Product'
+             >
+               View Product
+          </a>
           </div>
           
           </div>
@@ -89,7 +97,15 @@ function Products() {
             and pests, as well as information on the best practices for
             preventing and treating them. 
           </p>
-          <a className="btn2" href="https//wwww.nicetyfarm.com/">View Product</a>
+          <a
+               className="btn2"
+               href="https://nicetyfarm.com"
+               target='_blank'
+               rel="noopener"
+               aria-label='View Product'
+             >
+               View Product
+          </a>
           </div>
           
           </div>
@@ -110,7 +126,15 @@ function Products() {
             and pests, as well as information on the best practices for
             preventing and treating them. 
           </p>
-          <a className="btn2" href="https//wwww.nicetyfarm.com/">View Product</a>
+          <a
+               className="btn2"
+               href="https://nicetyfarm.com"
+               target='_blank'
+               rel="noopener"
+               aria-label='View Product'
+             >
+               View Product
+          </a>
           </div>
           
           </div>
