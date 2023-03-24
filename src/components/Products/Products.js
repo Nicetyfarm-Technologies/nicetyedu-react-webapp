@@ -8,6 +8,7 @@ import nicetyTech from "../Assets/Images/nicetyedu-pic.png";
 import nicetyeduPic from "../Assets/Images/nicetytech.png";
 import { Link } from "react-router-dom";
 
+
 function Products() {
   var settings = {
     dots: true,
@@ -36,7 +37,16 @@ function Products() {
             the school with financial management, pupils' payments, timetabling,
             results generation and records keeping. 
           </p>
-          <a className="btn2" href="https//wwww.nicetyfarm.com/">View Product</a>
+         
+            <a
+               className="btn2"
+               href="https://nicetyfarm.com"
+               target='_blank'
+               rel="noopener"
+               aria-label='View Product'
+             >
+      View Product
+        </a>
           </div>
           
           </div>
