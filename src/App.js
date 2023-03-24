@@ -9,6 +9,7 @@ import ProductsPage from './components/Pages/Products';
 import TractionPage from './components/Pages/Traction';
 import ContactPage from './components/Pages/Contact';
 import LoginPage from './components/Pages/Login';
+import ResetPage from './components/Pages/Reset';
 import Footer from './components/Footer/Footer';
 
 class App extends Component {
@@ -23,6 +24,7 @@ class App extends Component {
         <Route path="/traction" element={<TractionPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/signin" element={<LoginPage />} />
+        <Route path="/reset" element={<ResetPage />} />
 			</Routes>
       <Footer />
       </Router>

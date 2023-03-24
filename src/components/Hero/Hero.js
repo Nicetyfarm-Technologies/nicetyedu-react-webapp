@@ -2,6 +2,7 @@ import React from 'react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 import './Hero.css'
+import { Link } from 'react-router-dom';
 import sc1 from "../Assets/Images/st10.jpeg";
 import sc2 from "../Assets/Images/school3.jpeg";
 import sc3 from "../Assets/Images/school2.jpg";
@@ -41,7 +42,7 @@ const Hero = () => {
             <div key={index}>
               <div className='container' style={{ ...divStyle, 'backgroundImage': `url(${slideImage.url})` }}>
                 <span className='span' style={spanStyle}>{slideImage.caption}</span>
-                <button className='btn1'>Get Started</button>
+                <Link to="/get-started" className='btn1'>Get Started</Link>
               </div>
             </div>
           ))} 
