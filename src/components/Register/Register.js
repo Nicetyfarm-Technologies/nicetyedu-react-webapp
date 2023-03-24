@@ -20,6 +20,10 @@ function Register() {
   return (
     <div className="signup-container">
       <div className="signup">
+        <div className="register-intro">
+          <h2>Welcome To Nicety<span>Edu</span></h2>
+          <p> We are excited seeing you join this super Education Technology. Kindly fill in the form below for the onboading process to begin</p>
+        </div>
         <form className="registering-form"></form>
       </div>
     </div>

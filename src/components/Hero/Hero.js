@@ -42,7 +42,7 @@ const Hero = () => {
             <div key={index}>
               <div className='container' style={{ ...divStyle, 'backgroundImage': `url(${slideImage.url})` }}>
                 <span className='span' style={spanStyle}>{slideImage.caption}</span>
-                <Link to="/get-started" className='btn1'>Get Started</Link>
+                <Link to="/register" className='login-btn'>Get Started</Link>
               </div>
             </div>
           ))} 

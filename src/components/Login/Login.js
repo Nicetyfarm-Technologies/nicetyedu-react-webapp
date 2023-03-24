@@ -1,22 +1,33 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import logo from "../Assets/Images/icon2.png";
+import auth from "../firebase/config";
 
 function Login() {
-
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log({
-      email: email,
-      password: password
-    });
-    setEmail("");
-    setPassword("");
-  }
+signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    console.log(user.uid);
+    localStorage.setItem('uid',JSON.stringify(user.uid));
+    navigate("/dashboard");
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(error);
+  });
+  };
 
   return (
     <div className="login-container">
