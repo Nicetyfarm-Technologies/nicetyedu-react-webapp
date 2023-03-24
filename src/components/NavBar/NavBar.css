@@ -7,8 +7,6 @@
 }
 
 .nav {
-    padding: 3%;
-    background-color: rgb(1, 13, 37);
     width: 100%;
 }
 
@@ -25,6 +23,8 @@ span {
     justify-content: space-between;
     width: 100%;
     align-items: center;
+    background-color: rgb(1, 13, 37);
+    padding: 3%;
 }
 
 .btn  {
@@ -60,7 +60,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    background-color: rgb(1, 10, 29);
+    background-color: rgb(1, 13, 37);
     align-items: center;
     padding: 20px 0;
     text-align: center;
@@ -92,9 +92,6 @@ a:hover {
 
 
 @media  (min-width: 768px) {
-    /* .nav {
-        background-color: #bbb;
-    } */
     .primary-nav {
         display: flex;
         justify-content: space-between;
@@ -103,5 +100,8 @@ a:hover {
     }
     .humburger, .close {
         display: none;
+    }
+    .main-nav {
+        padding: 2.5%;
     }
 }

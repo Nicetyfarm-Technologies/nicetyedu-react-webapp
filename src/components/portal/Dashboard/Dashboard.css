@@ -1,0 +1,15 @@
+.portal-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.portal-page-content {
+    padding: 30px;
+}
+
+@media  (min-width: 768px) {
+    .portal-content {
+        flex-direction: row;
+    }
+}
