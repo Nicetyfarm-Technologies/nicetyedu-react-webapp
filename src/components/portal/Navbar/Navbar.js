@@ -53,7 +53,9 @@ function InNavBar() {
             </button>
 
             <div className="user-container">
+              <NavLink to="/dashboard/profile" activestyle="true">
               <img src={user.img} alt="user-image" />
+              </NavLink>
               <p>{user.name}</p>
             </div>
 

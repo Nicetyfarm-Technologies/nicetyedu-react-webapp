@@ -13,6 +13,15 @@ import ResetPage from './components/Pages/Reset';
 import Footer from './components/Footer/Footer';
 import ProtectedRoute from './components/ProtectedRoute';
 import DashboardPage from './components/portal/pages/Dashboard';
+import ClassesPage from './components/portal/pages/Classes';
+import StaffPage from './components/portal/pages/Staff';
+import LibraryPage from './components/portal/pages/Library';
+import FinancePage from './components/portal/pages/Finances';
+import TimetablesPage from './components/portal/pages/Timetables';
+import EnrollmentsPage from './components/portal/pages/Enrollments';
+import ResultsPage from './components/portal/pages/Results';
+import CalendersPage from './components/portal/pages/Calenders';
+import ProfilePage from './components/portal/pages/Profile';
 
 class App extends Component {
   render() {
@@ -21,6 +30,15 @@ class App extends Component {
        <Routes>
        <Route path="/dashboard" element={<ProtectedRoute />}>
 					<Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/dashboard/classes" element={<ClassesPage />} />
+          <Route path="/dashboard/staff" element={<StaffPage />} />
+          <Route path="/dashboard/library" element={<LibraryPage />} />
+          <Route path="/dashboard/finances" element={<FinancePage />} />
+          <Route path="/dashboard/timetables" element={<TimetablesPage />} />
+          <Route path="/dashboard/enrollments" element={<EnrollmentsPage />} />
+          <Route path="/dashboard/results" element={<ResultsPage />} />
+          <Route path="/dashboard/calenders" element={<CalendersPage />} />
+          <Route path="/dashboard/profile" element={<ProfilePage />} />
 				</Route>
         <Route path="/" element={<Home />} />
 				<Route path="/about" element={<AboutPage />} />
