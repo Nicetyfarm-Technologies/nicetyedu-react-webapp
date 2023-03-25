@@ -1,6 +1,8 @@
 import React from "react";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import { getAuth, signOut } from "firebase/auth";
 import logo from "../images/icon.png";
 import "./Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -19,6 +21,41 @@ function InNavBar() {
     name: "Ice-berg Pvt",
     img: logo,
   };
+
+  const [displayName2, setName] = useState("");
+  const [displayImage, setImage] = useState({logo});
+
+  const showImage = () => {
+    console.log(displayImage);
+  }
+
+  const signOut = () => {
+    const auth = getAuth();
+signOut(auth).then(() => {
+  // Sign-out successful.
+  navigate("/");
+}).catch((error) => {
+  // An error happened.
+});
+  }
+
+  const getUserProfile = () => {
+    const auth = getAuth();
+const user = auth.currentUser;
+if (user !== null) {
+  const displayName = user.displayName;
+  const email = user.email;
+  const photoURL = user.photoURL;
+  const emailVerified = user.emailVerified;
+  const uid = user.uid;
+  setName(displayName);
+
+}
+  }
+
+  useEffect(() => {
+    getUserProfile()
+  }, [])
 
   const showNavContent = () => {
     navRef.current.classList.toggle("responsive");
@@ -56,8 +93,9 @@ function InNavBar() {
               <NavLink to="/dashboard/profile" activestyle="true">
               <img src={user.img} alt="user-image" />
               </NavLink>
-              <p>{user.name}</p>
+              <p>{displayName2}</p>
             </div>
+            {/* <button onClick={signOut}>Signout</button> */}
 
             <div className="">
               <NavLink to="/" activestyle="true" className="login-btn">
