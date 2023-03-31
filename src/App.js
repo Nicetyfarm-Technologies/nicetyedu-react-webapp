@@ -8,12 +8,15 @@ import ProductsPage from './components/Pages/Products';
 import TractionPage from './components/Pages/Traction';
 import ContactPage from './components/Pages/Contact';
 import LoginPage from './components/Pages/Login';
+import AdminLoginPage from './components/Pages/AdminLogin';
 import RegisterPage from './components/Pages/Register';
 import ResetPage from './components/Pages/Reset';
 import Footer from './components/Footer/Footer';
 import ProtectedRoute from './components/ProtectedRoute';
 import DashboardPage from './components/portal/pages/Dashboard';
 import ClassesPage from './components/portal/pages/Classes';
+import AttendancePage from './components/portal/pages/Attendance';
+import SubjectsPage from './components/portal/pages/Subjects.';
 import StaffPage from './components/portal/pages/Staff';
 import LibraryPage from './components/portal/pages/Library';
 import FinancePage from './components/portal/pages/Finances';
@@ -22,15 +25,24 @@ import EnrollmentsPage from './components/portal/pages/Enrollments';
 import ResultsPage from './components/portal/pages/Results';
 import CalendersPage from './components/portal/pages/Calenders';
 import ProfilePage from './components/portal/pages/Profile';
+import StudentsProtectedRoute from './components/studentsProtectedRoute';
+import StudentsDashboardPage from './components/studentPortal/pages/Dashboard';
+import StudentsResultsPage from './components/studentPortal/pages/Results';
 
 class App extends Component {
   render() {
     return (
       <Router>
        <Routes>
+       <Route path="/studentsdashboard" element={<StudentsProtectedRoute />}>
+					<Route path="/studentsdashboard" element={<StudentsDashboardPage />} />
+          <Route path="/studentsdashboard/results" element={<StudentsResultsPage />} />
+				</Route>
        <Route path="/dashboard" element={<ProtectedRoute />}>
 					<Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/dashboard/classes" element={<ClassesPage />} />
+          <Route path="/dashboard/attendance" element={<AttendancePage />} />
+          <Route path="/dashboard/subjects" element={<SubjectsPage />} />
           <Route path="/dashboard/staff" element={<StaffPage />} />
           <Route path="/dashboard/library" element={<LibraryPage />} />
           <Route path="/dashboard/finances" element={<FinancePage />} />
@@ -46,6 +58,7 @@ class App extends Component {
         <Route path="/traction" element={<TractionPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/signin" element={<LoginPage />} />
+        <Route path="/adminlogin" element={<AdminLoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/reset" element={<ResetPage />} />
 			</Routes>
@@ -53,5 +66,6 @@ class App extends Component {
       </Router>
     );}
 }
+
 
 export default App;

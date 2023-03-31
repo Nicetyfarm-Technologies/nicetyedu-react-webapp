@@ -10,7 +10,7 @@ import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 const menu = <FontAwesomeIcon icon={faBars} />;
 const close = <FontAwesomeIcon icon={faTimes} />;
 
-function InNavBar() {
+function StudentsInNavBar() {
   const navRef = useRef();
   const navRef3 = useRef();
   const navRef4 = useRef();
@@ -86,7 +86,7 @@ function InNavBar() {
 
 
             <div className="">
-              <button onClick={logOut} type="button" name="Logout" className="login-btn">
+              <button onClick={logOut} name="Logout" type="button" className="login-btn">
                 Logout
               </button>
             </div>
@@ -97,4 +97,4 @@ function InNavBar() {
   );
 }
 
-export default InNavBar;
+export default StudentsInNavBar;
