@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { useRef } from "react";
-import { NavLink } from "react-router-dom";
 import "./About.css";
-import sc from "../Images/sc.jpeg";
+import sc from "../Assets/Images/sc.jpeg"
 
 function About() {
 

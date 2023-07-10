@@ -1,0 +1,32 @@
+.traction-container {
+    width: 100%;
+    padding: 60px;
+    height: fit-content;
+}
+
+.traction {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cont h3 {
+    font-size: 105px;
+}
+
+@media  (min-width: 768px) {
+    .traction {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 60px 100px;
+    }
+ }

@@ -1,0 +1,42 @@
+.App {
+  background-color: #252628;
+  width: 100%;
+  /* height: 100vh; */
+  font-family: monospace;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  animation: shrink 5s infinite alternate;
+  position: relative;
+}
+
+p {
+  margin: 0;
+}
+
+span {
+  margin: 0;
+}
+
+.quiz-sub-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.quiz-sub {
+  background-color: rgb(8, 8, 68);
+  width: 90%;
+  max-width: 500px;
+  padding: 15px;
+}
+
+.quiz-sub a {
+  padding: 10px;
+}
+
+.terminal-bot {
+  height: fit-content;
+  padding-bottom: 20px;
+}

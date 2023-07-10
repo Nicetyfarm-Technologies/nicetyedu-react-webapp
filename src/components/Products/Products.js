@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import "./Products.css";
-import nicetyfarmPic from "../Images/nicetyfarm-pic.png";
-import nicetyTech from "../Images/nicetyedu-pic.png";
-import nicetyeduPic from "../Images/nicetytech.png";
+import nicetyfarmPic from "../Assets/Images/nicetyfarm-pic.png";
+import nicetyTech from "../Assets/Images/nicetyedu-pic.png";
+import nicetyeduPic from "../Assets/Images/nicetytech.png";
 import { Link } from "react-router-dom";
+
 
 function Products() {
   var settings = {
@@ -36,7 +37,16 @@ function Products() {
             the school with financial management, pupils' payments, timetabling,
             results generation and records keeping. 
           </p>
-          <a className="btn2" href="https//wwww.nicetyfarm.com/">View Product</a>
+         
+            <a
+               className="btn2"
+               href="https://nicetyfarm.com"
+               target='_blank'
+               rel="noopener"
+               aria-label='View Product'
+             >
+               View Product
+          </a>
           </div>
           
           </div>
@@ -57,7 +67,15 @@ function Products() {
             and pests, as well as information on the best practices for
             preventing and treating them. 
           </p>
-          <Link to={{ pathname: "https//wwww.nicetyfarm.com/" }} target="_blank" className="btn2" >View Product</Link>
+          <a
+               className="btn2"
+               href="https://nicetyfarm.com"
+               target='_blank'
+               rel="noopener"
+               aria-label='View Product'
+             >
+               View Product
+          </a>
           </div>
           
           </div>
@@ -79,7 +97,15 @@ function Products() {
             and pests, as well as information on the best practices for
             preventing and treating them. 
           </p>
-          <a className="btn2" href="https//wwww.nicetyfarm.com/">View Product</a>
+          <a
+               className="btn2"
+               href="https://nicetyfarm.com"
+               target='_blank'
+               rel="noopener"
+               aria-label='View Product'
+             >
+               View Product
+          </a>
           </div>
           
           </div>
@@ -100,7 +126,15 @@ function Products() {
             and pests, as well as information on the best practices for
             preventing and treating them. 
           </p>
-          <a className="btn2" href="https//wwww.nicetyfarm.com/">View Product</a>
+          <a
+               className="btn2"
+               href="https://nicetyfarm.com"
+               target='_blank'
+               rel="noopener"
+               aria-label='View Product'
+             >
+               View Product
+          </a>
           </div>
           
           </div>

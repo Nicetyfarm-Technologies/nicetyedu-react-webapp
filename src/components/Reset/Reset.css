@@ -1,0 +1,32 @@
+.reset-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.reset {
+    width: 100%;
+    max-width: 700px;
+    min-height: 50px;
+    padding: 50px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background-color: #bbb;
+    border-radius: 10px;
+}
+
+.reset label {
+    min-width: 100%;
+}
+
+.form-intro {
+    text-align: center;
+}
+
+hr {
+    color: rgb(4, 4, 48);
+    border: 0.1px solid rgb(4, 4, 48);
+}
