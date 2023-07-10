@@ -5,33 +5,22 @@ import "./Login.css";
 
 function Login() {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [id, setID] = useState("");
+  // const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = auth.userCredential
-        const customRole = {
-          moderator: true,
-          canDeletePosts: true,
-          canBanUsers: false
-        };
-
-        console.log(user);
-
-        // const uid = 'some-user-uid';
-
-        // navigate("/studentsdashboard");
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-          alert(errorMessage);
-        
-      });
+    console.log(id);
+    if(id == 20230001) {
+      navigate("/studentsdashboard");
+      // alert("login success")
+      console.log("correct");
+    } else {
+      console.log("wrong");
+      // alert("School ID unknown");
+    }
+    console.log(id);
   };
 
   return (
@@ -43,29 +32,22 @@ function Login() {
       <form className="form" onSubmit={handleSubmit}>
         <h3>Login In As Pupil</h3>
         <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="email"
+          type="number"
+          value={id}
+          onChange={(e) => setID(e.target.value)}
+          placeholder="School ID"
           required
         />
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="password"
-          required
-        />
-        <div className="password-reset">
+        {/* <div className="password-reset">
           <p>forgot password?</p>
           <Link to="/reset" className="reset-password">
             Reset Here
           </Link>
-        </div>
+        </div> */}
         <button type="submit" name="Login" className="log-btn">
           Login
         </button>
-        <Link to="/adminlogin">Login As Admin</Link>
+        <Link to="/adminlogin">Login As Staff</Link>
       </form>
     </div>
   );

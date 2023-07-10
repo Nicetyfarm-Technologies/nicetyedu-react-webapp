@@ -27,6 +27,8 @@ import CalendersPage from './components/portal/pages/Calenders';
 import ProfilePage from './components/portal/pages/Profile';
 import StudentsProtectedRoute from './components/studentsProtectedRoute';
 import StudentsDashboardPage from './components/studentPortal/pages/Dashboard';
+import StudentsPastpapersPage from './components/studentPortal/pages/Pastpapers';
+import MathPastpapersPage from './components/studentPortal/pages/MathPapers';
 import StudentsResultsPage from './components/studentPortal/pages/Results';
 
 class App extends Component {
@@ -36,6 +38,8 @@ class App extends Component {
        <Routes>
        <Route path="/studentsdashboard" element={<StudentsProtectedRoute />}>
 					<Route path="/studentsdashboard" element={<StudentsDashboardPage />} />
+          <Route path="/studentsdashboard/pastpapers" element={<StudentsPastpapersPage />} />
+          <Route path="/studentsdashboard/pastpapers/ecz/mathematics-12" element={<MathPastpapersPage />} />
           <Route path="/studentsdashboard/results" element={<StudentsResultsPage />} />
 				</Route>
        <Route path="/dashboard" element={<ProtectedRoute />}>

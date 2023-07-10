@@ -77,14 +77,6 @@ function StudentsInNavBar() {
               {close}
             </button>
 
-            <div className="user-container">
-              <NavLink to="/dashboard/profile" activestyle="true">
-                <img src={displayImage} alt="user-image" />
-              </NavLink>
-              <p>{displayName2}</p>
-            </div>
-
-
             <div className="">
               <button onClick={logOut} name="Logout" type="button" className="login-btn">
                 Logout

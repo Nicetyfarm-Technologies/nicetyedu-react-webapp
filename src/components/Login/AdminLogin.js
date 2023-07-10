@@ -36,7 +36,7 @@ function AdminLogin() {
         <p>We are glad to see you again, kindly login to continue</p>
       </div>
       <form className="form" onSubmit={handleSubmit}>
-      <h3>Login In As Admin</h3>
+      <h3>Login In As Staff</h3>
         <input
           type="email"
           value={email}
