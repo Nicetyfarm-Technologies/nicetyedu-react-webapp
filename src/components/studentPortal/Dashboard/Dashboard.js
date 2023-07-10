@@ -28,7 +28,7 @@ if (user) {
           <li className='el'><Link>Books</Link></li>
           <li className='el'><Link>Videos</Link></li>
           <li className='el'><Link to="/studentsdashboard/pastpapers">Past Papers</Link></li>
-          <li className='el'><Link>Quizzes</Link></li>
+          <li className='el'><Link to="/studentsdashboard/quizzes">Quizzes</Link></li>
           <li className='el'><Link>Assignments</Link></li>
           <li className='el'><Link>Practicals</Link></li>
           <li className='el'><Link>Time Table</Link></li>

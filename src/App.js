@@ -29,6 +29,18 @@ import StudentsProtectedRoute from './components/studentsProtectedRoute';
 import StudentsDashboardPage from './components/studentPortal/pages/Dashboard';
 import StudentsPastpapersPage from './components/studentPortal/pages/Pastpapers';
 import MathPastpapersPage from './components/studentPortal/pages/MathPapers';
+import QuizMainPage from './components/studentPortal/pages/QuizMain';
+import MathQuizPage from './components/studentPortal/pages/MathQuiz';
+import EnglishQuizPage from './components/studentPortal/pages/EnglishQuiz';
+import ArtQuizPage from './components/studentPortal/pages/ArtQuiz';
+import AccountsQuizPage from './components/studentPortal/pages/AccountsQuiz';
+import BiologyQuizPage from './components/studentPortal/pages/BiologyQuiz';
+import CEQuizPage from './components/studentPortal/pages/CEQuiz';
+import DTQuizPage from './components/studentPortal/pages/DTQuiz';
+import FNQuizPage from './components/studentPortal/pages/FNQuiz';
+import HistoryQuizPage from './components/studentPortal/pages/HistoryQuiz';
+import CommerceQuizPage from './components/studentPortal/pages/CommerceQuiz';
+import ScienceQuizPage from './components/studentPortal/pages/ScienceQuiz';
 import StudentsResultsPage from './components/studentPortal/pages/Results';
 
 class App extends Component {
@@ -40,6 +52,18 @@ class App extends Component {
 					<Route path="/studentsdashboard" element={<StudentsDashboardPage />} />
           <Route path="/studentsdashboard/pastpapers" element={<StudentsPastpapersPage />} />
           <Route path="/studentsdashboard/pastpapers/ecz/mathematics-12" element={<MathPastpapersPage />} />
+          <Route path="/studentsdashboard/quizzes" element={<QuizMainPage />} />
+          <Route path="/studentsdashboard/quizzes/math" element={<MathQuizPage />} />
+          <Route path="/studentsdashboard/quizzes/art" element={<ArtQuizPage />} />
+          <Route path="/studentsdashboard/quizzes/accounts" element={<AccountsQuizPage />} />
+          <Route path="/studentsdashboard/quizzes/biology" element={<BiologyQuizPage />} />
+          <Route path="/studentsdashboard/quizzes/dt" element={<DTQuizPage />} />
+          <Route path="/studentsdashboard/quizzes/english" element={<EnglishQuizPage />} />
+          <Route path="/studentsdashboard/quizzes/fn" element={<FNQuizPage />} />
+          <Route path="/studentsdashboard/quizzes/history" element={<HistoryQuizPage />} />
+          <Route path="/studentsdashboard/quizzes/ce" element={<CEQuizPage />} />
+          <Route path="/studentsdashboard/quizzes/commerce" element={<CommerceQuizPage />} />
+          <Route path="/studentsdashboard/quizzes/science" element={<ScienceQuizPage />} />
           <Route path="/studentsdashboard/results" element={<StudentsResultsPage />} />
 				</Route>
        <Route path="/dashboard" element={<ProtectedRoute />}>
