@@ -141,16 +141,18 @@ const StudentsPastpapers = () => {
           <button onClick={show12eClasses}>Grade 12</button>
           <div className="grade-content none" ref={g12eRef}>
             <NavLink to="/studentsdashboard/pastpapers/ecz/mathematics-12">Mathematics</NavLink>
-            <NavLink to="/dashboard/grade10bpupils">English</NavLink>
-            <NavLink to="/dashboard/grade10cpupils">Science</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">RE</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">Accounts</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">History</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">Civic Education</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">Geography</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">DT</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">HE</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">Art</NavLink>
+            <NavLink to="/studentsdashboard/pastpapers/ecz/english-12">English</NavLink>
+            <NavLink to="/studentsdashboard/pastpapers/ecz/science-12">Science</NavLink>
+            <NavLink to="/studentsdashboard/pastpapers/ecz/re-12">RE</NavLink>
+            <NavLink to="/studentsdashboard/pastpapers/ecz/accounts-12">Accounts</NavLink>
+            <NavLink to="/studentsdashboard/pastpapers/ecz/history-12">History</NavLink>
+            <NavLink to="/studentsdashboard/pastpapers/ecz/ce-12">Civic Education</NavLink>
+            <NavLink to="/studentsdashboard/pastpapers/ecz/geography-12">Geography</NavLink>
+            <NavLink to="/studentsdashboard/pastpapers/ecz/dt-12">DT</NavLink>
+            <NavLink to="/studentsdashboard/pastpapers/ecz/fn-12">FN</NavLink>
+            <NavLink to="/studentsdashboard/pastpapers/ecz/art-12">Art</NavLink>
+            <NavLink to="/studentsdashboard/pastpapers/ecz/commerce-12">Commerce</NavLink>
+            <NavLink to="/studentsdashboard/pastpapers/ecz/biology-12">Biology</NavLink>
           </div>
         </div>
       </div>

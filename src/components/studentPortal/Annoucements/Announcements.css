@@ -1,0 +1,13 @@
+.announce {
+    padding: 15px;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.announcements {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

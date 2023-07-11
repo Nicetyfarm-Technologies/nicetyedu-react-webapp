@@ -1,0 +1,22 @@
+.vid-sub-container {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    padding: 35px;
+    border-bottom: 2px solid;
+    overflow-inline: scroll;
+    overflow-x: scroll;
+    margin-bottom: 25px;
+    overflow-y: hidden;
+}
+
+.video-container {
+    min-width: 280px;
+    min-height: 200px;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 40px;
+}

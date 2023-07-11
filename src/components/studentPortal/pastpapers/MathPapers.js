@@ -4,18 +4,18 @@ import StudentsMinNav from "../minNav/MinVav";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 import { NavLink } from "react-router-dom";
-import m115 from "./m115.pdf";
-import m116 from "./m116.pdf";
-import m117 from "./m117.pdf";
-import m118 from "./m118.pdf";
-import m119 from "./m119.pdf";
-import m120 from "./m120.pdf";
-import m215 from "./m215.pdf";
-import m216 from "./m216.pdf";
-import m217 from "./m217.pdf";
-import m218 from "./m218.pdf";
-import m219 from "./m219.pdf";
-import m220 from "./m220.pdf";
+import m115 from "./grade12eczmath/m115.pdf";
+import m116 from "./grade12eczmath/m116.pdf";
+import m117 from "./grade12eczmath/m117.pdf";
+import m118 from "./grade12eczmath/m118.pdf";
+import m119 from "./grade12eczmath/m119.pdf";
+import m120 from "./grade12eczmath/m120.pdf";
+import m215 from "./grade12eczmath/m215.pdf";
+import m216 from "./grade12eczmath/m216.pdf";
+import m217 from "./grade12eczmath/m217.pdf";
+import m218 from "./grade12eczmath/m218.pdf";
+import m219 from "./grade12eczmath/m219.pdf";
+import m220 from "./grade12eczmath/m220.pdf";
 
 const MathPastpapers = () => {
   

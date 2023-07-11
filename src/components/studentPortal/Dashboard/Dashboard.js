@@ -24,9 +24,9 @@ if (user) {
         <h2>Students Dashboard</h2>
         {/* <button className='log-btn' onClick={checkUser}>Check User</button> */}
         <ul className='el-container'>
-        <li className='el'><Link>Announcements</Link></li>
-          <li className='el'><Link>Books</Link></li>
-          <li className='el'><Link>Videos</Link></li>
+        <li className='el'><Link to="/studentsdashboard/announcements">Announcements</Link></li>
+          <li className='el'><Link to="/studentsdashboard/books">Books</Link></li>
+          <li className='el'><Link to="/studentsdashboard/videos">Videos</Link></li>
           <li className='el'><Link to="/studentsdashboard/pastpapers">Past Papers</Link></li>
           <li className='el'><Link to="/studentsdashboard/quizzes">Quizzes</Link></li>
           <li className='el'><Link>Assignments</Link></li>
