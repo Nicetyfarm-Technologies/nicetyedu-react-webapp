@@ -21,7 +21,7 @@ const Dashboard = () => {
         <MinNav />
         <div className="portal-page-content">
         <h2>Announcements</h2>
-        <form className='annonce-form'>
+        <form className='annonce-form2'>
           <h3>Give Announcements</h3>
           <div className='inputs'>
             <select>
@@ -33,7 +33,9 @@ const Dashboard = () => {
               <option>To Social Sciences Dept</option>
               <option>To Languages Dept</option>
             </select>
-            
+            <input type='text' placeholder='title' required />
+            <textarea placeholder='description' />
+            <button type='submit'>Post</button>
           </div>
         </form>
         </div>

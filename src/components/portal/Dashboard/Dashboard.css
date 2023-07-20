@@ -9,6 +9,18 @@
     width: 100%;
 }
 
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+select {
+    padding: 14px;
+    border-radius: 8px;
+}
+
 @media  (min-width: 768px) {
     .portal-content {
         flex-direction: row;
