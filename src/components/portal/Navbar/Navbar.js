@@ -24,7 +24,7 @@ function InNavBar() {
     // const auth = getAuth();
     // signOut(auth)
     //   .then(() => {
-    //     navigate("/");
+        navigate("/");
     //   })
     //   .catch((error) => {});
   };
