@@ -12,21 +12,21 @@ function AdminLogin() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
+    // signInWithEmailAndPassword(auth, email, password)
+    //   .then((userCredential) => {
         // const user = auth.app._options.appId;
         // if(user == "1:509399461359:web:266d4b518a78bc78bd5a1a") {
           // alert(user)
           navigate("/dashboard");
         // } else
         // navigate("/studentsdashboard");
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+      // })
+      // .catch((error) => {
+      //   const errorCode = error.code;
+      //   const errorMessage = error.message;
           // alert(errorMessage);
         
-      });
+      // });
   };
 
   return (
