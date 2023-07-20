@@ -1,7 +1,7 @@
 import InNavBar from "../Navbar/Navbar";
-import Timetables from "../Timetables/Timetables";
+import Timetables from "../timetables/Timetables";
 
-const TimetablesPage = () => {
+const TimetablesPage2 = () => {
   
     return (
       <>
@@ -11,4 +11,4 @@ const TimetablesPage = () => {
     )
 }
 
-export default TimetablesPage;
+export default TimetablesPage2;

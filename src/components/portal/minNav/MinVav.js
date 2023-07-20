@@ -11,7 +11,7 @@ const MinNav = () => {
         <ul className="portal-navigation-inner" ref={navRef2}>
           <li className="nav-element">
             <NavLink to="/dashboard" activestyle="true" className="element">
-              Dashboard
+              Announcements
             </NavLink>
             
           </li>

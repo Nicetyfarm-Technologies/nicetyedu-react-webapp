@@ -19,8 +19,7 @@ const Announcements = () => {
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic quis
               ratione quae quidem laboriosam quos maxime? Reprehenderit deleniti
-              sit minima, neque temporibus voluptas illo nemo corporis, vero
-              assumenda ipsa! Aliquid?
+              sit minima, neque temporibus voluptas illo nemo corporis, ve
             </p>
             <small><i>10-07-2023 09:38</i></small>
           </li>

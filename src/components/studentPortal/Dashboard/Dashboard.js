@@ -1,5 +1,5 @@
 import React from 'react';
-import { getAuth } from "firebase/auth";
+// import { getAuth } from "firebase/auth";
 import 'react-slideshow-image/dist/styles.css'
 import './Dashboard.css'
 import StudentsMinNav from '../minNav/MinVav';
@@ -7,16 +7,16 @@ import { Link } from 'react-router-dom';
 
 const StudentsDashboard = () => {
 
-  const checkUser = () => {
-  const auth = getAuth();
-const user = auth.currentUser;
+//   const checkUser = () => {
+//   const auth = getAuth();
+// const user = auth.currentUser;
 
-if (user) {
-  alert("user is already logged in")
-} else {
-  alert("No user is signed in.");
-}
-  }
+// if (user) {
+//   alert("user is already logged in")
+// } else {
+//   alert("No user is signed in.");
+// }
+//   }
     return (
       <div className="portal-content">
         <StudentsMinNav />
@@ -29,9 +29,9 @@ if (user) {
           <li className='el'><Link to="/studentsdashboard/videos">Videos</Link></li>
           <li className='el'><Link to="/studentsdashboard/pastpapers">Past Papers</Link></li>
           <li className='el'><Link to="/studentsdashboard/quizzes">Quizzes</Link></li>
-          <li className='el'><Link>Assignments</Link></li>
-          <li className='el'><Link>Practicals</Link></li>
-          <li className='el'><Link>Time Table</Link></li>
+          <li className='el'><Link to="/studentsdashboard/assignments">Assignments</Link></li>
+          <li className='el'><Link to="/studentsdashboard/practicals">Practicals</Link></li>
+          <li className='el'><Link to="/studentsdashboard/timetables">Time Table</Link></li>
         </ul>
         </div>
       </div>

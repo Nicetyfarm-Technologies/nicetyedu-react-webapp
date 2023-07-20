@@ -56,6 +56,9 @@ import CommerceQuizPage from './components/studentPortal/pages/CommerceQuiz';
 import ScienceQuizPage from './components/studentPortal/pages/ScienceQuiz';
 import StudentsVideosPage from './components/studentPortal/pages/Videos';
 import BooksPage from './components/studentPortal/pages/Books';
+import MathBooksPage from './components/studentPortal/pages/MathBooks';
+import AssignmentsPage from './components/studentPortal/pages/Assignments';
+import TimetablesPage2 from './components/studentPortal/pages/Timetables';
 import StudentsResultsPage from './components/studentPortal/pages/Results';
 
 class App extends Component {
@@ -67,6 +70,9 @@ class App extends Component {
 					<Route path="/studentsdashboard" element={<StudentsDashboardPage />} />
           <Route path="/studentsdashboard/announcements" element={<AnnouncementsPage />} />
           <Route path="/studentsdashboard/books" element={<BooksPage />} />
+          <Route path="/studentsdashboard/timetables" element={<TimetablesPage2 />} />
+          <Route path="/studentsdashboard/books/math" element={<MathBooksPage />} />
+          <Route path="/studentsdashboard/assignments" element={<AssignmentsPage />} />
           <Route path="/studentsdashboard/pastpapers" element={<StudentsPastpapersPage />} />
           <Route path="/studentsdashboard/pastpapers/ecz/mathematics-12" element={<MathPastpapersPage />} />
           <Route path="/studentsdashboard/pastpapers/ecz/accounts-12" element={<AccountsPastpapersPage />} />

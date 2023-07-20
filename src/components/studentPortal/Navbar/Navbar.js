@@ -1,7 +1,7 @@
 import React from "react";
 import { useRef, useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { getAuth, signOut } from "firebase/auth";
+// import { getAuth, signOut } from "firebase/auth";
 import logo from "../images/icon.png";
 import "./Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -21,29 +21,29 @@ function StudentsInNavBar() {
 
   const logOut = (event) => {
     event.preventDefault();
-    const auth = getAuth();
-    signOut(auth)
-      .then(() => {
-        navigate("/");
-      })
-      .catch((error) => {});
+    // const auth = getAuth();
+    // signOut(auth)
+    //   .then(() => {
+    //     navigate("/");
+    //   })
+    //   .catch((error) => {});
   };
 
-  const getUserProfile = () => {
-    const auth = getAuth();
-    const user = auth.currentUser;
-    if (user !== null) {
-      const displayName = user.displayName;
-      const photoURL = user.photoURL;
-      setName(displayName);
-      setImage(photoURL);
+  // const getUserProfile = () => {
+  //   const auth = getAuth();
+  //   const user = auth.currentUser;
+  //   if (user !== null) {
+  //     const displayName = user.displayName;
+  //     const photoURL = user.photoURL;
+  //     setName(displayName);
+  //     setImage(photoURL);
       
-    }
-  };
+  //   }
+  // };
 
-  useEffect(() => {
-    getUserProfile();
-  }, []);
+  // useEffect(() => {
+  //   getUserProfile();
+  // }, []);
 
   const showNavContent = () => {
     navRef.current.classList.toggle("responsive");
