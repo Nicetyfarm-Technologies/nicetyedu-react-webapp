@@ -38,6 +38,48 @@ const Dashboard = () => {
             <button type='submit'>Post</button>
           </div>
         </form>
+        <p>Latest</p>
+        <ul className="announcements">
+          <li className="announce">
+            <h3>Openning Of Schools</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic quis
+              ratione quae quidem laboriosam quos maxime? Reprehenderit deleniti
+              sit minima, neque temporibus voluptas illo nemo corporis, ve
+            </p>
+            <small><i>10-07-2023 09:38</i></small>
+          </li>
+          <li className="announce">
+            <h3>Openning Of Schools</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic quis
+              ratione quae quidem laboriosam quos maxime? Reprehenderit deleniti
+              sit minima, neque temporibus voluptas illo nemo corporis, vero
+              assumenda ipsa! Aliquid?
+            </p>
+            <small><i>10-07-2023 09:38</i></small>
+          </li>
+          <li className="announce">
+            <h3>Openning Of Schools</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic quis
+              ratione quae quidem laboriosam quos maxime? Reprehenderit deleniti
+              sit minima, neque temporibus voluptas illo nemo corporis, vero
+              assumenda ipsa! Aliquid?
+            </p>
+            <small><i>10-07-2023 09:38</i></small>
+          </li>
+          <li className="announce">
+            <h3>Openning Of Schools</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic quis
+              ratione quae quidem laboriosam quos maxime? Reprehenderit deleniti
+              sit minima, neque temporibus voluptas illo nemo corporis, vero
+              assumenda ipsa! Aliquid?
+            </p>
+            <small><i>10-07-2023 09:38</i></small>
+          </li>
+        </ul>
         </div>
       </div>
     )

@@ -2,27 +2,27 @@ import React, { useState } from "react";
 import "./Contact.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import {
-//   faFacebookF,
-//   faLinkedinIn,
-//   faWhatsapp,
-//   faInstagram,
-//   faTwitter,
-// } from "@fortawesome/free-brands-svg-icons";
-// import {
-//   faEnvelope,
-//   faPhone,
-//   faLocation,
-// } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFacebookF,
+  faLinkedinIn,
+  faWhatsapp,
+  faInstagram,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+import {
+  faEnvelope,
+  faPhone,
+  faLocation,
+} from "@fortawesome/free-solid-svg-icons";
 
-// const FacebookIcon = <FontAwesomeIcon icon={faFacebookF} />;
-// const LinkedInIcon = <FontAwesomeIcon icon={faLinkedinIn} />;
-// const WhatsappIcon = <FontAwesomeIcon icon={faWhatsapp} />;
-// const InstagramIcon = <FontAwesomeIcon icon={faInstagram} />;
-// const TwitterIcon = <FontAwesomeIcon icon={faTwitter} />;
-// const PhoneIcon = <FontAwesomeIcon icon={faPhone} />;
-// const EmailIcon = <FontAwesomeIcon icon={faEnvelope} />;
-// const LocationIcon = <FontAwesomeIcon icon={faLocation} />;
+const FacebookIcon = <FontAwesomeIcon icon={faFacebookF} />;
+const LinkedInIcon = <FontAwesomeIcon icon={faLinkedinIn} />;
+const WhatsappIcon = <FontAwesomeIcon icon={faWhatsapp} />;
+const InstagramIcon = <FontAwesomeIcon icon={faInstagram} />;
+const TwitterIcon = <FontAwesomeIcon icon={faTwitter} />;
+const PhoneIcon = <FontAwesomeIcon icon={faPhone} />;
+const EmailIcon = <FontAwesomeIcon icon={faEnvelope} />;
+const LocationIcon = <FontAwesomeIcon icon={faLocation} />;
 
 function Contact() {
   const [firstName, setFirstName] = useState("");
@@ -50,29 +50,29 @@ function Contact() {
             <div className="details-container">
               <div className="contacts">
                 <div className="contact">
-                  {/* {PhoneIcon} */}
+                  {PhoneIcon}
                   <p>
                     +260779293183, +260 97 3536566, +260 96 5240860,
                     +260974405943
                   </p>
                 </div>
                 <div className="contact">
-                  {/* {EmailIcon} */}
+                  {EmailIcon}
                   <p>info.nicetyfarm@gmail.com</p>
                 </div>
                 <div className="contact">
-                  {/* {LocationIcon} */}
+                  {LocationIcon}
                   <p>Plot 002, Nkwashi Estates, Chongwe Lusaka</p>
                 </div>
               </div>
             </div>
           </div>
           <div className="social-links">
-            {/* <Link>{FacebookIcon}</Link>
+            <Link>{FacebookIcon}</Link>
             <Link>{LinkedInIcon}</Link>
             <Link>{WhatsappIcon}</Link>
             <Link>{InstagramIcon}</Link>
-            <Link>{TwitterIcon}</Link> */}
+            <Link>{TwitterIcon}</Link>
           </div>
         </div>
         <form className="contact-form">
