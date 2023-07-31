@@ -26,6 +26,25 @@ const Enrollments = () => {
   const [grade, setGrade] = useState("grade8a");
 
   const [grade8a, setGrade8a] = useState([]);
+  const [grade8b, setGrade8b] = useState([]);
+  const [grade8c, setGrade8c] = useState([]);
+  const [grade8d, setGrade8d] = useState([]);
+  const [grade9a, setGrade9a] = useState([]);
+  const [grade9b, setGrade9b] = useState([]);
+  const [grade9c, setGrade9c] = useState([]);
+  const [grade9d, setGrade9d] = useState([]);
+  const [grade10a, setGrade10a] = useState([]);
+  const [grade10b, setGrade10b] = useState([]);
+  const [grade10c, setGrade10c] = useState([]);
+  const [grade10d, setGrade10d] = useState([]);
+  const [grade11a, setGrade11a] = useState([]);
+  const [grade11b, setGrade11b] = useState([]);
+  const [grade11c, setGrade11c] = useState([]);
+  const [grade11d, setGrade11d] = useState([]);
+  const [grade12a, setGrade12a] = useState([]);
+  const [grade12b, setGrade12b] = useState([]);
+  const [grade12c, setGrade12c] = useState([]);
+  const [grade12d, setGrade12d] = useState([]);
 
   const [pupils, setPupils] = useState([
     ["Grade 8A", []],
@@ -77,7 +96,8 @@ const Enrollments = () => {
   // };
 
   useEffect(() => {
-    const q = query(collection(db, `pupils`));
+    //for 8a
+    const q = query(collection(db, `pupils8a`));
     const unSubscribe = onSnapshot(q, (querySnapshot) => {
       let pupilsArr = [];
       querySnapshot.forEach((doc) => {
@@ -85,18 +105,27 @@ const Enrollments = () => {
       });
       setGrade8a(pupilsArr);
     });
-    // grade8a.forEach((object) => {
-    //   if (object.grade === "grade8a") {
-    //     pupils[0][1].push(object);
-    //   } else if (object.grade === "grade8b") {
-    //     pupils[1][1].push(object);
-    //   } else if (object.grade === "grade8c") {
-    //     pupils[2][1].push(object);
-    //   } else {
-    //     pupils[3][1].push(object);
-    //   }
-    // });
-    console.log(pupils);
+
+    // for 8b
+    const a = query(collection(db, `pupils8b`));
+    const unSubscribe1 = onSnapshot(a, (querySnapshot) => {
+      let pupilsArr = [];
+      querySnapshot.forEach((doc) => {
+        pupilsArr.push({ ...doc.data(), id: doc.id });
+      });
+      setGrade8b(pupilsArr);
+    });
+
+    // for 8c
+    const b = query(collection(db, `pupils8b`));
+    const unSubscribe2 = onSnapshot(b, (querySnapshot) => {
+      let pupilsArr = [];
+      querySnapshot.forEach((doc) => {
+        pupilsArr.push({ ...doc.data(), id: doc.id });
+      });
+      setGrade8c(pupilsArr);
+    });
+    
     return () => unSubscribe();
   });
   // };
