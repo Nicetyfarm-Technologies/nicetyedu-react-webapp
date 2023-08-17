@@ -51,7 +51,7 @@ const Enrollments = () => {
     ["Grade 8B", []],
     ["Grade 8C", []],
     ["Grade 8D", []],
-  ])
+  ]);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -62,20 +62,23 @@ const Enrollments = () => {
 
   const enrollPupil = async (e) => {
     e.preventDefault();
-    await setDoc(doc(db, "pupils" + grade, "20230001" + grade + grade8a.length), {
-      id: "20230001" + grade + grade8a.length,
-      firstName: firstName,
-      lastName: lastName,
-      sex: sex,
-      address: address,
-      dob: dob,
-      guardianName: guardianName,
-      guardianNumber: guardianNumber,
-      guardianEmail: guardianEmail,
-      enrolmentDate: enrolmentDate.toLocaleDateString(),
-    });
-    await setDoc(doc(db, "pupils", "20230001" + grade + grade8a.length), {
-      id: "20230001" + grade + grade8a.length,
+    await setDoc(
+      doc(db, "pupils" + grade, "20230001" + grade + enrolmentDate.toLocaleDateString() + enrolmentDate.toLocaleTimeString()),
+      {
+        id: "20230001" + grade + enrolmentDate.toLocaleDateString() + enrolmentDate.toLocaleTimeString(),
+        firstName: firstName,
+        lastName: lastName,
+        sex: sex,
+        address: address,
+        dob: dob,
+        guardianName: guardianName,
+        guardianNumber: guardianNumber,
+        guardianEmail: guardianEmail,
+        enrolmentDate: enrolmentDate.toLocaleDateString(),
+      }
+    );
+    await setDoc(doc(db, "pupils", "20230001" + grade + enrolmentDate.toLocaleDateString() + enrolmentDate.toLocaleTimeString()), {
+      id: "20230001" + grade + enrolmentDate.toLocaleDateString() + enrolmentDate.toLocaleTimeString(),
       firstName: firstName,
       lastName: lastName,
       sex: sex,
@@ -104,26 +107,6 @@ const Enrollments = () => {
         pupilsArr.push({ ...doc.data(), id: doc.id });
       });
       setGrade8a(pupilsArr);
-    });
-
-    // for 8b
-    const a = query(collection(db, `pupils8b`));
-    const unSubscribe1 = onSnapshot(a, (querySnapshot) => {
-      let pupilsArr = [];
-      querySnapshot.forEach((doc) => {
-        pupilsArr.push({ ...doc.data(), id: doc.id });
-      });
-      setGrade8b(pupilsArr);
-    });
-
-    // for 8c
-    const b = query(collection(db, `pupils8b`));
-    const unSubscribe2 = onSnapshot(b, (querySnapshot) => {
-      let pupilsArr = [];
-      querySnapshot.forEach((doc) => {
-        pupilsArr.push({ ...doc.data(), id: doc.id });
-      });
-      setGrade8c(pupilsArr);
     });
     
     return () => unSubscribe();
@@ -222,43 +205,138 @@ const Enrollments = () => {
             <button type="submit">Enroll</button>
           </div>
         </form>
-        {pupils.map((val1, key) => {
-          return (
-            <div className="students">
-              <h3>{val1[0]}</h3>
-              <table>
-                <tr>
-                  <th>Pupil ID</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Sex</th>
-                  <th>Address</th>
-                  <th>D.O.B</th>
-                  <th>Enrollment Date</th>
-                  <th>Guardian's FullName</th>
-                  <th>Guardian's Phone</th>
-                  <th>Guardian's Email</th>
+        <div className="students">
+          <h3>Grade 8A</h3>
+          <table>
+            <tr>
+              <th>Pupil ID</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Sex</th>
+              <th>Address</th>
+              <th>D.O.B</th>
+              <th>Enrollment Date</th>
+              <th>Guardian's FullName</th>
+              <th>Guardian's Phone</th>
+              <th>Guardian's Email</th>
+            </tr>
+            {grade8a.map((val, key) => {
+              return (
+                <tr key={key}>
+                  <td>{val.studentId}</td>
+                  <td>{val.firstName}</td>
+                  <td>{val.lastName}</td>
+                  <td>{val.sex}</td>
+                  <td>{val.address}</td>
+                  <td>{val.dob}</td>
+                  <td>{val.enrolmentDate}</td>
+                  <td>{val.guardianName}</td>
+                  <td>{val.guardianNumber}</td>
+                  <td>{val.guardianEmail}</td>
                 </tr>
-                {val1[1].map((val, key) => {
-                  return (
-                    <tr key={key}>
-                      <td>{val.studentId}</td>
-                      <td>{val.firstName}</td>
-                      <td>{val.lastName}</td>
-                      <td>{val.sex}</td>
-                      <td>{val.address}</td>
-                      <td>{val.dob}</td>
-                      <td>{val.enrolmentDate}</td>
-                      <td>{val.guardianName}</td>
-                      <td>{val.guardianNumber}</td>
-                      <td>{val.guardianEmail}</td>
-                    </tr>
-                  );
-                })}
-              </table>
-            </div>
-          );
-        })}
+              );
+            })}
+          </table>
+        </div>
+        <div className="students">
+          <h3>Grade 8B</h3>
+          <table>
+            <tr>
+              <th>Pupil ID</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Sex</th>
+              <th>Address</th>
+              <th>D.O.B</th>
+              <th>Enrollment Date</th>
+              <th>Guardian's FullName</th>
+              <th>Guardian's Phone</th>
+              <th>Guardian's Email</th>
+            </tr>
+            {grade8b.map((val, key) => {
+              return (
+                <tr key={key}>
+                  <td>{val.studentId}</td>
+                  <td>{val.firstName}</td>
+                  <td>{val.lastName}</td>
+                  <td>{val.sex}</td>
+                  <td>{val.address}</td>
+                  <td>{val.dob}</td>
+                  <td>{val.enrolmentDate}</td>
+                  <td>{val.guardianName}</td>
+                  <td>{val.guardianNumber}</td>
+                  <td>{val.guardianEmail}</td>
+                </tr>
+              );
+            })}
+          </table>
+        </div>
+        <div className="students">
+          <h3>Grade 8C</h3>
+          <table>
+            <tr>
+              <th>Pupil ID</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Sex</th>
+              <th>Address</th>
+              <th>D.O.B</th>
+              <th>Enrollment Date</th>
+              <th>Guardian's FullName</th>
+              <th>Guardian's Phone</th>
+              <th>Guardian's Email</th>
+            </tr>
+            {grade8c.map((val, key) => {
+              return (
+                <tr key={key}>
+                  <td>{val.studentId}</td>
+                  <td>{val.firstName}</td>
+                  <td>{val.lastName}</td>
+                  <td>{val.sex}</td>
+                  <td>{val.address}</td>
+                  <td>{val.dob}</td>
+                  <td>{val.enrolmentDate}</td>
+                  <td>{val.guardianName}</td>
+                  <td>{val.guardianNumber}</td>
+                  <td>{val.guardianEmail}</td>
+                </tr>
+              );
+            })}
+          </table>
+        </div>
+        <div className="students">
+          <h3>Grade 8D</h3>
+          <table>
+            <tr>
+              <th>Pupil ID</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Sex</th>
+              <th>Address</th>
+              <th>D.O.B</th>
+              <th>Enrollment Date</th>
+              <th>Guardian's FullName</th>
+              <th>Guardian's Phone</th>
+              <th>Guardian's Email</th>
+            </tr>
+            {grade8d.map((val, key) => {
+              return (
+                <tr key={key}>
+                  <td>{val.studentId}</td>
+                  <td>{val.firstName}</td>
+                  <td>{val.lastName}</td>
+                  <td>{val.sex}</td>
+                  <td>{val.address}</td>
+                  <td>{val.dob}</td>
+                  <td>{val.enrolmentDate}</td>
+                  <td>{val.guardianName}</td>
+                  <td>{val.guardianNumber}</td>
+                  <td>{val.guardianEmail}</td>
+                </tr>
+              );
+            })}
+          </table>
+        </div>
       </div>
     </div>
   );

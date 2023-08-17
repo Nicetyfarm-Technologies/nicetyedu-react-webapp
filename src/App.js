@@ -60,6 +60,7 @@ import MathBooksPage from './components/studentPortal/pages/MathBooks';
 import AssignmentsPage from './components/studentPortal/pages/Assignments';
 import TimetablesPage2 from './components/studentPortal/pages/Timetables';
 import StudentsResultsPage from './components/studentPortal/pages/Results';
+import SkillsPage from './components/studentPortal/pages/Skills';
 
 class App extends Component {
   render() {
@@ -101,6 +102,7 @@ class App extends Component {
           <Route path="/studentsdashboard/quizzes/science" element={<ScienceQuizPage />} />
           <Route path="/studentsdashboard/videos" element={<StudentsVideosPage />} />
           <Route path="/studentsdashboard/results" element={<StudentsResultsPage />} />
+          <Route path="/studentsdashboard/skills" element={<SkillsPage />} />
 				</Route>
        <Route path="/dashboard" element={<ProtectedRoute />}>
 					<Route path="/dashboard" element={<DashboardPage />} />

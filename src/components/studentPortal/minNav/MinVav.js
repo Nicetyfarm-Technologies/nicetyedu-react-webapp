@@ -22,6 +22,13 @@ const StudentsMinNav = () => {
               Results
             </NavLink>
           </li>
+          <hr />
+          
+          <li className="nav-element">
+            <NavLink to="/studentsdashboard/skills" activestyle="true" className="element">
+              Essential Skills
+            </NavLink>
+          </li>
         </ul>
       </div>
     )
