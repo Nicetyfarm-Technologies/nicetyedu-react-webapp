@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import {
   onSnapshot,
   query,
@@ -8,13 +9,16 @@ import {
   setDoc,
   deleteDoc,
 } from "firebase/firestore";
+import ReactDOM from 'react-dom';
+import Modal from 'react-modal';
+import auth from "../../firebase/config";
 import { db } from "../../firebase/config";
 import MinNav from '../minNav/MinVav';
 
 const Staff = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [qualification, setQualification] = useState("");
+  const [qualification, setQualification] = useState("certificate");
   const [sex, setSex] = useState("male");
   const [address, setAddress] = useState("");
   const [dob, setDob] = useState("");
@@ -23,34 +27,9 @@ const Staff = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
   const [department, setDepartment] = useState("grade8a");
+  const password = "test1234";
 
-  const [grade8a, setGrade8a] = useState([]);
-  const [grade8b, setGrade8b] = useState([]);
-  const [grade8c, setGrade8c] = useState([]);
-  const [grade8d, setGrade8d] = useState([]);
-  const [grade9a, setGrade9a] = useState([]);
-  const [grade9b, setGrade9b] = useState([]);
-  const [grade9c, setGrade9c] = useState([]);
-  const [grade9d, setGrade9d] = useState([]);
-  const [grade10a, setGrade10a] = useState([]);
-  const [grade10b, setGrade10b] = useState([]);
-  const [grade10c, setGrade10c] = useState([]);
-  const [grade10d, setGrade10d] = useState([]);
-  const [grade11a, setGrade11a] = useState([]);
-  const [grade11b, setGrade11b] = useState([]);
-  const [grade11c, setGrade11c] = useState([]);
-  const [grade11d, setGrade11d] = useState([]);
-  const [grade12a, setGrade12a] = useState([]);
-  const [grade12b, setGrade12b] = useState([]);
-  const [grade12c, setGrade12c] = useState([]);
-  const [grade12d, setGrade12d] = useState([]);
-
-  const [pupils, setPupils] = useState([
-    ["Grade 8A", []],
-    ["Grade 8B", []],
-    ["Grade 8C", []],
-    ["Grade 8D", []],
-  ]);
+  const [staff, setStaff] = useState([]);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -59,65 +38,65 @@ const Staff = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  const enrollPupil = async (e) => {
+  const addStaff = async (e) => {
     e.preventDefault();
-    await setDoc(
-      doc(db, "staff" + grade, "20230001" + grade + enrolmentDate.toLocaleDateString() + enrolmentDate.toLocaleTimeString()),
+    await setDoc(doc(db, "staff", "20230001" + department + enrolmentDate),
       {
-        id: "20230001" + grade + enrolmentDate.toLocaleDateString() + enrolmentDate.toLocaleTimeString(),
+        id: "20230001" + department + enrolmentDate,
         firstName: firstName,
         lastName: lastName,
         sex: sex,
         address: address,
         dob: dob,
-        guardianName: guardianName,
-        guardianNumber: guardianNumber,
-        guardianEmail: guardianEmail,
-        enrolmentDate: enrolmentDate.toLocaleDateString(),
+        qualification: qualification,
+        department: department,
+        nrc: nrc,
+        phoneNumber: phoneNumber,
+        email: email,
+        dateAdded: enrolmentDate.toLocaleDateString(),
       }
     );
-    await setDoc(doc(db, "staff", "20230001" + grade + enrolmentDate.toLocaleDateString() + enrolmentDate.toLocaleTimeString()), {
-      id: "20230001" + grade + enrolmentDate.toLocaleDateString() + enrolmentDate.toLocaleTimeString(),
-      firstName: firstName,
-      lastName: lastName,
-      sex: sex,
-      address: address,
-      grade: grade,
-      dob: dob,
-      guardianName: guardianName,
-      guardianNumber: guardianNumber,
-      guardianEmail: guardianEmail,
-      enrolmentDate: enrolmentDate.toLocaleDateString(),
-    });
+    createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    const user = userCredential.user;
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
     // setTitle("");
     // setDescription("");
     // setAssignee("No one");
-    alert("Enrolled Successfully");
+    alert("Added Successfully");
   };
   // }
   // };
 
   useEffect(() => {
     //for 8a
-    const q = query(collection(db, `pupils8a`));
+    const q = query(collection(db, `staff`));
     const unSubscribe = onSnapshot(q, (querySnapshot) => {
       let pupilsArr = [];
       querySnapshot.forEach((doc) => {
         pupilsArr.push({ ...doc.data(), id: doc.id });
       });
-      setGrade8a(pupilsArr);
+      setStaff(pupilsArr);
     });
-    
+    console.log(staff)
     return () => unSubscribe();
   });
   // };
+  const sayHello = () => {
+    alert("Hello");
+  }
 
   return (
     <div className="portal-content">
       <MinNav />
       <div className="portal-page-content">
         <h2>Staff Management</h2>
-        <form onSubmit={enrollPupil} className="annonce-form2">
+        <form onSubmit={addStaff} className="annonce-form2">
           <h3>Add Staff</h3>
           <div className="inputs">
             <select
@@ -209,137 +188,35 @@ const Staff = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Email Address"
+              required
             />
             <button type="submit">Add</button>
           </div>
         </form>
         <div className="students">
-          <h3>Mathematics Dept</h3>
+          {/* <h3>Mathematics Dept</h3> */}
           <table>
             <tr>
-              <th>Pupil ID</th>
-              <th>First Name</th>
-              <th>Last Name</th>
+              <th>Name</th>
               <th>Sex</th>
               <th>Address</th>
-              <th>D.O.B</th>
-              <th>Enrollment Date</th>
-              <th>Guardian's FullName</th>
-              <th>Guardian's Phone</th>
-              <th>Guardian's Email</th>
+              <th>Date Added</th>
+              <th>Phone Number</th>
+              <th>Email</th>
+              <th>Department</th>
+              <th>More</th>
             </tr>
-            {grade8a.map((val, key) => {
+            {staff.map((val, key) => {
               return (
                 <tr key={key}>
-                  <td>{val.studentId}</td>
-                  <td>{val.firstName}</td>
-                  <td>{val.lastName}</td>
+                  <td>{val.firstName} {val.lastName}</td>
                   <td>{val.sex}</td>
                   <td>{val.address}</td>
-                  <td>{val.dob}</td>
-                  <td>{val.enrolmentDate}</td>
-                  <td>{val.guardianName}</td>
-                  <td>{val.guardianNumber}</td>
-                  <td>{val.guardianEmail}</td>
-                </tr>
-              );
-            })}
-          </table>
-        </div>
-        <div className="students">
-          <h3>Languages Dept</h3>
-          <table>
-            <tr>
-              <th>Pupil ID</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Sex</th>
-              <th>Address</th>
-              <th>D.O.B</th>
-              <th>Enrollment Date</th>
-              <th>Guardian's FullName</th>
-              <th>Guardian's Phone</th>
-              <th>Guardian's Email</th>
-            </tr>
-            {grade8b.map((val, key) => {
-              return (
-                <tr key={key}>
-                  <td>{val.studentId}</td>
-                  <td>{val.firstName}</td>
-                  <td>{val.lastName}</td>
-                  <td>{val.sex}</td>
-                  <td>{val.address}</td>
-                  <td>{val.dob}</td>
-                  <td>{val.enrolmentDate}</td>
-                  <td>{val.guardianName}</td>
-                  <td>{val.guardianNumber}</td>
-                  <td>{val.guardianEmail}</td>
-                </tr>
-              );
-            })}
-          </table>
-        </div>
-        <div className="students">
-          <h3>Natural Sciences Dept</h3>
-          <table>
-            <tr>
-              <th>Pupil ID</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Sex</th>
-              <th>Address</th>
-              <th>D.O.B</th>
-              <th>Enrollment Date</th>
-              <th>Guardian's FullName</th>
-              <th>Guardian's Phone</th>
-              <th>Guardian's Email</th>
-            </tr>
-            {grade8c.map((val, key) => {
-              return (
-                <tr key={key}>
-                  <td>{val.studentId}</td>
-                  <td>{val.firstName}</td>
-                  <td>{val.lastName}</td>
-                  <td>{val.sex}</td>
-                  <td>{val.address}</td>
-                  <td>{val.dob}</td>
-                  <td>{val.enrolmentDate}</td>
-                  <td>{val.guardianName}</td>
-                  <td>{val.guardianNumber}</td>
-                  <td>{val.guardianEmail}</td>
-                </tr>
-              );
-            })}
-          </table>
-        </div>
-        <div className="students">
-          <h3>Natural Sciences Dept </h3>
-          <table>
-            <tr>
-              <th>Pupil ID</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Sex</th>
-              <th>Address</th>
-              <th>D.O.B</th>
-              <th>Enrollment Date</th>
-              <th>Guardian's FullName</th>
-              <th>Guardian's Phone</th>
-              <th>Guardian's Email</th>
-            </tr>
-            {grade8d.map((val, key) => {
-              return (
-                <tr key={key}>
-                  <td>{val.studentId}</td>
-                  <td>{val.firstName}</td>
-                  <td>{val.lastName}</td>
-                  <td>{val.sex}</td>
-                  <td>{val.address}</td>
-                  <td>{val.dob}</td>
-                  <td>{val.enrolmentDate}</td>
-                  <td>{val.guardianName}</td>
-                  <td>{val.guardianNumber}</td>
-                  <td>{val.guardianEmail}</td>
+                  <td>{val.dateAdded}</td>
+                  <td>{val.phoneNumber}</td>
+                  <td>{val.email}</td>
+                  <td>{val.department}</td>
+                  <td onClick={sayHello}>View</td>
                 </tr>
               );
             })}
