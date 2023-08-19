@@ -15,6 +15,17 @@ import auth from "../../firebase/config";
 import { db } from "../../firebase/config";
 import MinNav from '../minNav/MinVav';
 
+const customStyles = {
+  content: {
+    top: '10%',
+    left: '10%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-10%',
+    transform: 'translate(-10%, -10%)',
+  },
+};
+
 const Staff = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -28,6 +39,24 @@ const Staff = () => {
   const [email, setEmail] = useState("");
   const [department, setDepartment] = useState("grade8a");
   const password = "test1234";
+  const [indiv, setIndiv] = useState({
+    firstName: "",
+    lastName: "",
+    sex: ""
+  })
+
+  let subtitle;
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  function openModal(val) {
+    setIndiv(val)
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
 
   const [staff, setStaff] = useState([]);
 
@@ -83,13 +112,9 @@ const Staff = () => {
       });
       setStaff(pupilsArr);
     });
-    console.log(staff)
     return () => unSubscribe();
   });
   // };
-  const sayHello = () => {
-    alert("Hello");
-  }
 
   return (
     <div className="portal-content">
@@ -193,6 +218,25 @@ const Staff = () => {
             <button type="submit">Add</button>
           </div>
         </form>
+
+        <Modal className="modal"
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+        <h2>{indiv.firstName} {indiv.lastName}</h2>
+        <button onClick={closeModal}>close</button>
+        <div>I am a modal</div>
+        <form>
+          <input />
+          <button>tab navigation</button>
+          <button>stays</button>
+          <button>inside</button>
+          <button>the modal</button>
+        </form>
+      </Modal>
+
         <div className="students">
           {/* <h3>Mathematics Dept</h3> */}
           <table>
@@ -216,7 +260,7 @@ const Staff = () => {
                   <td>{val.phoneNumber}</td>
                   <td>{val.email}</td>
                   <td>{val.department}</td>
-                  <td onClick={sayHello}>View</td>
+                  <td onClick={() => openModal(val)}>View</td>
                 </tr>
               );
             })}

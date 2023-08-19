@@ -5,6 +5,11 @@
     padding: 10px;
 }
 
+.modal {
+    width: 90%;
+    border: 2px solid;
+}
+
 .classes-nav ul {
     background-color: rgb(5, 5, 68);
     padding: 15px;
