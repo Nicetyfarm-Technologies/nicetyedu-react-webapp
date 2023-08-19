@@ -13,7 +13,7 @@ const Announcement = ({ announcement, deleteAnnounce }) => {
             <p>
               {announcement.description}
             </p>
-            <small><i>{announcement.announceDate}</i></small>
+            <small><i>{announcement.date} | {announcement.time}</i></small>
             {/* <button type="button" onClick={() => deleteAnnounce(announcement.id)}>{delet}</button> */}
           </li>
   );

@@ -14,15 +14,15 @@ import MinNav from '../minNav/MinVav';
 const Staff = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [studentId, setStudentId] = useState("");
+  const [qualification, setQualification] = useState("");
   const [sex, setSex] = useState("male");
   const [address, setAddress] = useState("");
   const [dob, setDob] = useState("");
   const [enrolmentDate, setEnrollmentDate] = useState("");
-  const [guardianName, setGuardianName] = useState("");
-  const [guardianNumber, setGuardianNumber] = useState("");
-  const [guardianEmail, setGuardianEmail] = useState("");
-  const [grade, setGrade] = useState("grade8a");
+  const [nrc, setNrc] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [email, setEmail] = useState("");
+  const [department, setDepartment] = useState("grade8a");
 
   const [grade8a, setGrade8a] = useState([]);
   const [grade8b, setGrade8b] = useState([]);
@@ -121,27 +121,24 @@ const Staff = () => {
           <h3>Add Staff</h3>
           <div className="inputs">
             <select
-              value={grade}
+              value={department}
               onChange={(e) => {
-                setGrade(e.target.value);
+                setDepartment(e.target.value);
               }}
             >
-              <option value="grade8a">Mathematics</option>
-              <option value="grade8b">Languages</option>
-              <option value="grade8c">ICT</option>
-              <option value="grade8d">Natural Sciences</option>
-              <option value="grade9a">Social Sciences</option>
-              <option value="grade9b">Design & Technology</option>
-              <option value="grade9c">Agriculture</option>
-              <option value="grade9d">Art</option>
-              <option value="grade10a">Food And Nutrition</option>
-              <option value="grade10b">Business</option>
-              <option value="grade10c">Grade 10C</option>
-              <option value="grade10d">Grade 10D</option>
-              <option value="grade11a">Grade 11A</option>
-              <option value="grade11b">Grade 11B</option>
-              <option value="grade11c">Grade 11C</option>
-              <option value="grade11d">Grade 11D</option>
+              <option value="math">Mathematics</option>
+              <option value="languages">Languages</option>
+              <option value="ict">ICT</option>
+              <option value="ns">Natural Sciences</option>
+              <option value="ss">Social Sciences</option>
+              <option value="dt">Design & Technology</option>
+              <option value="agric">Agriculture</option>
+              <option value="art">Art</option>
+              <option value="fn">Food And Nutrition</option>
+              <option value="bs">Business</option>
+              <option value="accounts">Accounts</option>
+              <option value="guidance">Guidance</option>
+              <option value="other">other</option>
             </select>
             <input
               type="text"
@@ -183,25 +180,37 @@ const Staff = () => {
             />
             <input
               type="text"
-              value={guardianName}
-              onChange={(e) => setGuardianName(e.target.value)}
-              placeholder="Guardian's FullName"
+              value={nrc}
+              onChange={(e) => setNrc(e.target.value)}
+              placeholder="NRC"
               required
             />
+            <select
+              value={qualification}
+              onChange={(e) => {
+                setQualification(e.target.value);
+              }}
+            >
+              <option value="certificate">Certificate</option>
+              <option value="diploma">Diploma</option>
+              <option  value="bachelor">Bachelor's Degree</option>
+              <option  value="master">Master's Degree</option>
+              <option  value="phd">PHD</option>
+            </select>
             <input
               type="text"
-              value={guardianNumber}
-              onChange={(e) => setGuardianNumber(e.target.value)}
-              placeholder="Guardian's Phone Number"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              placeholder="Phone Number"
               required
             />
             <input
               type="email"
-              value={guardianEmail}
-              onChange={(e) => setGuardianEmail(e.target.value)}
-              placeholder="Guardian's Email Address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email Address"
             />
-            <button type="submit">Enroll</button>
+            <button type="submit">Add</button>
           </div>
         </form>
         <div className="students">

@@ -21,6 +21,7 @@ const [assigned, setAssigned] = useState("pupils")
 const [title, setTitle] = useState("")
 const [description, setDescription] = useState("")
 const [announceDate, setAnnounceDate] = useState("")
+const [announceDateTime, setAnnounceDateTime] = useState("")
 const [announceTime, setAnnounceTime] = useState("")
 const [announcements, setAnnouncements] = useState([
   {
@@ -35,6 +36,7 @@ const [adminEmail, setAdminEmail] = useState(null)
 useEffect(() => {
   const intervalId = setInterval(() => {
     setAnnounceDate(new Date());
+    setAnnounceDateTime(new Date().toLocaleDateString());
     setAnnounceTime(new Date().toLocaleTimeString());
   }, 1000);
   return () => clearInterval(intervalId);
@@ -47,7 +49,8 @@ useEffect(() => {
     querySnapshot.forEach((doc) => {
       companyBlogsArr.push({ ...doc.data(), id: doc.id });
     });
-    setAnnouncements(companyBlogsArr);
+    let sortedArr = companyBlogsArr.reverse();
+    setAnnouncements(sortedArr);
   });
   return () => unSubscribe();
 }, []);
@@ -62,7 +65,8 @@ const postAnnouncement = async (e) => {
         id: "announce" + announceDate,
         title: title,
         description: description,
-        date: announceDate
+        date: announceDateTime,
+        time: announceTime
       }
     );
   } else if(assigned === "staff") {
@@ -72,7 +76,8 @@ const postAnnouncement = async (e) => {
         id: "announce" + announceDate,
         title: title,
         description: description,
-        date: announceDate
+        date: announceDateTime,
+        time: announceTime
       }
     );
   } else {
