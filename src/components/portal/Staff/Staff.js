@@ -9,7 +9,7 @@ import {
   setDoc,
   deleteDoc,
 } from "firebase/firestore";
-import ReactDOM from 'react-dom';
+import avarta from "../images/avarta.png";
 import Modal from 'react-modal';
 import auth from "../../firebase/config";
 import { db } from "../../firebase/config";
@@ -21,8 +21,8 @@ const customStyles = {
     left: '10%',
     right: 'auto',
     bottom: 'auto',
-    marginRight: '-10%',
-    transform: 'translate(-10%, -10%)',
+    margin: '2%',
+    // transform: 'translate(-10%, -10%)',
   },
 };
 
@@ -37,7 +37,13 @@ const Staff = () => {
   const [nrc, setNrc] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
-  const [department, setDepartment] = useState("grade8a");
+  const [department, setDepartment] = useState("mathematics");
+  const [subjects, setSubjects] = useState([]);
+  const [hod, setHod] = useState(false);
+  const [classes, setClasses] = useState([]);
+  const [userImg, setUserImg] = useState(avarta);
+  const [isAccounts, setIsAccounts] = useState(false);
+  const [isHead, setIsHead] = useState(false);
   const password = "test1234";
   const [indiv, setIndiv] = useState({
     firstName: "",
@@ -45,7 +51,6 @@ const Staff = () => {
     sex: ""
   })
 
-  let subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
   function openModal(val) {
@@ -113,7 +118,7 @@ const Staff = () => {
       setStaff(pupilsArr);
     });
     return () => unSubscribe();
-  });
+  }, []);
   // };
 
   return (
@@ -226,15 +231,33 @@ const Staff = () => {
         contentLabel="Example Modal"
       >
         <h2>{indiv.firstName} {indiv.lastName}</h2>
+        <div className="user-details">
+          <div className="image-div">
+            <img src={userImg} alt="user-icon" />
+          </div>
+          <div className="det">
+            <p>EMAIL: {indiv.email}</p>
+            <p>PHONE NUMBER: {indiv.phoneNumber}</p>
+            <p>SEX: {indiv.sex}</p>
+            <p>D.O.B: {indiv.dob}</p>
+            <p>NRC: {indiv.nrc}</p>
+          </div>
+        </div>
+        <div className="other-det">
+              <ul>
+                <li>DPARTMENT: {indiv.department}</li>
+                <li>IS H.O.D: {indiv.isHod}</li>
+                <li>SUBJECTS: </li>
+                <li>HIGHEST LEVEL: {indiv.qualification}</li>
+              </ul>
+              <ul>
+                <li>DATE JOINED: {indiv.dateAdded}</li>
+                <li>CLASS TEACHER: {indiv.isHod}</li>
+                <li>CLASSES: </li>
+                <li>HIGHEST LEVEL: {indiv.qualification}</li>
+              </ul>
+        </div>
         <button onClick={closeModal}>close</button>
-        <div>I am a modal</div>
-        <form>
-          <input />
-          <button>tab navigation</button>
-          <button>stays</button>
-          <button>inside</button>
-          <button>the modal</button>
-        </form>
       </Modal>
 
         <div className="students">
