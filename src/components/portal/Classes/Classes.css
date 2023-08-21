@@ -40,6 +40,11 @@
     border: 1px solid #fff;
 }
 
+.type-writer {
+    color: #000;
+    font-size: 30px;
+}
+
 .det {
     display: flex;
     flex-direction: column;

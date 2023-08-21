@@ -9,22 +9,78 @@ import {
   setDoc,
   deleteDoc,
 } from "firebase/firestore";
+// import chroma from "chroma-js";
+// import { ColourOption, colourOptions } from "../data";
+// import Select, { StylesConfig } from "react-select";
 import avarta from "../images/avarta.png";
-import Modal from 'react-modal';
+import Modal from "react-modal";
 import auth from "../../firebase/config";
 import { db } from "../../firebase/config";
-import MinNav from '../minNav/MinVav';
+import MinNav from "../minNav/MinVav";
 
 const customStyles = {
   content: {
-    top: '10%',
-    left: '10%',
-    right: 'auto',
-    bottom: 'auto',
-    margin: '2%',
+    top: "10%",
+    left: "10%",
+    right: "auto",
+    bottom: "auto",
+    margin: "2%",
     // transform: 'translate(-10%, -10%)',
   },
 };
+
+// const colourStyles: StylesConfig<ColourOption, true> = {
+//   control: (styles) => ({ ...styles, backgroundColor: "white" }),
+//   option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+//     const color = chroma(data.color);
+//     return {
+//       ...styles,
+//       backgroundColor: isDisabled
+//         ? undefined
+//         : isSelected
+//         ? data.color
+//         : isFocused
+//         ? color.alpha(0.1).css()
+//         : undefined,
+//       color: isDisabled
+//         ? "#ccc"
+//         : isSelected
+//         ? chroma.contrast(color, "white") > 2
+//           ? "white"
+//           : "black"
+//         : data.color,
+//       cursor: isDisabled ? "not-allowed" : "default",
+
+//       ":active": {
+//         ...styles[":active"],
+//         backgroundColor: !isDisabled
+//           ? isSelected
+//             ? data.color
+//             : color.alpha(0.3).css()
+//           : undefined,
+//       },
+//     };
+//   },
+//   multiValue: (styles, { data }) => {
+//     const color = chroma(data.color);
+//     return {
+//       ...styles,
+//       backgroundColor: color.alpha(0.1).css(),
+//     };
+//   },
+//   multiValueLabel: (styles, { data }) => ({
+//     ...styles,
+//     color: data.color,
+//   }),
+//   multiValueRemove: (styles, { data }) => ({
+//     ...styles,
+//     color: data.color,
+//     ":hover": {
+//       backgroundColor: data.color,
+//       color: "white",
+//     },
+//   }),
+// };
 
 const Staff = () => {
   const [firstName, setFirstName] = useState("");
@@ -48,20 +104,19 @@ const Staff = () => {
   const [indiv, setIndiv] = useState({
     firstName: "",
     lastName: "",
-    sex: ""
-  })
+    sex: "",
+  });
 
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
   function openModal(val) {
-    setIndiv(val)
+    setIndiv(val);
     setIsOpen(true);
   }
 
   function closeModal() {
     setIsOpen(false);
   }
-
 
   const [staff, setStaff] = useState([]);
 
@@ -74,31 +129,29 @@ const Staff = () => {
 
   const addStaff = async (e) => {
     e.preventDefault();
-    await setDoc(doc(db, "staff", "20230001" + department + enrolmentDate),
-      {
-        id: "20230001" + department + enrolmentDate,
-        firstName: firstName,
-        lastName: lastName,
-        sex: sex,
-        address: address,
-        dob: dob,
-        qualification: qualification,
-        department: department,
-        nrc: nrc,
-        phoneNumber: phoneNumber,
-        email: email,
-        dateAdded: enrolmentDate.toLocaleDateString(),
-      }
-    );
+    await setDoc(doc(db, "staff", "20230001" + department + enrolmentDate), {
+      id: "20230001" + department + enrolmentDate,
+      firstName: firstName,
+      lastName: lastName,
+      sex: sex,
+      address: address,
+      dob: dob,
+      qualification: qualification,
+      department: department,
+      nrc: nrc,
+      phoneNumber: phoneNumber,
+      email: email,
+      dateAdded: enrolmentDate.toLocaleDateString(),
+    });
     createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    const user = userCredential.user;
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // ..
-  });
+      .then((userCredential) => {
+        const user = userCredential.user;
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+      });
     // setTitle("");
     // setDescription("");
     // setAssignee("No one");
@@ -202,9 +255,9 @@ const Staff = () => {
             >
               <option value="certificate">Certificate</option>
               <option value="diploma">Diploma</option>
-              <option  value="bachelor">Bachelor's Degree</option>
-              <option  value="master">Master's Degree</option>
-              <option  value="phd">PHD</option>
+              <option value="bachelor">Bachelor's Degree</option>
+              <option value="master">Master's Degree</option>
+              <option value="phd">PHD</option>
             </select>
             <input
               type="text"
@@ -224,28 +277,32 @@ const Staff = () => {
           </div>
         </form>
 
-        <Modal className="modal"
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Example Modal"
-      >
-        <h2>{indiv.firstName} {indiv.lastName}</h2>
-        <div className="user-details">
-          <div className="image-div">
-            <img src={userImg} alt="user-icon" />
-          </div>
-          <div className="det">
-            <p>EMAIL: {indiv.email}</p>
-            <p>PHONE NUMBER: {indiv.phoneNumber}</p>
-            <p>SEX: {indiv.sex}</p>
-            <p>D.O.B: {indiv.dob}</p>
-            <p>NRC: {indiv.nrc}</p>
-          </div>
-        </div>
-        <div className="other-det">
+        <Modal
+          className="modal"
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          style={customStyles}
+          contentLabel="Example Modal"
+        >
+          <div className="modal-body">
+            <h2>
+              {indiv.firstName} {indiv.lastName}
+            </h2>
+            <div className="user-details">
+              <div className="image-div">
+                <img src={userImg} alt="user-icon" />
+              </div>
+              <div className="det">
+                <p>EMAIL: {indiv.email}</p>
+                <p>PHONE NUMBER: {indiv.phoneNumber}</p>
+                <p>SEX: {indiv.sex}</p>
+                <p>D.O.B: {indiv.dob}</p>
+                <p>NRC: {indiv.nrc}</p>
+              </div>
+            </div>
+            <div className="other-det">
               <ul>
-                <li>DPARTMENT: {indiv.department}</li>
+                <li>DEPARTMENT: {indiv.department}</li>
                 <li>IS H.O.D: {indiv.isHod}</li>
                 <li>SUBJECTS: </li>
                 <li>HIGHEST LEVEL: {indiv.qualification}</li>
@@ -256,9 +313,10 @@ const Staff = () => {
                 <li>CLASSES: </li>
                 <li>HIGHEST LEVEL: {indiv.qualification}</li>
               </ul>
-        </div>
-        <button onClick={closeModal}>close</button>
-      </Modal>
+            </div>
+          </div>
+          <button onClick={closeModal}>close</button>
+        </Modal>
 
         <div className="students">
           {/* <h3>Mathematics Dept</h3> */}
@@ -276,7 +334,9 @@ const Staff = () => {
             {staff.map((val, key) => {
               return (
                 <tr key={key}>
-                  <td>{val.firstName} {val.lastName}</td>
+                  <td>
+                    {val.firstName} {val.lastName}
+                  </td>
                   <td>{val.sex}</td>
                   <td>{val.address}</td>
                   <td>{val.dateAdded}</td>
@@ -292,6 +352,6 @@ const Staff = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Staff;
