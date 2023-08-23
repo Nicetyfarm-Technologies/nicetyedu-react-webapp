@@ -17,6 +17,16 @@
     display: flex;
 }
 
+.modal-body {
+    width: 100%;
+    height: 80%;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    display: flex;
+}
+
 .modal .user-details {
     display: flex;
     align-items: center;
