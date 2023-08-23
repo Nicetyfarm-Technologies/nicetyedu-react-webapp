@@ -17,6 +17,22 @@
     display: flex;
 }
 
+.file-form {
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    justify-content: center;
+    gap: 30px;
+}
+
+.file-form input, .file-form button {
+    /* padding: 10px; */
+    border-radius: 10px;
+    height: 40px;
+    background-color: rgb(6, 6, 64);
+    color: #fff;
+}
+
 .modal-body {
     width: 100%;
     height: 80%;
