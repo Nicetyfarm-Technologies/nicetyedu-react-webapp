@@ -15,7 +15,8 @@ import MinNav from "../minNav/MinVav";
 const Enrollments = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [studentId, setStudentId] = useState("");
+  const [middleName, setMiddleName] = useState("");
+  // const [studentId, setStudentId] = useState("");
   const [sex, setSex] = useState("male");
   const [address, setAddress] = useState("");
   const [dob, setDob] = useState("");
@@ -25,33 +26,9 @@ const Enrollments = () => {
   const [guardianEmail, setGuardianEmail] = useState("");
   const [grade, setGrade] = useState("grade8a");
 
-  const [grade8a, setGrade8a] = useState([]);
-  const [grade8b, setGrade8b] = useState([]);
-  const [grade8c, setGrade8c] = useState([]);
-  const [grade8d, setGrade8d] = useState([]);
-  const [grade9a, setGrade9a] = useState([]);
-  const [grade9b, setGrade9b] = useState([]);
-  const [grade9c, setGrade9c] = useState([]);
-  const [grade9d, setGrade9d] = useState([]);
-  const [grade10a, setGrade10a] = useState([]);
-  const [grade10b, setGrade10b] = useState([]);
-  const [grade10c, setGrade10c] = useState([]);
-  const [grade10d, setGrade10d] = useState([]);
-  const [grade11a, setGrade11a] = useState([]);
-  const [grade11b, setGrade11b] = useState([]);
-  const [grade11c, setGrade11c] = useState([]);
-  const [grade11d, setGrade11d] = useState([]);
-  const [grade12a, setGrade12a] = useState([]);
-  const [grade12b, setGrade12b] = useState([]);
-  const [grade12c, setGrade12c] = useState([]);
-  const [grade12d, setGrade12d] = useState([]);
+  const [pupil, setPupil] = useState([]);
 
-  const [pupils, setPupils] = useState([
-    ["Grade 8A", []],
-    ["Grade 8B", []],
-    ["Grade 8C", []],
-    ["Grade 8D", []],
-  ]);
+  const [pupils, setPupils] = useState([{}]);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -63,10 +40,10 @@ const Enrollments = () => {
   const enrollPupil = async (e) => {
     e.preventDefault();
     await setDoc(
-      doc(db, "pupils" + grade, "20230001" + grade + enrolmentDate.toLocaleDateString() + enrolmentDate.toLocaleTimeString()),
-      {
-        id: "20230001" + grade + enrolmentDate.toLocaleDateString() + enrolmentDate.toLocaleTimeString(),
+      doc(db, "pupils", "20230001" + grade + enrolmentDate), {
+        id: "20230001" + grade + enrolmentDate,
         firstName: firstName,
+        middleName: middleName,
         lastName: lastName,
         sex: sex,
         address: address,
@@ -77,19 +54,6 @@ const Enrollments = () => {
         enrolmentDate: enrolmentDate.toLocaleDateString(),
       }
     );
-    await setDoc(doc(db, "pupils", "20230001" + grade + enrolmentDate.toLocaleDateString() + enrolmentDate.toLocaleTimeString()), {
-      id: "20230001" + grade + enrolmentDate.toLocaleDateString() + enrolmentDate.toLocaleTimeString(),
-      firstName: firstName,
-      lastName: lastName,
-      sex: sex,
-      address: address,
-      grade: grade,
-      dob: dob,
-      guardianName: guardianName,
-      guardianNumber: guardianNumber,
-      guardianEmail: guardianEmail,
-      enrolmentDate: enrolmentDate.toLocaleDateString(),
-    });
     // setTitle("");
     // setDescription("");
     // setAssignee("No one");
@@ -100,14 +64,14 @@ const Enrollments = () => {
 
   useEffect(() => {
     //for 8a
-    const q = query(collection(db, `pupils8a`));
+    const q = query(collection(db, `pupils`));
     const unSubscribe = onSnapshot(q, (querySnapshot) => {
       let pupilsArr = [];
       querySnapshot.forEach((doc) => {
         pupilsArr.push({ ...doc.data(), id: doc.id });
       });
-      setGrade8a(pupilsArr);
-    });
+      setPupils(pupilsArr);
+    }, []);
     
     return () => unSubscribe();
   });
@@ -150,6 +114,12 @@ const Enrollments = () => {
               onChange={(e) => setFirstName(e.target.value)}
               placeholder="First Name"
               required
+            />
+            <input
+              type="text"
+              value={middleName}
+              onChange={(e) => setMiddleName(e.target.value)}
+              placeholder="Middle Name"
             />
             <input
               type="text"
@@ -206,7 +176,7 @@ const Enrollments = () => {
           </div>
         </form>
         <div className="students">
-          <h3>Grade 8A</h3>
+          <h3>Pupils</h3>
           <table>
             <tr>
               <th>Pupil ID</th>
@@ -220,7 +190,7 @@ const Enrollments = () => {
               <th>Guardian's Phone</th>
               <th>Guardian's Email</th>
             </tr>
-            {grade8a.map((val, key) => {
+            {pupils.map((val, key) => {
               return (
                 <tr key={key}>
                   <td>{val.studentId}</td>
@@ -238,106 +208,7 @@ const Enrollments = () => {
             })}
           </table>
         </div>
-        <div className="students">
-          <h3>Grade 8B</h3>
-          <table>
-            <tr>
-              <th>Pupil ID</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Sex</th>
-              <th>Address</th>
-              <th>D.O.B</th>
-              <th>Enrollment Date</th>
-              <th>Guardian's FullName</th>
-              <th>Guardian's Phone</th>
-              <th>Guardian's Email</th>
-            </tr>
-            {grade8b.map((val, key) => {
-              return (
-                <tr key={key}>
-                  <td>{val.studentId}</td>
-                  <td>{val.firstName}</td>
-                  <td>{val.lastName}</td>
-                  <td>{val.sex}</td>
-                  <td>{val.address}</td>
-                  <td>{val.dob}</td>
-                  <td>{val.enrolmentDate}</td>
-                  <td>{val.guardianName}</td>
-                  <td>{val.guardianNumber}</td>
-                  <td>{val.guardianEmail}</td>
-                </tr>
-              );
-            })}
-          </table>
-        </div>
-        <div className="students">
-          <h3>Grade 8C</h3>
-          <table>
-            <tr>
-              <th>Pupil ID</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Sex</th>
-              <th>Address</th>
-              <th>D.O.B</th>
-              <th>Enrollment Date</th>
-              <th>Guardian's FullName</th>
-              <th>Guardian's Phone</th>
-              <th>Guardian's Email</th>
-            </tr>
-            {grade8c.map((val, key) => {
-              return (
-                <tr key={key}>
-                  <td>{val.studentId}</td>
-                  <td>{val.firstName}</td>
-                  <td>{val.lastName}</td>
-                  <td>{val.sex}</td>
-                  <td>{val.address}</td>
-                  <td>{val.dob}</td>
-                  <td>{val.enrolmentDate}</td>
-                  <td>{val.guardianName}</td>
-                  <td>{val.guardianNumber}</td>
-                  <td>{val.guardianEmail}</td>
-                </tr>
-              );
-            })}
-          </table>
-        </div>
-        <div className="students">
-          <h3>Grade 8D</h3>
-          <table>
-            <tr>
-              <th>Pupil ID</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Sex</th>
-              <th>Address</th>
-              <th>D.O.B</th>
-              <th>Enrollment Date</th>
-              <th>Guardian's FullName</th>
-              <th>Guardian's Phone</th>
-              <th>Guardian's Email</th>
-            </tr>
-            {grade8d.map((val, key) => {
-              return (
-                <tr key={key}>
-                  <td>{val.studentId}</td>
-                  <td>{val.firstName}</td>
-                  <td>{val.lastName}</td>
-                  <td>{val.sex}</td>
-                  <td>{val.address}</td>
-                  <td>{val.dob}</td>
-                  <td>{val.enrolmentDate}</td>
-                  <td>{val.guardianName}</td>
-                  <td>{val.guardianNumber}</td>
-                  <td>{val.guardianEmail}</td>
-                </tr>
-              );
-            })}
-          </table>
-        </div>
-      </div>
+              </div>
     </div>
   );
 };

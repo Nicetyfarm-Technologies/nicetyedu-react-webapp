@@ -84,6 +84,7 @@ const customStyles = {
 
 const Staff = () => {
   const [firstName, setFirstName] = useState("");
+  const [middleName, setMiddleName] = useState("");
   const [lastName, setLastName] = useState("");
   const [qualification, setQualification] = useState("certificate");
   const [sex, setSex] = useState("male");
@@ -132,6 +133,7 @@ const Staff = () => {
     await setDoc(doc(db, "staff", "20230001" + department + enrolmentDate), {
       id: "20230001" + department + enrolmentDate,
       firstName: firstName,
+      middleName: middleName,
       lastName: lastName,
       sex: sex,
       address: address,
@@ -211,6 +213,12 @@ const Staff = () => {
             />
             <input
               type="text"
+              value={middleName}
+              onChange={(e) => setMiddleName(e.target.value)}
+              placeholder="Middle Name"
+            />
+            <input
+              type="text"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
               placeholder="Last Name"
@@ -286,7 +294,7 @@ const Staff = () => {
         >
           <div className="modal-body">
             <h2>
-              {indiv.firstName} {indiv.lastName}
+              {indiv.firstName} {indiv.middleName} {indiv.lastName}
             </h2>
             <div className="user-details">
               <div className="image-div">
