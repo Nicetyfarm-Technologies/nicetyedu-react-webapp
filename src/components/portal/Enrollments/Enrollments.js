@@ -42,9 +42,11 @@ const Enrollments = () => {
     await setDoc(
       doc(db, "pupils", "20230001" + grade + enrolmentDate), {
         id: "20230001" + grade + enrolmentDate,
+        studentId: enrolmentDate.getTime(),
         firstName: firstName,
         middleName: middleName,
         lastName: lastName,
+        grade: grade,
         sex: sex,
         address: address,
         dob: dob,
@@ -184,11 +186,9 @@ const Enrollments = () => {
               <th>Last Name</th>
               <th>Sex</th>
               <th>Address</th>
-              <th>D.O.B</th>
+              <th>Grade</th>
               <th>Enrollment Date</th>
               <th>Guardian's FullName</th>
-              <th>Guardian's Phone</th>
-              <th>Guardian's Email</th>
             </tr>
             {pupils.map((val, key) => {
               return (
@@ -198,11 +198,9 @@ const Enrollments = () => {
                   <td>{val.lastName}</td>
                   <td>{val.sex}</td>
                   <td>{val.address}</td>
-                  <td>{val.dob}</td>
+                  <td>{val.grade}</td>
                   <td>{val.enrolmentDate}</td>
                   <td>{val.guardianName}</td>
-                  <td>{val.guardianNumber}</td>
-                  <td>{val.guardianEmail}</td>
                 </tr>
               );
             })}
