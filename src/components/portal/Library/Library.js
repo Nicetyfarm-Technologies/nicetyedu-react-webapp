@@ -24,9 +24,11 @@ const Library = () => {
   const [title, setTitle] = useState("");
   const [fileUrl, setFileUrl] = useState("");
   const [level, setLevel] = useState("Junior-Secondary");
+  const [term, setTerm] = useState("Term-1");
+  const [category, setCategory] = useState("Mid-Term");
   const [subject, setSubject] = useState("Mathematics");
   const [type, setType] = useState("Textbook");
-  const [topic, SetTopic] = useState("");
+  const [topic, setTopic] = useState("");
   const [year, setYear] = useState("2015");
 
   function openModal() {
@@ -108,6 +110,24 @@ const Library = () => {
           modalIsOpen={modalIsOpen}
           closeModal={closeModal}
           customStyles={customStyles}
+          title={title}
+          setTitle={setTitle}
+          level={level}
+          setLevel={setLevel}
+          type={type}
+          setType={setType}
+          topic={topic}
+          setTopic={setTopic}
+          year={year}
+          setYear={setYear}
+          subject={subject}
+          setSubject={setSubject}
+          term={term}
+          setTerm={setTerm}
+          category={category}
+          setCategory={setCategory}
+          fileUrl={fileUrl}
+          setFileUrl={setFileUrl}
         />
 
         <ul className="quiz-sub-container">
