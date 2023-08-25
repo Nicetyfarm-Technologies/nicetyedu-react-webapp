@@ -3,7 +3,6 @@ import { onSnapshot, query, collection } from "firebase/firestore";
 import { db } from "../../firebase/config";
 import "./Videos.css";
 import StudentsMinNav from "../minNav/MinVav";
-import video1 from "./videos/cvid.mp4";
 
 const StudentsVideos = () => {
   const [videosJunior, setVideosJunior] = useState([]);
