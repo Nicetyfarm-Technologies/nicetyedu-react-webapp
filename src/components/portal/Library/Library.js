@@ -141,6 +141,7 @@ const Library = () => {
           level: level,
           subject: subject,
           fileUrl: fileUrl,
+          term: term,
           category: category,
         }
       );
