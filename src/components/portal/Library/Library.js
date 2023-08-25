@@ -135,12 +135,13 @@ const Library = () => {
     e.preventDefault();
     if(level === "Junior-Secondary") {
       await setDoc(
-        doc(db, "pastpapersjunior", subject + date), {
-          id: subject + date,
-          topic: topic,
+        doc(db, "pastpapersjunior", subject + year + date), {
+          id: subject + year + date,
+          year: year,
           level: level,
           subject: subject,
           fileUrl: fileUrl,
+          category: category,
         }
       );
       // setTitle("");
@@ -149,12 +150,14 @@ const Library = () => {
       alert("Video Added Successfully");  
     } else if(level === "Senior-Secondary") {
       await setDoc(
-        doc(db, "pastpaperssenior", subject + date), {
-          id: subject + date,
-          topic: topic,
+        doc(db, "pastpaperssenior", subject + year + date), {
+          id: subject + year + date,
+          year: year,
           level: level,
           subject: subject,
           fileUrl: fileUrl,
+          term: term,
+          category: category,
         }
       );
       // setTitle("");
