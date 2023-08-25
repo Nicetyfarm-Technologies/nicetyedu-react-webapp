@@ -1,6 +1,15 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
+import {
+  onSnapshot,
+  query,
+  collection,
+  updateDoc,
+  doc,
+  setDoc,
+  deleteDoc,
+} from "firebase/firestore";
+import { db } from "../../firebase/config";
 // import './Dashboard.css'
 import MinNav from "../minNav/MinVav";
 import m1 from "./mathbooks/m1.pdf";
@@ -30,6 +39,130 @@ const Library = () => {
   const [type, setType] = useState("Textbook");
   const [topic, setTopic] = useState("");
   const [year, setYear] = useState("2015");
+  const [date, setDate] = useState();
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setDate(new Date());
+    }, 1000);
+    return () => clearInterval(intervalId);
+  }, []);
+
+  const addBook = async(e) => {
+    e.preventDefault();
+    if(level === "Junior-Secondary") {
+      await setDoc(
+        doc(db, "booksjunior", type + subject + date), {
+          id: type + subject + date,
+          title: title,
+          level: level,
+          subject: subject,
+          type: type,
+          fileUrl: fileUrl,
+        }
+      );
+      // setTitle("");
+      // setDescription("");
+      // setAssignee("No one");
+      alert("Book Added Successfully");  
+    } else if(level === "Senior-Secondary") {
+      await setDoc(
+        doc(db, "bookssenior", type + subject + date), {
+          id: type + subject + date,
+          title: title,
+          level: level,
+          subject: subject,
+          type: type,
+          fileUrl: fileUrl,
+        }
+      );
+      // setTitle("");
+      // setDescription("");
+      // setAssignee("No one");
+      alert("Book Added Successfully");
+    } else {
+      await setDoc(
+        doc(db, "booksteacher", type + subject + date), {
+          id: type + subject + date,
+          title: title,
+          level: level,
+          subject: subject,
+          type: type,
+          fileUrl: fileUrl,
+        }
+      );
+      // setTitle("");
+      // setDescription("");
+      // setAssignee("No one");
+      alert("Book Added Successfully");
+    }
+  }
+
+  const addVideo = async(e) => {
+    e.preventDefault();
+    if(level === "Junior-Secondary") {
+      await setDoc(
+        doc(db, "videosjunior", subject + date), {
+          id: subject + date,
+          topic: topic,
+          level: level,
+          subject: subject,
+          fileUrl: fileUrl,
+        }
+      );
+      // setTitle("");
+      // setDescription("");
+      // setAssignee("No one");
+      alert("Video Added Successfully");  
+    } else if(level === "Senior-Secondary") {
+      await setDoc(
+        doc(db, "videosssenior", subject + date), {
+          id: subject + date,
+          topic: topic,
+          level: level,
+          subject: subject,
+          fileUrl: fileUrl,
+        }
+      );
+      // setTitle("");
+      // setDescription("");
+      // setAssignee("No one");
+      alert("Video Added Successfully");
+    }
+  }
+
+  const addPastpaper = async(e) => {
+    e.preventDefault();
+    if(level === "Junior-Secondary") {
+      await setDoc(
+        doc(db, "pastpapersjunior", subject + date), {
+          id: subject + date,
+          topic: topic,
+          level: level,
+          subject: subject,
+          fileUrl: fileUrl,
+        }
+      );
+      // setTitle("");
+      // setDescription("");
+      // setAssignee("No one");
+      alert("Video Added Successfully");  
+    } else if(level === "Senior-Secondary") {
+      await setDoc(
+        doc(db, "pastpaperssenior", subject + date), {
+          id: subject + date,
+          topic: topic,
+          level: level,
+          subject: subject,
+          fileUrl: fileUrl,
+        }
+      );
+      // setTitle("");
+      // setDescription("");
+      // setAssignee("No one");
+      alert("Video Added Successfully");
+    }
+  }
 
   function openModal() {
     setVal(1);
@@ -128,15 +261,13 @@ const Library = () => {
           setCategory={setCategory}
           fileUrl={fileUrl}
           setFileUrl={setFileUrl}
+          addBook={addBook}
+          addVideo={addVideo}
+          addPastpaper={addPastpaper}
         />
 
-        <ul className="quiz-sub-container">
-          <li className="quiz-sub">
-            <a href={m1}>INTRODUCTION TO DIFFERENTIATION</a>
-          </li>
-          <li className="quiz-sub">
-            <a href={m2}>ADDITIONAL MATHEMATICS PURE & APPLIED</a>
-          </li>
+        <ul className="">
+          
         </ul>
       </div>
     </div>

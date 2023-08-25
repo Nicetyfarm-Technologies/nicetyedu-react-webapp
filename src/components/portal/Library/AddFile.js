@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { storage } from "../../firebase/config";
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import Modal from "react-modal";
@@ -26,8 +26,12 @@ const AddFile = ({
   setCategory,
   fileUrl,
   setFileUrl,
+  addBook,
+  addVideo,
+  addPastpaper
 }) => {
   const [progresspercent, setProgresspercent] = useState(0);
+  const [file, setFile] = useState(null)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -76,11 +80,11 @@ const AddFile = ({
               </div>
             </div>
           )}
-          <form onSubmit={() => handleSubmit()} className="file-form">
-            <input type="file" required />
+          <form onSubmit={handleSubmit} className="file-form">
+            <input value={file} onChange={(e) => setFile(e.target.value)} type="file" required />
             <button type="submit">Attach</button>
           </form>
-          <form className="file-details-form">
+          <form onSubmit={addBook} className="file-details-form">
             <div className="file-details">
               <label>
                 Title:
@@ -152,11 +156,21 @@ const AddFile = ({
       >
         <div className="modal-body">
           <h2>Add Video</h2>
-          <form className="file-form">
+          {!fileUrl && (
+            <div className="outerbar">
+              <div
+                className="innerbar"
+                style={{ width: `${progresspercent}%` }}
+              >
+                {progresspercent}%
+              </div>
+            </div>
+          )}
+          <form onSubmit={handleSubmit} className="file-form">
             <input type="file" required />
             <button type="submit">Attach</button>
           </form>
-          <form className="file-details-form">
+          <form onSubmit={addVideo} className="file-details-form">
             <div className="file-details">
               <label>
                 Topic:
@@ -218,11 +232,21 @@ const AddFile = ({
       >
         <div className="modal-body">
           <h2>Add Pastpaper</h2>
-          <form className="file-form">
+          {!fileUrl && (
+            <div className="outerbar">
+              <div
+                className="innerbar"
+                style={{ width: `${progresspercent}%` }}
+              >
+                {progresspercent}%
+              </div>
+            </div>
+          )}
+          <form onSubmit={handleSubmit} className="file-form">
             <input type="file" required />
             <button type="submit">Attach</button>
           </form>
-          <form className="file-details-form">
+          <form onSubmit={addPastpaper} className="file-details-form">
             <div className="file-details">
               <label>
                 Year:
@@ -286,7 +310,7 @@ const AddFile = ({
                 </select>
               </label>
             </div>
-            <button type="submit">Post Video</button>
+            <button type="submit">Post Pastpaper</button>
           </form>
         </div>
         <button type="button" onClick={closeModal}>
