@@ -42,23 +42,9 @@ const StudentsPastpapers = () => {
       <div className="portal-page-content">
         <h2>Students Past Papers</h2><br />
         <h3>School Past Papers</h3>
+        
         <div className="grad-btn">
-          <button onClick={show8Classes}>Grade 8</button>
-          <div className="grade-content none" ref={g8Ref}>
-            <NavLink to="/dashboard/grade10apupils">Mathematics</NavLink>
-            <NavLink to="/dashboard/grade10bpupils">English</NavLink>
-            <NavLink to="/dashboard/grade10cpupils">Science</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">RE</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">BS</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">ICT</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">Social Studies</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">DT</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">HE</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">Art</NavLink>
-          </div>
-        </div>
-        <div className="grad-btn">
-          <button onClick={show9Classes}>Grade 9</button>
+          <button onClick={show9Classes}>Junior Secondary</button>
           <div className="grade-content none" ref={g9Ref}>
             <NavLink to="/dashboard/grade10apupils">Mathematics</NavLink>
             <NavLink to="/dashboard/grade10bpupils">English</NavLink>
@@ -72,40 +58,9 @@ const StudentsPastpapers = () => {
             <NavLink to="/dashboard/grade10dpupils">Art</NavLink>
           </div>
         </div>
+        
         <div className="grad-btn">
-          <button onClick={show10Classes}>Grade 10</button>
-          <div className="grade-content none" ref={g10Ref}>
-            <NavLink to="/dashboard/grade10apupils">Mathematics</NavLink>
-            <NavLink to="/dashboard/grade10bpupils">English</NavLink>
-            <NavLink to="/dashboard/grade10cpupils">Science</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">RE</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">Accounts</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">History</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">Civic Education</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">Geography</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">DT</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">HE</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">Art</NavLink>
-          </div>
-        </div>
-        <div className="grad-btn">
-          <button onClick={show11Classes}>Grade 11</button>
-          <div className="grade-content none" ref={g11Ref}>
-            <NavLink to="/dashboard/grade10apupils">Mathematics</NavLink>
-            <NavLink to="/dashboard/grade10bpupils">English</NavLink>
-            <NavLink to="/dashboard/grade10cpupils">Science</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">RE</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">Accounts</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">History</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">Civic Education</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">Geography</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">DT</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">HE</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">Art</NavLink>
-          </div>
-        </div>
-        <div className="grad-btn">
-          <button onClick={show12Classes}>Grade 12</button>
+          <button onClick={show12Classes}>Senior Secondary</button>
           <div className="grade-content none" ref={g12Ref}>
             <NavLink to="/dashboard/grade10apupils">Mathematics</NavLink>
             <NavLink to="/dashboard/grade10bpupils">English</NavLink>
@@ -126,33 +81,12 @@ const StudentsPastpapers = () => {
           <button onClick={show9eClasses}>Grade 9</button>
           <div className="grade-content none" ref={g9eRef}>
             <NavLink to="/dashboard/grade10apupils">Mathematics</NavLink>
-            <NavLink to="/dashboard/grade10bpupils">English</NavLink>
-            <NavLink to="/dashboard/grade10cpupils">Science</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">RE</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">BS</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">ICT</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">Social Studies</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">DT</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">HE</NavLink>
-            <NavLink to="/dashboard/grade10dpupils">Art</NavLink>
           </div>
         </div>
         <div className="grad-btn">
           <button onClick={show12eClasses}>Grade 12</button>
           <div className="grade-content none" ref={g12eRef}>
             <NavLink to="/studentsdashboard/pastpapers/ecz/mathematics-12">Mathematics</NavLink>
-            <NavLink to="/studentsdashboard/pastpapers/ecz/english-12">English</NavLink>
-            <NavLink to="/studentsdashboard/pastpapers/ecz/science-12">Science</NavLink>
-            <NavLink to="/studentsdashboard/pastpapers/ecz/re-12">RE</NavLink>
-            <NavLink to="/studentsdashboard/pastpapers/ecz/accounts-12">Accounts</NavLink>
-            <NavLink to="/studentsdashboard/pastpapers/ecz/history-12">History</NavLink>
-            <NavLink to="/studentsdashboard/pastpapers/ecz/ce-12">Civic Education</NavLink>
-            <NavLink to="/studentsdashboard/pastpapers/ecz/geography-12">Geography</NavLink>
-            <NavLink to="/studentsdashboard/pastpapers/ecz/dt-12">DT</NavLink>
-            <NavLink to="/studentsdashboard/pastpapers/ecz/fn-12">FN</NavLink>
-            <NavLink to="/studentsdashboard/pastpapers/ecz/art-12">Art</NavLink>
-            <NavLink to="/studentsdashboard/pastpapers/ecz/commerce-12">Commerce</NavLink>
-            <NavLink to="/studentsdashboard/pastpapers/ecz/biology-12">Biology</NavLink>
           </div>
         </div>
       </div>

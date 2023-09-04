@@ -328,7 +328,55 @@ const AddFile = ({
         contentLabel="Example Modal"
       >
         <div className="modal-body">
-          <h2>Add Quiz</h2>
+          <h2>Add Quiz Question</h2>
+          {!fileUrl && (
+            <div className="outerbar">
+              <div
+                className="innerbar"
+                style={{ width: `${progresspercent}%` }}
+              >
+                {progresspercent}%
+              </div>
+            </div>
+          )}
+          <form onSubmit={handleSubmit} className="file-form">
+            <input type="file" required />
+            <button type="submit">Attach</button>
+          </form>
+          <form onSubmit={addPastpaper} className="file-details-form">
+            <div className="file-details">
+              <label>
+                Level:
+                <select
+                  value={level}
+                  onChange={(e) => setLevel(e.target.value)}
+                >
+                  <option value="Junior-Secondary">Junior Secondary</option>
+                  <option value="Senior-Secondary">Senior Secondary</option>
+                </select>
+              </label>
+
+              <label>
+                Subject:
+                <select
+                  value={subject}
+                  onChange={(e) => setSubject(e.target.value)}
+                >
+                  <option value="English">English</option>
+                  <option value="Mathematics">Mathematics</option>
+                  <option value="Science">Science</option>
+                  <option value="Literature">Literature</option>
+                  <option value="ICT">ICT</option>
+                  <option value="Business">Business</option>
+                  <option value="R.E">R.E</option>
+                  <option value="History">History</option>
+                  <option value="C.E">C.E</option>
+                  <option value="Geography">Geography</option>
+                </select>
+              </label>
+            </div>
+            <button type="submit">Post Question</button>
+          </form>
         </div>
         <button type="button" onClick={closeModal}>
           close
