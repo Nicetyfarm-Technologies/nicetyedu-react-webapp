@@ -102,8 +102,8 @@ class App extends Component {
           <Route path="/studentsdashboard/quizzes/science" element={<ScienceQuizPage />} />
           <Route path="/studentsdashboard/videos" element={<StudentsVideosPage />} />
           <Route path="/studentsdashboard/results" element={<StudentsResultsPage />} />
-          <Route path="/studentsdashboard/practicals" element={<NutritionPage />} />
-          {/* <Route path="/studentsdashboard/practicals/cells" element={<NutritionPage />} /> */}
+          <Route path="/studentsdashboard/practicals" element={<PracticalsPage />} />
+          <Route path="/studentsdashboard/practicals/nutrition" element={<NutritionPage />} />
           <Route path="/studentsdashboard/skills" element={<SkillsPage />} />
 				</Route>
        <Route path="/dashboard" element={<ProtectedRoute />}>

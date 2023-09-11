@@ -11,23 +11,23 @@ function Nutrition() {
       <StudentsMinNav />
       <div className="portal-page-content">
         <div className="App2">
-          <h1>Biology Digital Practicals</h1>
+          <h1>Test For Nutrition Practicals</h1>
           <div className="container2">
             <div className="cell-container">
-              <Reagent type="Iodine Solution" />
-              <Reagent type=" dilute sodium hydroxide Solution" />
-              <Reagent type="  sodium hydroxide Solution" />
-              <Reagent type=" Ethanol Solution" />
-              <Reagent type=" Benedict Solution" />
+              <Reagent type="Iodine Solution" color="iodine"/>
+              <Reagent type=" dilute sodium hydroxide Solution" color="sodium"/>
+              <Reagent type="  sodium hydroxide Solution" color="ethanol"/>
+              <Reagent type=" Ethanol Solution" color="ethanol"/>
+              <Reagent type=" Benedict Solution" color="benedict"/>
             </div>
             <div className="test-sub">
               <TestTube />
             </div>
             <div className="cell-container">
-              <TestSub type="Mealie Meal" />
-              <TestSub type=" Coffee" />
-              <TestSub type="  Cheese" />
-              <TestSub type=" Fish" />
+              <TestSub type="Mealie Meal" color="mealie"/>
+              <TestSub type=" Coffee" color="coffee"/>
+              <TestSub type="  Cheese" color="cheese"/>
+              <TestSub type=" Fish" color="fish"/>
               {/* <Reagent type=" Benedict Solution" /> */}
             </div>
           </div>

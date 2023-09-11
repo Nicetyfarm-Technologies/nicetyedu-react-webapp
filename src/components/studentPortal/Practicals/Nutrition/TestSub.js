@@ -1,7 +1,7 @@
 import React from "react";
 import { useDrag } from "react-dnd";
 
-const TestSub = ({ type }) => {
+const TestSub = ({ type, color }) => {
   const [, drag] = useDrag({
     type: "CELL",
     item: { type },
@@ -10,7 +10,7 @@ const TestSub = ({ type }) => {
   return (
     <div ref={drag} className="cel">
       <div className="cell">
-        <div className="cel-q"></div>
+        <div className={color}></div>
       </div>
       <p>{type}</p>
     </div>
