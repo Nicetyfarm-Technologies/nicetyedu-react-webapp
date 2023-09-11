@@ -1,0 +1,9 @@
+.practicals {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.practicals a {
+    color: rgb(5, 5, 63);
+}

@@ -1,0 +1,78 @@
+/* src/App.css */
+
+.App2 {
+    text-align: center;
+  }
+  
+  .container2 {
+    display: flex;
+    /* flex-direction: column; */
+    gap: 40px;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .cell-container {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+  }
+
+  .cell {
+    width: 40px;
+    height: 180px;
+    background-color: #34495e;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 0;
+  }
+  
+  .cel-q {
+    width: 40px;
+    height: 160px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .cel p {
+    font-size: 10px;
+    width: 40px;
+  }
+  
+  .petri-dish {
+    width: 120px;
+    /* height: 120px; */
+    padding: 20px;
+    border: 2px dashed #34495e;
+    border-radius: 50%;
+  }
+  
+  .cell-counts {
+    margin-top: 20px;
+  }
+
+  .test-sub {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .cell-counts p {
+    font-size: 10px;
+  }
+
+  .food-sam {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  

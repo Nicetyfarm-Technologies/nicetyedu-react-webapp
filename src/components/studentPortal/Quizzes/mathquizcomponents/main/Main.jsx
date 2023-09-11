@@ -1,13 +1,33 @@
-import React, { useContext, useEffect } from 'react';
+import React, {useState, useContext, useEffect} from "react";
+import {
+  onSnapshot,
+  query,
+  collection,
+} from "firebase/firestore";
+import {db} from '../../../../firebase/config';
 import { QuizContext } from '../helpers/Contexts';
 import { FaHome } from "react-icons/fa"
-import { Questions } from "../helpers/Questions";
+// import { Questions } from "../helpers/Questions";
 import './Main.css';
 
 const Main = () => {
 
+    const [allQuestions, setAllQuestions] = useState([])
+
+    useEffect(() => {
+        const q = query(collection(db, 'quizmath'));
+        const unSubscribe = onSnapshot(q, (querySnapshot) => {
+          const companyBlogsArr = [];
+          querySnapshot.forEach((doc) => {
+            companyBlogsArr.push({ ...doc.data(), id: doc.id });
+          });
+          setAllQuestions(companyBlogsArr);
+        });
+        return () => unSubscribe();
+      }, []);
+
     //Shuffle questions array
-    const shuffled = Questions.sort(() => 0.5 - Math.random());
+    const shuffled = allQuestions.sort(() => 0.5 - Math.random());
     //Take 10 random questions array
     let questionsArray = shuffled.slice(0, 10);
     const { questions, setQuestions } = useContext(QuizContext);
@@ -15,6 +35,7 @@ const Main = () => {
 
     const d = new Date();
     var minutes;
+    
 
     //set new 10 random question every time when components re-render
     useEffect(() => {
