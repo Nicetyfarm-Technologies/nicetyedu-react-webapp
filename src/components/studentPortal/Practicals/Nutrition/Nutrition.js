@@ -1,12 +1,11 @@
 import React from "react";
 import StudentsMinNav from "../../minNav/MinVav";
-import "./Cells.css";
-import MealieMeal from "./MealieMeal";
-import Cheese from "./Cheese";
-import Coffee from "./Coffee";
+import "./Nutrition.css";
 import Reagent from "./Reagent";
+import TestSub from "./TestSub";
+import TestTube from "./TestTube";
 
-function Cells() {
+function Nutrition() {
   return (
     <div className="portal-content">
       <StudentsMinNav />
@@ -22,9 +21,14 @@ function Cells() {
               <Reagent type=" Benedict Solution" />
             </div>
             <div className="test-sub">
-            <MealieMeal />
-            <Cheese />
-            <Coffee />
+              <TestTube />
+            </div>
+            <div className="cell-container">
+              <TestSub type="Mealie Meal" />
+              <TestSub type=" Coffee" />
+              <TestSub type="  Cheese" />
+              <TestSub type=" Fish" />
+              {/* <Reagent type=" Benedict Solution" /> */}
             </div>
           </div>
         </div>
@@ -33,4 +37,4 @@ function Cells() {
   );
 }
 
-export default Cells;
+export default Nutrition;

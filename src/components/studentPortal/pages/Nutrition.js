@@ -1,18 +1,18 @@
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import StudentsInNavBar from "../Navbar/Navbar";
-import Cells from "../Practicals/cells/Cells";
+import Nutrition from '../Practicals/Nutrition/Nutrition';
 
-const CellsPage = () => {
+const NutritionPage = () => {
   
     return (
       <>
         <StudentsInNavBar />
         <DndProvider backend={HTML5Backend}>
-        <Cells />
+        <Nutrition />
         </DndProvider>
       </>
     )
 }
 
-export default CellsPage;
+export default NutritionPage;

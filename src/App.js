@@ -60,8 +60,8 @@ import AssignmentsPage from './components/studentPortal/pages/Assignments';
 import TimetablesPage2 from './components/studentPortal/pages/Timetables';
 import StudentsResultsPage from './components/studentPortal/pages/Results';
 import PracticalsPage from './components/studentPortal/pages/Practicals';
-import CellsPage from './components/studentPortal/pages/Cells';
 import SkillsPage from './components/studentPortal/pages/Skills';
+import NutritionPage from './components/studentPortal/pages/Nutrition';
 
 class App extends Component {
   render() {
@@ -102,8 +102,8 @@ class App extends Component {
           <Route path="/studentsdashboard/quizzes/science" element={<ScienceQuizPage />} />
           <Route path="/studentsdashboard/videos" element={<StudentsVideosPage />} />
           <Route path="/studentsdashboard/results" element={<StudentsResultsPage />} />
-          <Route path="/studentsdashboard/practicals" element={<PracticalsPage />} />
-          <Route path="/studentsdashboard/practicals/cells" element={<CellsPage />} />
+          <Route path="/studentsdashboard/practicals" element={<NutritionPage />} />
+          {/* <Route path="/studentsdashboard/practicals/cells" element={<NutritionPage />} /> */}
           <Route path="/studentsdashboard/skills" element={<SkillsPage />} />
 				</Route>
        <Route path="/dashboard" element={<ProtectedRoute />}>

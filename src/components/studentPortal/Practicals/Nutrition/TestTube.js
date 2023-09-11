@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { useDrop } from 'react-dnd';
+import React, { useState } from "react";
+import { useDrop } from "react-dnd";
 
-const Coffee = () => {
+const TestTube = () => {
   const [cellCounts, setCellCounts] = useState({});
 
   const [, drop] = useDrop({
-    accept: 'CELL',
+    accept: "CELL",
     drop: (item) => {
       const { type } = item;
       const updatedCounts = { ...cellCounts };
@@ -21,7 +21,7 @@ const Coffee = () => {
   return (
     <div className="food-sam">
       <div ref={drop} className="petri-dish">
-        <h2>Coffee</h2>
+        {/* <h2>Mealie Meal</h2> */}
         <div className="cell-counts">
           {Object.keys(cellCounts).map((type) => (
             <p key={type}>
@@ -30,10 +30,11 @@ const Coffee = () => {
           ))}
         </div>
       </div>
-      <button type="button" onClick={clearReagents}>Clear Reagents</button>
       <button type="button">Shake to Mix</button>
+      <button type="button">Heat</button>
+      <button type="button" onClick={clearReagents}>Clear Reagents</button>
     </div>
   );
 };
 
-export default Coffee;
+export default TestTube;
