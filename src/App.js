@@ -60,7 +60,7 @@ import AssignmentsPage from './components/studentPortal/pages/Assignments';
 import TimetablesPage2 from './components/studentPortal/pages/Timetables';
 import StudentsResultsPage from './components/studentPortal/pages/Results';
 import PracticalsPage from './components/studentPortal/pages/Practicals';
-import CellsPage from './components/studentsPortal/pages/Cells';
+import CellsPage from './components/studentPortal/pages/Cells';
 import SkillsPage from './components/studentPortal/pages/Skills';
 
 class App extends Component {

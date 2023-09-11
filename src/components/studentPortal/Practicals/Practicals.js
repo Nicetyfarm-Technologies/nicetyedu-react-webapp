@@ -11,7 +11,7 @@ const Practicals = () => {
         <h2>Practicals</h2>
 
         <div className="practicals">
-            <a href="/studentsdashboard/practicals/cells">Cells</a>
+            <a href="/studentsdashboard/practicals/cells">Test For Nutrition</a>
             {/* <a href="#">Grade 8 Term 2</a> */}
         </div>
         </div>
