@@ -1,8 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.9be0e42f.css",
-    "main.js": "/static/js/main.b0976c43.js",
-    "static/media/cvid.mp4": "/static/media/cvid.d683479f9d9cfd0cefef.mp4",
+    "main.css": "/static/css/main.eab3a8a5.css",
+    "main.js": "/static/js/main.aad6cda6.js",
     "static/media/m2.pdf": "/static/media/m2.01a66f21fc185fa74b95.pdf",
     "static/media/m118.pdf": "/static/media/m118.53d3e0cbc228295300eb.pdf",
     "static/media/m218.pdf": "/static/media/m218.61195e0951e3bad0f06f.pdf",
@@ -26,13 +25,13 @@
     "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
-    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.9be0e42f.css.map": "/static/css/main.9be0e42f.css.map",
-    "main.b0976c43.js.map": "/static/js/main.b0976c43.js.map"
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
+    "main.eab3a8a5.css.map": "/static/css/main.eab3a8a5.css.map",
+    "main.aad6cda6.js.map": "/static/js/main.aad6cda6.js.map"
   },
   "entrypoints": [
-    "static/css/main.9be0e42f.css",
-    "static/js/main.b0976c43.js"
+    "static/css/main.eab3a8a5.css",
+    "static/js/main.aad6cda6.js"
   ]
 }
