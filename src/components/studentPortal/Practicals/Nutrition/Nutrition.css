@@ -50,6 +50,19 @@
     height: 160px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    background-color: rgb(36, 136, 243);
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .biuret {
+    width: 20px;
+    height: 160px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     background-color: blue;
     color: white;
     text-align: center;
@@ -137,6 +150,19 @@
     cursor: pointer;
   }
 
+  .milk {
+    width: 20px;
+    height: 160px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: cornsilk;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
   .blue-black {
     background-color: rgb(2, 2, 31);
     width: 80px;
@@ -152,6 +178,58 @@
 
   .yellow-brown {
     background-color: rgb(153, 153, 5);
+    width: 80px;
+    padding: 20px;
+    border: 2px dashed #34495e;
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: #fff;
+  }
+
+  .lightblue {
+    background-color:  rgb(36, 136, 243);
+    width: 80px;
+    padding: 20px;
+    border: 2px dashed #34495e;
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: #fff;
+  }
+
+  .blue {
+    background-color: blue;
+    width: 80px;
+    padding: 20px;
+    border: 2px dashed #34495e;
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: #fff;
+  }
+
+  .oranged  {
+    background-color: orange;
+    width: 80px;
+    padding: 20px;
+    border: 2px dashed #34495e;
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: #fff;
+  }
+
+  .violet  {
+    background-color: violet;
     width: 80px;
     padding: 20px;
     border: 2px dashed #34495e;

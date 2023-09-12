@@ -15,19 +15,19 @@ function Nutrition() {
           <div className="container2">
             <div className="cell-container">
               <Reagent type="Iodine Solution" color="iodine"/>
-              <Reagent type=" dilute sodium hydroxide Solution" color="sodium"/>
-              <Reagent type="  sodium hydroxide Solution" color="ethanol"/>
-              <Reagent type=" Ethanol Solution" color="ethanol"/>
-              <Reagent type=" Benedict Solution" color="benedict"/>
+              {/* <Reagent type=" dilute sodium hydroxide Solution" color="sodium"/> */}
+              {/* <Reagent type="  sodium hydroxide Solution" color="ethanol"/> */}
+              <Reagent type="Biuret Reagent" color="biuret"/>
+              <Reagent type="Benedict Solution" color="benedict"/>
             </div>
             <div className="test-sub">
               <TestTube />
             </div>
             <div className="cell-container">
               <TestSub type="Mealie Meal" color="mealie"/>
-              <TestSub type=" Coffee" color="coffee"/>
-              <TestSub type="  Cheese" color="cheese"/>
-              <TestSub type=" Fish" color="fish"/>
+              <TestSub type="Apple" color="milk"/>
+              <TestSub type="Water" color="ethanol"/>
+              <TestSub type="Fish" color="fish"/>
               {/* <Reagent type=" Benedict Solution" /> */}
             </div>
           </div>
