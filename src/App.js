@@ -62,6 +62,7 @@ import StudentsResultsPage from './components/studentPortal/pages/Results';
 import PracticalsPage from './components/studentPortal/pages/Practicals';
 import SkillsPage from './components/studentPortal/pages/Skills';
 import NutritionPage from './components/studentPortal/pages/Nutrition';
+import CaPage from './components/portal/pages/Ca';
 
 class App extends Component {
   render() {
@@ -117,6 +118,7 @@ class App extends Component {
           <Route path="/dashboard/timetables" element={<TimetablesPage />} />
           <Route path="/dashboard/enrollments" element={<EnrollmentsPage />} />
           <Route path="/dashboard/results" element={<ResultsPage />} />
+          <Route path="/dashboard/results/ca" element={<CaPage />} />
           <Route path="/dashboard/calenders" element={<CalendersPage />} />
           <Route path="/dashboard/profile" element={<ProfilePage />} />
 				</Route>

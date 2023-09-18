@@ -216,7 +216,7 @@
   }
 
   .oranged  {
-    background-color: orange;
+    background-color: orangered;
     width: 80px;
     padding: 20px;
     border: 2px dashed #34495e;
@@ -229,7 +229,7 @@
   }
 
   .violet  {
-    background-color: violet;
+    background-color: purple;
     width: 80px;
     padding: 20px;
     border: 2px dashed #34495e;
