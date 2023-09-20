@@ -2,3 +2,12 @@
     display: flex;
     gap: 10px;
 }
+
+.practicals form {
+    width: 100%;
+    background-color: #bbb;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}

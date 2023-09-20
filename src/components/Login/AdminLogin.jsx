@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import auth from "../firebase/config";
@@ -12,21 +12,18 @@ function AdminLogin() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // signInWithEmailAndPassword(auth, email, password)
-    //   .then((userCredential) => {
-        // const user = auth.app._options.appId;
-        // if(user == "1:509399461359:web:266d4b518a78bc78bd5a1a") {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // const user = userCredential.currentUser;
           // alert(user)
           navigate("/dashboard");
-        // } else
-        // navigate("/studentsdashboard");
-      // })
-      // .catch((error) => {
-      //   const errorCode = error.code;
-      //   const errorMessage = error.message;
-          // alert(errorMessage);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+          alert(errorMessage);
         
-      // });
+      });
   };
 
   return (

@@ -30,30 +30,8 @@ import StudentsDashboardPage from './components/studentPortal/pages/Dashboard';
 import AnnouncementsPage from './components/studentPortal/pages/Announcements';
 import StudentsPastpapersPage from './components/studentPortal/pages/Pastpapers';
 import MathPastpapersPage from './components/studentPortal/pages/MathPapers';
-import ArtPastpapersPage from './components/studentPortal/pages/ArtPapers';
-import AccountsPastpapersPage from './components/studentPortal/pages/AccountsPapers';
-import BiologyPastpapersPage from './components/studentPortal/pages/BiologyPapers';
-import CEPastpapersPage from './components/studentPortal/pages/CEPapers';
-import CommercePastpapersPage from './components/studentPortal/pages/CommercePapers';
-import DTPastpapersPage from './components/studentPortal/pages/DTPapers';
-import EnglishPastpapersPage from './components/studentPortal/pages/EnglishPapers';
-import FNPastpapersPage from './components/studentPortal/pages/FNPapers';
-import HistoryPastpapersPage from './components/studentPortal/pages/HistoryPapers';
-import GeographyPastpapersPage from './components/studentPortal/pages/GeographyPapers';
-import REPastpapersPage from './components/studentPortal/pages/REPapers';
-import SciencePastpapersPage from './components/studentPortal/pages/SciencePapers';
 import QuizMainPage from './components/studentPortal/pages/QuizMain';
 import MathQuizPage from './components/studentPortal/pages/MathQuiz';
-import EnglishQuizPage from './components/studentPortal/pages/EnglishQuiz';
-import ArtQuizPage from './components/studentPortal/pages/ArtQuiz';
-import AccountsQuizPage from './components/studentPortal/pages/AccountsQuiz';
-import BiologyQuizPage from './components/studentPortal/pages/BiologyQuiz';
-import CEQuizPage from './components/studentPortal/pages/CEQuiz';
-import DTQuizPage from './components/studentPortal/pages/DTQuiz';
-import FNQuizPage from './components/studentPortal/pages/FNQuiz';
-import HistoryQuizPage from './components/studentPortal/pages/HistoryQuiz';
-import CommerceQuizPage from './components/studentPortal/pages/CommerceQuiz';
-import ScienceQuizPage from './components/studentPortal/pages/ScienceQuiz';
 import StudentsVideosPage from './components/studentPortal/pages/Videos';
 import BooksPage from './components/studentPortal/pages/Books';
 import AssignmentsPage from './components/studentPortal/pages/Assignments';
@@ -63,6 +41,7 @@ import PracticalsPage from './components/studentPortal/pages/Practicals';
 import SkillsPage from './components/studentPortal/pages/Skills';
 import NutritionPage from './components/studentPortal/pages/Nutrition';
 import CaPage from './components/portal/pages/Ca';
+import InputResPage from './components/portal/pages/InputRef';
 
 class App extends Component {
   render() {
@@ -77,30 +56,8 @@ class App extends Component {
           <Route path="/studentsdashboard/assignments" element={<AssignmentsPage />} />
           <Route path="/studentsdashboard/pastpapers" element={<StudentsPastpapersPage />} />
           <Route path="/studentsdashboard/pastpapers/ecz/mathematics-12" element={<MathPastpapersPage />} />
-          <Route path="/studentsdashboard/pastpapers/ecz/accounts-12" element={<AccountsPastpapersPage />} />
-          <Route path="/studentsdashboard/pastpapers/ecz/art-12" element={<ArtPastpapersPage />} />
-          <Route path="/studentsdashboard/pastpapers/ecz/biology-12" element={<BiologyPastpapersPage />} />
-          <Route path="/studentsdashboard/pastpapers/ecz/ce-12" element={<CEPastpapersPage />} />
-          <Route path="/studentsdashboard/pastpapers/ecz/commerce-12" element={<CommercePastpapersPage />} />
-          <Route path="/studentsdashboard/pastpapers/ecz/dt-12" element={<DTPastpapersPage />} />
-          <Route path="/studentsdashboard/pastpapers/ecz/english-12" element={<EnglishPastpapersPage />} />
-          <Route path="/studentsdashboard/pastpapers/ecz/fn-12" element={<FNPastpapersPage />} />
-          <Route path="/studentsdashboard/pastpapers/ecz/history-12" element={<HistoryPastpapersPage />} />
-          <Route path="/studentsdashboard/pastpapers/ecz/geography-12" element={<GeographyPastpapersPage />} />
-          <Route path="/studentsdashboard/pastpapers/ecz/re-12" element={<REPastpapersPage />} />
-          <Route path="/studentsdashboard/pastpapers/ecz/science-12" element={<SciencePastpapersPage />} />
           <Route path="/studentsdashboard/quizzes" element={<QuizMainPage />} />
           <Route path="/studentsdashboard/quizzes/math" element={<MathQuizPage />} />
-          <Route path="/studentsdashboard/quizzes/art" element={<ArtQuizPage />} />
-          <Route path="/studentsdashboard/quizzes/accounts" element={<AccountsQuizPage />} />
-          <Route path="/studentsdashboard/quizzes/biology" element={<BiologyQuizPage />} />
-          <Route path="/studentsdashboard/quizzes/dt" element={<DTQuizPage />} />
-          <Route path="/studentsdashboard/quizzes/english" element={<EnglishQuizPage />} />
-          <Route path="/studentsdashboard/quizzes/fn" element={<FNQuizPage />} />
-          <Route path="/studentsdashboard/quizzes/history" element={<HistoryQuizPage />} />
-          <Route path="/studentsdashboard/quizzes/ce" element={<CEQuizPage />} />
-          <Route path="/studentsdashboard/quizzes/commerce" element={<CommerceQuizPage />} />
-          <Route path="/studentsdashboard/quizzes/science" element={<ScienceQuizPage />} />
           <Route path="/studentsdashboard/videos" element={<StudentsVideosPage />} />
           <Route path="/studentsdashboard/results" element={<StudentsResultsPage />} />
           <Route path="/studentsdashboard/practicals" element={<PracticalsPage />} />
@@ -119,6 +76,7 @@ class App extends Component {
           <Route path="/dashboard/enrollments" element={<EnrollmentsPage />} />
           <Route path="/dashboard/results" element={<ResultsPage />} />
           <Route path="/dashboard/results/ca" element={<CaPage />} />
+          <Route path="/dashboard/results/input" element={<InputResPage />} />
           <Route path="/dashboard/calenders" element={<CalendersPage />} />
           <Route path="/dashboard/profile" element={<ProfilePage />} />
 				</Route>
