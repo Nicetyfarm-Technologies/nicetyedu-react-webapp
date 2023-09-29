@@ -65,7 +65,6 @@ const Enrollments = () => {
   // };
 
   useEffect(() => {
-    //for 8a
     const q = query(collection(db, `pupils`));
     const unSubscribe = onSnapshot(q, (querySnapshot) => {
       let pupilsArr = [];

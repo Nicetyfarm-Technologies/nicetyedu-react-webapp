@@ -42,6 +42,7 @@ import SkillsPage from './components/studentPortal/pages/Skills';
 import NutritionPage from './components/studentPortal/pages/Nutrition';
 import CaPage from './components/portal/pages/Ca';
 import InputResPage from './components/portal/pages/InputRef';
+import CreateTermPage from './components/portal/pages/CreateTerm';
 
 class App extends Component {
   render() {
@@ -77,6 +78,7 @@ class App extends Component {
           <Route path="/dashboard/results" element={<ResultsPage />} />
           <Route path="/dashboard/results/ca" element={<CaPage />} />
           <Route path="/dashboard/results/input" element={<InputResPage />} />
+          <Route path="/dashboard/results/create" element={<CreateTermPage />} />
           <Route path="/dashboard/calenders" element={<CalendersPage />} />
           <Route path="/dashboard/profile" element={<ProfilePage />} />
 				</Route>
