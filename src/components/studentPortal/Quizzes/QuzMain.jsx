@@ -2,15 +2,11 @@ import React from "react";
 import "./App.css";
 import StudentsMinNav from "../minNav/MinVav";
 import { Link } from "react-router-dom";
-import { useRef } from "react";
-import { NavLink } from "react-router-dom";
 
 const QuizMain = () => {
 
   return (
-    <div className="portal-content">
-      <StudentsMinNav />
-      <div className="portal-page-content">
+    <>
         <h2>Examination Quiz</h2>
         <br />
         <p>Select Subject</p>
@@ -27,8 +23,7 @@ const QuizMain = () => {
             <li className="quiz-sub"><Link to="/studentsdashboard/quizzes/history">History Quiz</Link></li>
             <li className="quiz-sub"><Link to="/studentsdashboard/quizzes/ce">Civic Education Quiz</Link></li>
         </ul>
-      </div>
-    </div>
+      </>
   );
 };
 

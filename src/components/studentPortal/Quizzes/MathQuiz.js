@@ -13,7 +13,6 @@ const MathQuiz = () => {
   const [score, setScore] = useState(0);
 
   return <div className="App" id="app">
-    <StudentsMinNav />
     <QuizContext.Provider value={{gameState, setGameState, score, setScore, questions, setQuestions, counter, setCounter}}>
       {gameState === "main" && <Main/>}
       {gameState === "quiz" && <Quiz/>}

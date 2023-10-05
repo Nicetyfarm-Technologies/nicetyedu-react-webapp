@@ -37,9 +37,7 @@ const StudentsPastpapers = () => {
   };
 
   return (
-    <div className="portal-content">
-      <StudentsMinNav />
-      <div className="portal-page-content">
+    <>
         <h2>Students Past Papers</h2><br />
         <h3>School Past Papers</h3>
         
@@ -89,8 +87,7 @@ const StudentsPastpapers = () => {
             <NavLink to="/studentsdashboard/pastpapers/ecz/mathematics-12">Mathematics</NavLink>
           </div>
         </div>
-      </div>
-    </div>
+      </>
   );
 };
 

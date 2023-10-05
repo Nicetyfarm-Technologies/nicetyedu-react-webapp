@@ -1,8 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import logo from "../images/icon.png"
-// import './Dashboard.css'
-import MinNav from "../minNav/MinVav";
+import logo from "../images/icon.png";
 import { getAuth, updateProfile } from "firebase/auth";
 import { storage } from "../../firebase/config";
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
@@ -84,9 +82,7 @@ if (user !== null) {
   // console.log(displayImage);
 
   return (
-    <div className="portal-content">
-      <MinNav />
-      <div className="portal-page-content">
+    <>
         <h2>Profile</h2>
         <div className="cont-form">
         {
@@ -110,12 +106,7 @@ if (user !== null) {
           <button type="submit" name="Submit" className="log-btn">Update</button>
         </form>
         </div>
-      
-        {/* <button className="log-btn" onClick={getUserProfile}>Get User Profile</button> */}
-      </div>
-
-
-    </div>
+      </>
   );
 };
 

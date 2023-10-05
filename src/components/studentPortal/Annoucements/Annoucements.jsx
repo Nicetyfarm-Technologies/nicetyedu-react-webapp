@@ -39,9 +39,7 @@ const Announcements = () => {
   };
 
   return (
-    <div className="portal-content">
-      <StudentsMinNav />
-      <div className="portal-page-content">
+    <>
         <h2>Announcements</h2>
         <br />
         <p>Latest</p>
@@ -54,8 +52,7 @@ const Announcements = () => {
               />
             ))}
         </ul>
-      </div>
-    </div>
+      </>
   );
 };
 

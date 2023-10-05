@@ -1,19 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Modal from "react-modal";
 import {
-  onSnapshot,
-  query,
-  collection,
-  updateDoc,
   doc,
   setDoc,
-  deleteDoc,
 } from "firebase/firestore";
 import { db } from "../../firebase/config";
-// import './Dashboard.css'
-import MinNav from "../minNav/MinVav";
-import m1 from "./mathbooks/m1.pdf";
-import m2 from "./mathbooks/m2.pdf";
 import AddFile from "./AddFile";
 
 const customStyles = {
@@ -203,9 +193,7 @@ const Library = () => {
   }
 
   return (
-    <div className="portal-content">
-      <MinNav />
-      <div className="portal-page-content">
+    <>
         <h2>Library</h2>
         <ul className="el-container">
           {/* <li className='el'><Link to="/studentsdashboard/announcements">Announcements</Link></li> */}
@@ -273,8 +261,7 @@ const Library = () => {
         <ul className="">
           
         </ul>
-      </div>
-    </div>
+      </>
   );
 };
 

@@ -6,9 +6,7 @@ import { Link } from 'react-router-dom';
 
 const StudentsDashboard = () => {
     return (
-      <div className="portal-content">
-        <StudentsMinNav />
-        <div className="portal-page-content">
+      <>
         <h2>Students Dashboard</h2>
         <ul className='el-container'>
         <li className='el'><Link to="/studentsdashboard/announcements">Announcements</Link></li>
@@ -19,9 +17,9 @@ const StudentsDashboard = () => {
           <li className='el'><Link to="/studentsdashboard/assignments">Assignments</Link></li>
           <li className='el'><Link to="/studentsdashboard/practicals">Practicals</Link></li>
           <li className='el'><Link to="/studentsdashboard/timetables">Time Table</Link></li>
+          <li className='el'><Link to="/studentsdashboard/attendance">Attendance</Link></li>
         </ul>
-        </div>
-      </div>
+        </>
     )
 }
 

@@ -1,6 +1,4 @@
 import React from 'react';
-// import './Dashboard.css'
-import MinNav from '../minNav/MinVav';
 
 const Timetables = () => {
 // Define constants for the schedule
@@ -104,14 +102,11 @@ console.log(generatedTimetable);
 
 
     return (
-      <div className="portal-content">
-        <MinNav />
-        <div className="portal-page-content">
+        <>
         <h2>Timetables</h2>
 
         <button type='button' onClick={generateTimetable}>Generate</button>
-        </div>
-      </div>
+        </>
     )
 }
 

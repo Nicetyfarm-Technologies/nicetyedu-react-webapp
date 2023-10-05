@@ -34,9 +34,7 @@ const Attendance = () => {
   if(classpage === true) 
 
   return (
-    <div className="portal-content">
-      <MinNav />
-      <div className="portal-page-content">
+    <>
         <h2>Classes</h2>
         <div className="classes-div">
           <div className="classes-nav">
@@ -105,8 +103,7 @@ const Attendance = () => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </>
   );
 };
 

@@ -1,6 +1,5 @@
 import React from "react";
 import "./Classes.css";
-import MinNav from "../minNav/MinVav";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useRef } from "react";
@@ -34,9 +33,7 @@ const Subjects = () => {
   if(classpage === true) 
 
   return (
-    <div className="portal-content">
-      <MinNav />
-      <div className="portal-page-content">
+    <>
         <h2>Classes</h2>
         <div className="classes-div">
           <div className="classes-nav">
@@ -105,8 +102,7 @@ const Subjects = () => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </>
   );
 };
 

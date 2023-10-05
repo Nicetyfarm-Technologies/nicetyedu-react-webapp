@@ -79,9 +79,7 @@ const Enrollments = () => {
   // };
 
   return (
-    <div className="portal-content">
-      <MinNav />
-      <div className="portal-page-content">
+    <>
         <h2>Enrollments</h2>
         <form onSubmit={enrollPupil} className="annonce-form2">
           <h3>Add Pupil</h3>
@@ -205,8 +203,7 @@ const Enrollments = () => {
             })}
           </table>
         </div>
-              </div>
-    </div>
+        </>
   );
 };
 

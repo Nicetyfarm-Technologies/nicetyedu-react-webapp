@@ -32,9 +32,7 @@ const StudentsResults = () => {
 	}
 
     return (
-      <div className="portal-content">
-        <StudentsMinNav />
-        <div className="portal-page-content">
+      <>
         <h2>Students Results</h2>
         <form className='annonce-form2' ref={form} onSubmit={showResults}>
           <h3>Kindly Enter your ID to display</h3>
@@ -59,8 +57,7 @@ const StudentsResults = () => {
             <a href="#">Grade 12 Term 2</a>
             <button type='button' onClick={closeResults}>Close</button>
         </div>
-        </div>
-      </div>
+        </>
     )
 }
 

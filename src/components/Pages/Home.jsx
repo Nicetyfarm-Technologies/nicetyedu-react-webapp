@@ -1,19 +1,13 @@
 import NavBar from "../NavBar";
-import Hero from "../Hero/Hero";
-import About from "../About/About";
-import Products from "../Products/Products";
-import Traction from "../Traction/Traction";
-import Contact from "../Contact/Contact";
+import { Outlet } from "react-router-dom";
+import Footer from "../Footer/Footer";
 
 const Home = () => {
     return (
       <>
         <NavBar />
-        <Hero />
-        <About />
-        <Products />
-        <Traction />
-        <Contact />
+        <Outlet />
+        <Footer />
       </>
     )
 }

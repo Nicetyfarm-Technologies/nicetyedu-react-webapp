@@ -39,9 +39,7 @@ const Books = () => {
   }, []);
 
   return (
-    <div className="portal-content">
-      <StudentsMinNav />
-      <div className="portal-page-content">
+    <>
         <h2>Students' Books</h2>
         <br />
         <p>Junior Secondary</p>
@@ -57,8 +55,7 @@ const Books = () => {
               <li className="quiz-sub"><Link to={book.fileUrl}>{book.title}</Link></li>
             ))}
         </ul>
-      </div>
-    </div>
+      </>
   );
 };
 

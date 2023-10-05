@@ -20,9 +20,7 @@ import m220 from "./grade12eczmath/m220.pdf";
 const MathPastpapers = () => {
   
   return (
-    <div className="portal-content">
-      <StudentsMinNav />
-      <div className="portal-page-content">
+    <>
         <h2>G12 ECZ Mathematics Past Papers</h2><br />
         <div className="math-papers">
             <a href={m115}>2015 Mathematics Paper 1</a>
@@ -38,8 +36,7 @@ const MathPastpapers = () => {
             <a href={m120}>2020 Mathematics Paper 1</a>
             <a href={m220}>2020 Mathematics Paper 2</a>
         </div>
-      </div>
-    </div>
+      </>
   );
 };
 

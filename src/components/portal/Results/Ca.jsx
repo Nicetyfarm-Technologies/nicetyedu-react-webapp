@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-// import './Dashboard.css'
-import MinNav from "../minNav/MinVav";
-import { Link } from "react-router-dom";
 
 const Ca = () => {
 
@@ -285,9 +282,7 @@ const Ca = () => {
   };
 
   return (
-    <div className="portal-content">
-      <MinNav />
-      <div className="portal-page-content">
+    <>
         <h2>Continuous Assessment Results</h2><br />
         <div className="practicals">
         {/* <button onClick={handleAddPupil}>Add Pupil</button> */}
@@ -344,8 +339,7 @@ const Ca = () => {
       </table>
 
         </div>
-      </div>
-    </div>
+      </>
   );
 };
 

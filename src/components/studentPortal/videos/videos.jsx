@@ -33,9 +33,7 @@ const StudentsVideos = () => {
   }, []);
 
   return (
-    <div className="portal-content">
-      <StudentsMinNav />
-      <div className="portal-page-content">
+    <>
         <h2>Video Lessons</h2>
         <br />
 
@@ -65,8 +63,7 @@ const StudentsVideos = () => {
             </div>
             ))}
         </div>
-      </div>
-    </div>
+      </>
   );
 };
 

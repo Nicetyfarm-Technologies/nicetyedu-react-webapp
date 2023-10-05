@@ -16,7 +16,6 @@ import avarta from "../images/avarta.png";
 import Modal from "react-modal";
 import auth from "../../firebase/config";
 import { db } from "../../firebase/config";
-import MinNav from "../minNav/MinVav";
 
 const customStyles = {
   content: {
@@ -124,9 +123,7 @@ const Staff = () => {
   // };
 
   return (
-    <div className="portal-content">
-      <MinNav />
-      <div className="portal-page-content">
+    <>
         <h2>Staff Management</h2>
         <form onSubmit={addStaff} className="annonce-form2">
           <h3>Add Staff</h3>
@@ -304,8 +301,7 @@ const Staff = () => {
             })}
           </table>
         </div>
-      </div>
-    </div>
+      </>
   );
 };
 

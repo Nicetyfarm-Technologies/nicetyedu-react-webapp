@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./Results.css";
-import MinNav from "../minNav/MinVav";
 
 const InputRes = () => {
   const [subject, setSubject] = useState("English");
@@ -9,9 +8,7 @@ const InputRes = () => {
   const [week, setWeek] = useState("Week-2");
 
   return (
-    <div className="portal-content">
-      <MinNav />
-      <div className="portal-page-content">
+    <>
         <h2>Input Results</h2>
         <br />
         <div className="practicals">
@@ -83,8 +80,7 @@ const InputRes = () => {
             <button type="submit">Start</button>
           </form>
         </div>
-      </div>
-    </div>
+      </>
   );
 };
 
