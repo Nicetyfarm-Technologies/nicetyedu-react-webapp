@@ -29,9 +29,6 @@ function getDate() {
 
 const Attended = () => {
   const currentDate = useState(getDate());
-  const menuRef = useRef();
-  const humburger = useRef();
-  const close = useRef();
   const [eits, setEits] = useState([
     {
       conductorName: "Bright",

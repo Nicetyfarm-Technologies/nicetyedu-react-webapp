@@ -3,13 +3,12 @@ import React from "react";
 const Session = ({
   session,
   icon2,
-  user,
   attendClass,
   latitude,
   longitude,
 }) => {
   function calculateTimeLeft(unixTimestamp) {
-    const currentTimestamp = Math.floor(Date.now() / 1000); // Current Unix timestamp in seconds
+    const currentTimestamp = Math.floor(Date.now() / 1000);
     const timeDifference = unixTimestamp - currentTimestamp;
 
     if (timeDifference <= 0) {
@@ -23,15 +22,12 @@ const Session = ({
   }
 
   function getTimeFromUnixTimestamp(unixTimestamp) {
-    const milliseconds = unixTimestamp * 1000; // Convert Unix timestamp to milliseconds
-    const dateObject = new Date(milliseconds); // Create a new Date object
+    const milliseconds = unixTimestamp * 1000; 
+    const dateObject = new Date(milliseconds); 
 
-    // Extract the time components
     const hours = dateObject.getHours();
     const minutes = dateObject.getMinutes();
-    const seconds = dateObject.getSeconds();
 
-    // Format the time
     const formattedTime = `${hours.toString().padStart(2, "0")}:${minutes
       .toString()
       .padStart(2, "0")}`;
@@ -39,7 +35,7 @@ const Session = ({
     return formattedTime;
   }
   function checkTimeStatus(startTime, endTime) {
-    const currentTimestamp = Math.floor(Date.now() / 1000); // Current Unix timestamp in seconds
+    const currentTimestamp = Math.floor(Date.now() / 1000);
 
     if (currentTimestamp >= startTime && currentTimestamp < endTime) {
       return 1;

@@ -1,24 +1,19 @@
 import React, { useState } from "react";
-// import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 
 function Login() {
   const navigate = useNavigate();
   const [id, setID] = useState("");
-  // const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(id);
     if(id == 20230001) {
-      navigate("/studentsdashboard");
-      // alert("login success")
-      console.log("correct");
+      navigate("/studentsdashboard/dashboard");
     } else {
-      console.log("wrong");
-      // alert("School ID unknown");
+      alert("wrong");
     }
     console.log(id);
   };
@@ -38,12 +33,6 @@ function Login() {
           placeholder="School ID"
           required
         />
-        {/* <div className="password-reset">
-          <p>forgot password?</p>
-          <Link to="/reset" className="reset-password">
-            Reset Here
-          </Link>
-        </div> */}
         <button type="submit" name="Login" className="log-btn">
           Login
         </button>

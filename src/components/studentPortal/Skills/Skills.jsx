@@ -18,9 +18,7 @@ const Skills = () => {
 // }
 //   }
     return (
-      <div className="portal-content">
-        <StudentsMinNav />
-        <div className="portal-page-content">
+      <>
         <h2>Essential Realworld Skills</h2>
         {/* <button className='log-btn' onClick={checkUser}>Check User</button> */}
         <ul className='el-container'>
@@ -33,8 +31,7 @@ const Skills = () => {
           <li className='el'><Link to="/studentsdashboard/practicals">Continous :earning (reading)</Link></li>
           <li className='el'><Link to="/studentsdashboard/timetables">Critical Thinking</Link></li>
         </ul>
-        </div>
-      </div>
+        </>
     )
 }
 

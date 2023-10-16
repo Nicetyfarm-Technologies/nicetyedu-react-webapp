@@ -23,7 +23,6 @@ const DashboardNav = () => {
 
   const showNavContent = () => {
     humburger.current.classList.toggle("none");
-    // navRef2.current.classList.toggle("responsive");
     close.current.classList.toggle("none");
     menuRef.current.classList.toggle("none");
   };

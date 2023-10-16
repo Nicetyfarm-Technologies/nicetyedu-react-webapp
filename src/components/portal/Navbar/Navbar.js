@@ -37,7 +37,6 @@ function InNavBar() {
       const photoURL = user.photoURL;
       setName(displayName);
       setImage(photoURL);
-      
     }
   };
 
@@ -65,13 +64,7 @@ function InNavBar() {
           </div>
         </div>
         <div>
-          <button
-            className="humburger btn"
-            onClick={showNavContent}
-            ref={navRef3}
-          >
-            {menu}
-          </button>
+          
           <div ref={navRef} className="primary-nav">
             <button className="close btn" onClick={showNavContent}>
               {close}
@@ -84,9 +77,13 @@ function InNavBar() {
               <p>{displayName2}</p>
             </div>
 
-
             <div className="">
-              <button onClick={logOut} type="button" name="Logout" className="login-btn">
+              <button
+                onClick={logOut}
+                type="button"
+                name="Logout"
+                className="login-btn"
+              >
                 Logout
               </button>
             </div>

@@ -1,15 +1,30 @@
 import React from "react";
+import { DndProvider } from 'react-dnd';
+import {MultiBackend} from 'react-dnd-multi-backend';
+import {HTML5Backend} from 'react-dnd-html5-backend';
+import {TouchBackend} from 'react-dnd-touch-backend';
 import StudentsMinNav from "../../minNav/MinVav";
 import "./Nutrition.css";
 import Reagent from "./Reagent";
 import TestSub from "./TestSub";
 import TestTube from "./TestTube";
 
+
+const HTML5toTouch = {
+  backends: [
+    {
+      backend: HTML5Backend,
+    },
+    {
+      backend: TouchBackend,
+      options: { enableMouseEvents: true }, // Enable mouse events for touch
+    },
+  ],
+};
+
 function Nutrition() {
   return (
-    <div className="portal-content">
-      <StudentsMinNav />
-      <div className="portal-page-content">
+    <DndProvider backend={MultiBackend} options={HTML5toTouch}>
         <div className="App2">
           <h1>Test For Nutrition Practicals</h1>
           <div className="container2">
@@ -32,8 +47,7 @@ function Nutrition() {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </DndProvider>
   );
 }
 

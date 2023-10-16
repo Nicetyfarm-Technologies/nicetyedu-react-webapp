@@ -33,7 +33,7 @@ span {
 }
 
 a {
-    color: #fff;
+    color: #000;
 }
 
 a:hover {
@@ -70,6 +70,13 @@ a:hover {
 .humburger, .close {
     font-size: 25px;
     color: #fff;
+}
+
+.humburger2 {
+    font-size: 25px;
+    color: blue;
+    width: 100%;
+    text-align: right;
 }
 
 .none {

@@ -15,8 +15,8 @@ function AdminLogin() {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // const user = userCredential.currentUser;
-          // alert(user)
-          navigate("/dashboard");
+        //   alert(user)
+          navigate("/dashboard/announcements");
       })
       .catch((error) => {
         const errorCode = error.code;

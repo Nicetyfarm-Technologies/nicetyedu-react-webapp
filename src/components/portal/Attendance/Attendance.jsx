@@ -5,14 +5,6 @@ import icon2 from "../../Assets/bright.png";
 import Session from "./Session";
 import { Link, useNavigate } from "react-router-dom";
 
-function getDate() {
-  const today = new Date();
-  const month = today.getMonth() + 1;
-  const year = today.getFullYear();
-  const date = today.getDate();
-  return `${date} - ${month} - ${year}`;
-}
-
 const Attendance = () => {
 
   const [sessions, setSessions] = useState([]);
@@ -51,6 +43,14 @@ const Attendance = () => {
         console.error("Error:", error);
       });
   };
+
+  const getDate = () => {
+    const today = new Date();
+    const month = today.getMonth() + 1;
+    const year = today.getFullYear();
+    const date = today.getDate();
+    return `${date} - ${month} - ${year}`;
+  }
 
   const promptSendReport = () => {
     navigate("/reports/health")
@@ -91,6 +91,7 @@ const Attendance = () => {
   };
 
   useEffect(() => {
+    getDate();
     const savedData = localStorage.getItem(localStorageKey);
     if (savedData) {
       setUser(JSON.parse(savedData));

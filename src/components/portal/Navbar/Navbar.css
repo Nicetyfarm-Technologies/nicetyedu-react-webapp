@@ -15,8 +15,8 @@
 
 .portal-navigation {
     padding: 2.5%;
-    background-color: rgb(1, 13, 37);
-    color: #fff;
+    background-color: #fff;
+    color: rgb(1, 13, 37);
 }
 
 .portal-navigation-inner {
@@ -40,12 +40,17 @@
     gap: 10px;
 }
 
+.portal-navigation-inner2 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
 @media  (min-width: 768px) {
     .portal-navigation {
         width: 25%;
         height: 60%;
-        background-color: #cecbcb;
+        background-color: #fff;
         /* position: fixed; */
     }
     .portal-navigation a {

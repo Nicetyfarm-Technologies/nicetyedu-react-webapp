@@ -16,7 +16,7 @@ import "./Dashboard.css";
 import MinNav from "../minNav/MinVav";
 import Announcement from "./Announcement";
 import { Outlet } from "react-router-dom";
-import NavBar from "../../NavBar";
+import InNavBar from "../Navbar/Navbar";
 
 const Dashboard = () => {
   const [assigned, setAssigned] = useState("pupils");
@@ -89,7 +89,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <NavBar />
+      <InNavBar />
       <div className="portal-content">
         <MinNav />
         <div className="portal-page-content">

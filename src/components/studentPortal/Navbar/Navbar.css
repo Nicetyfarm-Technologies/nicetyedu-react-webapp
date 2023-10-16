@@ -15,7 +15,7 @@
 
 .portal-navigation {
     padding: 2.5%;
-    background-color: rgb(1, 13, 37);
+    background-color: #fff;
     color: #fff;
 }
 
@@ -45,7 +45,7 @@
     .portal-navigation {
         width: 25%;
         height: 60%;
-        background-color: #cecbcb;
+        background-color: #fff;
         /* position: fixed; */
     }
     .portal-navigation a {

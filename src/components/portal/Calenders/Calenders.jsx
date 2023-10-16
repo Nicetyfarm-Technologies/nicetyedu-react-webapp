@@ -1,5 +1,4 @@
 import React from 'react';
-// import './Dashboard.css'
 import MinNav from '../minNav/MinVav';
 
 const Calenders = () => {

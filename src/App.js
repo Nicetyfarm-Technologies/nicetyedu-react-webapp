@@ -8,14 +8,6 @@ import {
 import Home from "./components/Pages/Home";
 import ProtectedRoute from "./components/ProtectedRoute";
 import StudentsProtectedRoute from "./components/studentsProtectedRoute";
-import MathPastpapersPage from "./components/studentPortal/pages/MathPapers";
-import QuizMainPage from "./components/studentPortal/pages/QuizMain";
-import MathQuizPage from "./components/studentPortal/pages/MathQuiz";
-import StudentsVideosPage from "./components/studentPortal/pages/Videos";
-import StudentsResultsPage from "./components/studentPortal/pages/Results";
-import PracticalsPage from "./components/studentPortal/pages/Practicals";
-import SkillsPage from "./components/studentPortal/pages/Skills";
-import NutritionPage from "./components/studentPortal/pages/Nutrition";
 import Hom from "./components/Pages/Hom";
 import Login from "./components/Login/Login";
 import AdminLogin from "./components/Login/AdminLogin";
@@ -50,6 +42,8 @@ import MathQuiz from "./components/studentPortal/Quizzes/MathQuiz";
 import StudentsVideos from "./components/studentPortal/videos/videos";
 import StudentsResults from "./components/studentPortal/Results/Results";
 import Practicals from "./components/studentPortal/Practicals/Practicals";
+import Nutrition from "./components/studentPortal/Practicals/Nutrition/Nutrition";
+import Skills from "./components/studentPortal/Skills/Skills";
 
 class App extends Component {
   render() {
@@ -105,11 +99,11 @@ class App extends Component {
               />
               <Route
                 path="/studentsdashboard/practicals/nutrition"
-                element={<NutritionPage />}
+                element={<Nutrition />}
               />
               <Route
                 path="/studentsdashboard/skills"
-                element={<SkillsPage />}
+                element={<Skills />}
               />
             </Route>
           </Route>
