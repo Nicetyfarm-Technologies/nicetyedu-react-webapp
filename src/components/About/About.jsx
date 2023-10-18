@@ -45,7 +45,7 @@ function About() {
           <button className="see-more none" ref={showRef} onClick={showNavContent}>Read Less</button>
         </div>
         <div className="img-vid">
-          <img className="product-img" src={sc}></img>
+          <img className="product-img" src={sc} alt="product"></img>
         </div>
       </div>
     </div>

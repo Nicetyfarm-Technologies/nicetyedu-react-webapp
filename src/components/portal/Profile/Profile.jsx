@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import logo from "../images/icon.png";
+// import logo from "../images/icon.png";
 import { getAuth, updateProfile } from "firebase/auth";
 import { storage } from "../../firebase/config";
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
@@ -33,7 +33,7 @@ const Profile = () => {
     );
   }
   const [displayName2, setName] = useState("");
-  const [displayImage, setImage] = useState({logo});
+  // const [displayImage, setImage] = useState({logo});
 
   const updateUser = (event) => {
     event.preventDefault();
@@ -63,12 +63,12 @@ const Profile = () => {
 const user = auth.currentUser;
 if (user !== null) {
   const displayName = user.displayName;
-  const email = user.email;
-  const photoURL = user.photoURL;
-  const emailVerified = user.emailVerified;
-  const uid = user.uid;
+  // const email = user.email;
+  // const photoURL = user.photoURL;
+  // const emailVerified = user.emailVerified;
+  // const uid = user.uid;
   setName(displayName);
-  setImage(photoURL);
+  // setImage(photoURL);
 
 }
   }

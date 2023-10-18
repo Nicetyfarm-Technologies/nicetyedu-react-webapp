@@ -5,12 +5,12 @@ import "./Login.css";
 function Login() {
   const navigate = useNavigate();
   const [id, setID] = useState("");
-  const [error, setError] = useState("");
+  // const [error, setError] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(id);
-    if(id == 20230001) {
+    if(id === "20230001") {
       navigate("/studentsdashboard/dashboard");
     } else {
       alert("wrong");

@@ -3,7 +3,6 @@ import { DndProvider } from 'react-dnd';
 import {MultiBackend} from 'react-dnd-multi-backend';
 import {HTML5Backend} from 'react-dnd-html5-backend';
 import {TouchBackend} from 'react-dnd-touch-backend';
-import StudentsMinNav from "../../minNav/MinVav";
 import "./Nutrition.css";
 import Reagent from "./Reagent";
 import TestSub from "./TestSub";

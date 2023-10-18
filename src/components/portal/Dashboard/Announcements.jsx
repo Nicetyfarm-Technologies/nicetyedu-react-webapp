@@ -7,6 +7,7 @@ import {
   setDoc,
   deleteDoc,
 } from "firebase/firestore";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { db } from "../../firebase/config";
 import 'react-slideshow-image/dist/styles.css'
 import './Dashboard.css'
@@ -26,10 +27,21 @@ const [announcements, setAnnouncements] = useState([
     
   }
 ])
-const [adminEmail, setAdminEmail] = useState(null)
+const [adminEmail, setAdminEmail] = useState(null);
 
 
 useEffect(() => {
+  const auth = getAuth();
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    const userEmail = user.email;
+    if(userEmail === "steve@nicetyfarm.org") {
+      setAdminEmail(userEmail)
+    }
+  } else {
+  
+  }
+});
   const intervalId = setInterval(() => {
     setAnnounceDate(new Date());
     setAnnounceDateTime(new Date().toLocaleDateString());
@@ -91,36 +103,39 @@ const deleteAnnounce = async (id) => {
 
     return (
         <>
-            <h2>Announcements</h2>
-        <form onSubmit={postAnnouncement} className='annonce-form2'>
-          <h3>Give Announcements</h3>
-          <div className='inputs'>
-          <select
-              value={assigned}
-              onChange={(e) => {
-                setAssigned(e.target.value);
-              }}
-            >
-              <option value="pupils">Pupils</option>
-              <option value="staff">Staff</option>
-            </select>
-            <input
-              type="text"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-              placeholder="Title"
-              required
-            />
-            <textarea
-              // type="address"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              placeholder="Description"
-              required
-            />
-            <button type='submit'>Post</button>
-          </div>
-        </form>
+            {/* <h2>Announcements</h2> */}
+            {
+              adminEmail? <form onSubmit={postAnnouncement} className='annonce-form2'>
+              <h3>Give Announcements</h3>
+              <div className='inputs'>
+              <select
+                  value={assigned}
+                  onChange={(e) => {
+                    setAssigned(e.target.value);
+                  }}
+                >
+                  <option value="pupils">Pupils</option>
+                  <option value="staff">Staff</option>
+                </select>
+                <input
+                  type="text"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  placeholder="Title"
+                  required
+                />
+                <textarea
+                  // type="address"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                  placeholder="Description"
+                  required
+                />
+                <button type='submit'>Post</button>
+              </div>
+            </form> : <></>
+            }
+       
         <p>Latest</p>
         <ul className="announcements">
         {announcements.map((announcement, index) => (

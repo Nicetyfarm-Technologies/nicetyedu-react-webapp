@@ -1,12 +1,6 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
-const delet = <FontAwesomeIcon icon={faTrash} />;
-
-
-
-const Announcement = ({ announcement, deleteAnnounce }) => {
+const Announcement = ({ announcement }) => {
   return (
     <li className="announce">
             <h3>{announcement.title}</h3>

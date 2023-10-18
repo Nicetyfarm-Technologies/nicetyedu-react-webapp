@@ -1,9 +1,5 @@
 import React from "react";
 import "./Assignments.css";
-import StudentsMinNav from "../minNav/MinVav";
-import { Link } from "react-router-dom";
-import { useRef } from "react";
-import { NavLink } from "react-router-dom";
 
 const Assignments = () => {
 

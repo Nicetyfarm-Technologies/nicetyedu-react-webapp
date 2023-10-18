@@ -16,9 +16,6 @@ function StudentsInNavBar() {
   const navRef4 = useRef();
   const navigate = useNavigate();
 
-  const [displayName2, setName] = useState("");
-  const [displayImage, setImage] = useState({ logo });
-
   const logOut = (event) => {
     event.preventDefault();
     const auth = getAuth();
@@ -29,21 +26,9 @@ function StudentsInNavBar() {
       .catch((error) => {});
   };
 
-  const getUserProfile = () => {
-    const auth = getAuth();
-     const user = auth.currentUser;
-    if (user !== null) {
-      const displayName = user.displayName;
-      const photoURL = user.photoURL;
-      setName(displayName);
-      setImage(photoURL);
-      
-    }
-  };
-
-  useEffect(() => {
-    getUserProfile();
-  }, []);
+  // useEffect(() => {
+  //   getUserProfile();
+  // }, []);
 
   const showNavContent = () => {
     navRef.current.classList.toggle("responsive");

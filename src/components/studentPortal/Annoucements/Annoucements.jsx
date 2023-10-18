@@ -3,14 +3,13 @@ import {
   onSnapshot,
   query,
   collection,
-  updateDoc,
+  // updateDoc,
   doc,
-  setDoc,
+  // setDoc,
   deleteDoc,
 } from "firebase/firestore";
 import { db } from "../../firebase/config";
 import "./Announcements.css";
-import StudentsMinNav from "../minNav/MinVav";
 import Announcement from "./Announcement";
 
 const Announcements = () => {

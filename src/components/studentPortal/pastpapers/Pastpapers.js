@@ -1,31 +1,29 @@
 import React from "react";
-import './Pastpapers.css'
-import StudentsMinNav from "../minNav/MinVav";
-import { Link } from "react-router-dom";
+import './Pastpapers.css';
 import { useRef } from "react";
 import { NavLink } from "react-router-dom";
 
 const StudentsPastpapers = () => {
-  const g8Ref = useRef();
+  // const g8Ref = useRef();
   const g9Ref = useRef();
-  const g10Ref = useRef();
-  const g11Ref = useRef();
+  // const g10Ref = useRef();
+  // const g11Ref = useRef();
   const g12Ref = useRef();
   const g9eRef = useRef();
   const g12eRef = useRef();
 
-  const show8Classes = () => {
-    g8Ref.current.classList.toggle("none");
-  };
+  // const show8Classes = () => {
+  //   g8Ref.current.classList.toggle("none");
+  // };
   const show9Classes = () => {
     g9Ref.current.classList.toggle("none");
   };
-  const show10Classes = () => {
-    g10Ref.current.classList.toggle("none");
-  };
-  const show11Classes = () => {
-    g11Ref.current.classList.toggle("none");
-  };
+  // const show10Classes = () => {
+  //   g10Ref.current.classList.toggle("none");
+  // };
+  // const show11Classes = () => {
+  //   g11Ref.current.classList.toggle("none");
+  // };
   const show12Classes = () => {
     g12Ref.current.classList.toggle("none");
   };

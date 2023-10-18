@@ -1,5 +1,6 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
@@ -10,6 +11,7 @@ const MinNav = () => {
   const navRef = useRef();
   const navRef3 = useRef();
   const navRef4 = useRef();
+  const [adminEmail, setAdminEmail] = useState(null);
 
   const showNavContent = () => {
     navRef.current.classList.toggle("none");
@@ -17,48 +19,79 @@ const MinNav = () => {
     navRef4.current.classList.toggle("none");
   };
 
+  useEffect(() => {
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const userEmail = user.email;
+        if (userEmail === "steve@nicetyfarm.org") {
+          setAdminEmail(userEmail);
+        }
+      } else {
+      }
+    });
+  }, []);
+
   return (
     <div className="portal-navigation">
       <button
-				type="button"
-				className="humburger2 btn"
-				onClick={showNavContent}
-				ref={navRef3}
-			>
-				{menu}
-			</button>
-			<button
-				type="button"
-				className="humburger2 btn none"
-				onClick={showNavContent}
-				ref={navRef}
-			>
-				{close}
-			</button>
-      <ul className="portal-navigation-inner2 none" ref={navRef4}>
+        type="button"
+        className="humburger2 btn"
+        onClick={showNavContent}
+        ref={navRef3}
+      >
+        {menu}
+      </button>
+      <button
+        type="button"
+        className="humburger2 btn none"
+        onClick={showNavContent}
+        ref={navRef}
+      >
+        {close}
+      </button>
+      <ul
+        className="portal-navigation-inner2 none"
+        ref={navRef4}
+        onClick={showNavContent}
+      >
         <li className="nav-element">
-          <NavLink to="/dashboard" activestyle="true" className="element">
+          <NavLink
+            to="/dashboard/announcements"
+            activestyle="true"
+            className="element"
+          >
             Announcements
           </NavLink>
         </li>
         <hr />
-        <li className="nav-element">
-          <NavLink to="/dashboard/staff" activestyle="true" className="element">
-            Staff Management
-          </NavLink>
-        </li>
-        <hr />
+        {adminEmail ? (
+          <>
+            <li className="nav-element">
+              <NavLink
+                to="/dashboard/staff"
+                activestyle="true"
+                className="element"
+              >
+                Staff Management
+              </NavLink>
+            </li>
+            <hr />
 
-        <li className="nav-element">
-          <NavLink
-            to="/dashboard/enrollments"
-            activestyle="true"
-            className="element"
-          >
-            Enrollments
-          </NavLink>
-        </li>
-        <hr />
+            <li className="nav-element">
+              <NavLink
+                to="/dashboard/enrollments"
+                activestyle="true"
+                className="element"
+              >
+                Enrollments
+              </NavLink>
+            </li>
+            <hr />
+          </>
+        ) : (
+          ""
+        )}
 
         <li className="nav-element">
           <NavLink
@@ -93,16 +126,22 @@ const MinNav = () => {
         </li>
         <hr />
 
-        <li className="nav-element">
-          <NavLink
-            to="/dashboard/finances"
-            activestyle="true"
-            className="element"
-          >
-            Finances
-          </NavLink>
-        </li>
-        <hr />
+        {adminEmail ? (
+          <>
+            <li className="nav-element">
+              <NavLink
+                to="/dashboard/finances"
+                activestyle="true"
+                className="element"
+              >
+                Finances
+              </NavLink>
+            </li>
+            <hr />
+          </>
+        ) : (
+          ""
+        )}
 
         <li className="nav-element">
           <NavLink

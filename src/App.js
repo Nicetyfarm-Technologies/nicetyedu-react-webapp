@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate,
 } from "react-router-dom";
 import Home from "./components/Pages/Home";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -16,7 +15,6 @@ import ResetPassword from "./components/Reset/Reset";
 import AnnouncementsStaff from "./components/portal/Dashboard/Announcements";
 import Dashboard from "./components/portal/Dashboard/Dashboard";
 import Classes from "./components/portal/Classes/Classes";
-import Attendance from "./components/portal/Classes/Attendance";
 import Finance from "./components/portal/Finance/Finance";
 import Library from "./components/portal/Library/Library";
 import Staff from "./components/portal/Staff/Staff";
@@ -28,7 +26,6 @@ import InputRes from "./components/portal/Results/InputRes";
 import CreateTerm from "./components/portal/Results/CreateTerm";
 import Calenders from "./components/portal/Calenders/Calenders";
 import Profile from "./components/portal/Profile/Profile";
-import Subjects from "./components/portal/Classes/Subjects";
 import StudentsPortal from "./components/studentPortal/Dashboard/StudentPoatal";
 import StudentsDashboard from "./components/studentPortal/Dashboard/Dashboard";
 import Announcements from "./components/studentPortal/Annoucements/Annoucements";
@@ -114,8 +111,6 @@ class App extends Component {
                 element={<AnnouncementsStaff />}
               />
               <Route path="/dashboard/classes" element={<Classes />} />
-              <Route path="/dashboard/attendance" element={<Attendance />} />
-              <Route path="/dashboard/subjects" element={<Subjects />} />
               <Route path="/dashboard/staff" element={<Staff />} />
               <Route path="/dashboard/library" element={<Library />} />
               <Route path="/dashboard/finances" element={<Finance />} />

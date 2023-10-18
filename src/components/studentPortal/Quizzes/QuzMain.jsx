@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import StudentsMinNav from "../minNav/MinVav";
 import { Link } from "react-router-dom";
 
 const QuizMain = () => {

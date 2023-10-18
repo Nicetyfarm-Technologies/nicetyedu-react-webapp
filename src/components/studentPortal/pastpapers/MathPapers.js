@@ -1,9 +1,5 @@
 import React from "react";
-import './Pastpapers.css'
-import StudentsMinNav from "../minNav/MinVav";
-import { Link } from "react-router-dom";
-import { useRef } from "react";
-import { NavLink } from "react-router-dom";
+import './Pastpapers.css';
 import m115 from "./grade12eczmath/m115.pdf";
 import m116 from "./grade12eczmath/m116.pdf";
 import m117 from "./grade12eczmath/m117.pdf";

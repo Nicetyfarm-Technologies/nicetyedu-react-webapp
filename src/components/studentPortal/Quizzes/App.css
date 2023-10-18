@@ -30,13 +30,21 @@ span {
   width: 90%;
   max-width: 500px;
   padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .quiz-sub a {
   padding: 10px;
+  color: #fff;
 }
 
 .terminal-bot {
   height: fit-content;
   padding-bottom: 20px;
+}
+
+.delet {
+  color: #fff;
 }

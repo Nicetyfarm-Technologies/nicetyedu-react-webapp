@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import StudentsMinNav from "../minNav/MinVav";
 import Main from "./mathquizcomponents/main/Main";
 import Quiz from "./mathquizcomponents/quiz/Quiz";
 import End from "./mathquizcomponents/end/End";

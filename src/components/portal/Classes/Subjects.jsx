@@ -28,7 +28,7 @@ const Subjects = () => {
 		g12Ref.current.classList.toggle('none');
 	}
 
-  const [classpage, setPage] = useState(true);
+  const classpage = useState(true);
 
   if(classpage === true) 
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import 'react-slideshow-image/dist/styles.css'
 import './Dashboard.css'
-import StudentsMinNav from '../minNav/MinVav';
 import { Link } from 'react-router-dom';
 
 const StudentsDashboard = () => {

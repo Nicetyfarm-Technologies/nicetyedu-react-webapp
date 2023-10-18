@@ -30,8 +30,8 @@ const Main = () => {
     const shuffled = allQuestions.sort(() => 0.5 - Math.random());
     //Take 10 random questions array
     let questionsArray = shuffled.slice(0, 10);
-    const { questions, setQuestions } = useContext(QuizContext);
-    const { gameState, setGameState } = useContext(QuizContext);
+    const setQuestions = useContext(QuizContext);
+    const  setGameState = useContext(QuizContext);
 
     const d = new Date();
     var minutes;

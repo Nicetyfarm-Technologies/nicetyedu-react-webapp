@@ -6,7 +6,6 @@ import {
 } from "firebase/firestore";
 import {db} from '../../firebase/config';
 import "./Books.css";
-import StudentsMinNav from "../minNav/MinVav";
 import { Link } from "react-router-dom";
 
 const Books = () => {

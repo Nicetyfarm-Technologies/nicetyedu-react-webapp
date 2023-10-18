@@ -5,8 +5,8 @@ import "./Quiz.css";
 
 const Quiz = () => {
 
-    const { questions, setQuestions } = useContext(QuizContext);
-    const { gameState, setGameState } = useContext(QuizContext);
+    const  questions = useContext(QuizContext);
+    const setGameState  = useContext(QuizContext);
     const { counter, setCounter } = useContext(QuizContext);
     const { score, setScore } = useContext(QuizContext);
 

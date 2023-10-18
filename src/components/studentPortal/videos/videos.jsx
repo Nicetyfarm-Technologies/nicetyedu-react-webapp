@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { onSnapshot, query, collection } from "firebase/firestore";
 import { db } from "../../firebase/config";
 import "./Videos.css";
-import StudentsMinNav from "../minNav/MinVav";
 
 const StudentsVideos = () => {
   const [videosJunior, setVideosJunior] = useState([]);

@@ -1,6 +1,5 @@
 import React from 'react';
-import "./Practicals.css"
-import StudentsMinNav from '../minNav/MinVav';
+import "./Practicals.css";
 
 const Practicals = () => {
 

@@ -5,9 +5,9 @@ import { getAuth, signOut } from "firebase/auth";
 import logo from "../images/icon.png";
 import "./Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
-const menu = <FontAwesomeIcon icon={faBars} />;
+// const menu = <FontAwesomeIcon icon={faBars} />;
 const close = <FontAwesomeIcon icon={faTimes} />;
 
 function InNavBar() {
@@ -72,7 +72,7 @@ function InNavBar() {
 
             <div className="user-container">
               <NavLink to="/dashboard/profile" activestyle="true">
-                <img src={displayImage} alt="user-image" />
+                <img src={displayImage} alt="user" />
               </NavLink>
               <p>{displayName2}</p>
             </div>

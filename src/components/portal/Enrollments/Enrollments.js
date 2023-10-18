@@ -3,14 +3,23 @@ import {
   onSnapshot,
   query,
   collection,
-  updateDoc,
   doc,
   setDoc,
   deleteDoc,
 } from "firebase/firestore";
+import Modal from "react-modal";
 import { db } from "../../firebase/config";
-// import './Dashboard.css'
-import MinNav from "../minNav/MinVav";
+import avarta from "../images/avarta.png";
+
+const customStyles = {
+  content: {
+    top: "10%",
+    left: "10%",
+    right: "auto",
+    bottom: "auto",
+    margin: "2%",
+  },
+};
 
 const Enrollments = () => {
   const [firstName, setFirstName] = useState("");
@@ -25,10 +34,28 @@ const Enrollments = () => {
   const [guardianNumber, setGuardianNumber] = useState("");
   const [guardianEmail, setGuardianEmail] = useState("");
   const [grade, setGrade] = useState("grade8a");
+  
+  const userImg = useState(avarta);
 
-  const [pupil, setPupil] = useState([]);
+  // const [pupil, setPupil] = useState([]);
+  const [indiv, setIndiv] = useState({
+    firstName: "",
+    lastName: "",
+    sex: "",
+  });
 
   const [pupils, setPupils] = useState([{}]);
+
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  function openModal(val) {
+    setIndiv(val);
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -77,6 +104,12 @@ const Enrollments = () => {
     return () => unSubscribe();
   });
   // };
+
+  
+  const deletePupil = async (id) => {
+    await deleteDoc(doc(db, "pupils", id));
+    closeModal();
+  };
 
   return (
     <>
@@ -174,6 +207,56 @@ const Enrollments = () => {
             <button type="submit">Enroll</button>
           </div>
         </form>
+
+        <Modal
+        className="modal"
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+        <div className="modal-body">
+          <h2>
+            {indiv.firstName} {indiv.middleName} {indiv.lastName}
+          </h2>
+          <div className="user-details">
+            <div className="image-div">
+              <img src={userImg} alt="user-icon" />
+            </div>
+            <div className="det">
+            <p>GUARDIAN NAME: {indiv.guardianName} </p>
+              <p>GUARDIAN EMAIL: {indiv.email}</p>
+              <p>GUARDIAN PHONE NUMBER: {indiv.guardianNumber}</p>
+              <p>SEX: {indiv.sex}</p>
+              <p>D.O.B: {indiv.dob}</p>
+              {/* <p>ADDRESS: {indiv.address} </p> */}
+            </div>
+          </div>
+          <div className="other-det">
+            <ul>
+              <li>ID: {indiv.studentId}</li>
+              <li>GRADE: {indiv.grade}</li>
+              <li>CLASS: {indiv.class} </li>
+              {/* <li>HIGHEST LEVEL: {indiv.qualification}</li> */}
+            </ul>
+            <ul>
+              <li>DATE JOINED: {indiv.enrolmentDate}</li>
+              <li>ADDRESS: {indiv.address}</li>
+              {/* <li>CLASSES: </li> */}
+              {/* <li>HIGHEST LEVEL: {indiv.qualification}</li> */}
+            </ul>
+          </div>
+          <button
+            onClick={(e) => {
+              deletePupil(indiv.id);
+            }}
+          >
+            Delete Pupil
+          </button>
+          <button onClick={closeModal}>close</button>
+        </div>
+      </Modal>
+
         <div className="students">
           <h3>Pupils</h3>
           <table>
@@ -186,6 +269,7 @@ const Enrollments = () => {
               <th>Grade</th>
               <th>Enrollment Date</th>
               <th>Guardian's FullName</th>
+              <th>More</th>
             </tr>
             {pupils.map((val, key) => {
               return (
@@ -198,6 +282,7 @@ const Enrollments = () => {
                   <td>{val.grade}</td>
                   <td>{val.enrolmentDate}</td>
                   <td>{val.guardianName}</td>
+                  <td onClick={() => openModal(val)}>View</td>
                 </tr>
               );
             })}

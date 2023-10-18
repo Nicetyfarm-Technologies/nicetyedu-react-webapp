@@ -4,14 +4,11 @@ import {
   onSnapshot,
   query,
   collection,
-  updateDoc,
+  // updateDoc,
   doc,
   setDoc,
   deleteDoc,
 } from "firebase/firestore";
-// import chroma from "chroma-js";
-// import { ColourOption, colourOptions } from "../data";
-// import Select, { StylesConfig } from "react-select";
 import avarta from "../images/avarta.png";
 import Modal from "react-modal";
 import auth from "../../firebase/config";
@@ -24,7 +21,6 @@ const customStyles = {
     right: "auto",
     bottom: "auto",
     margin: "2%",
-    // transform: 'translate(-10%, -10%)',
   },
 };
 
@@ -41,12 +37,12 @@ const Staff = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
   const [department, setDepartment] = useState("mathematics");
-  const [subjects, setSubjects] = useState([]);
-  const [hod, setHod] = useState(false);
-  const [classes, setClasses] = useState([]);
-  const [userImg, setUserImg] = useState(avarta);
-  const [isAccounts, setIsAccounts] = useState(false);
-  const [isHead, setIsHead] = useState(false);
+  // const [subjects, setSubjects] = useState([]);
+  // const [hod, setHod] = useState(false);
+  // const [classes, setClasses] = useState([]);
+  const userImg = useState(avarta);
+  // const [isAccounts, setIsAccounts] = useState(false);
+  // const [isHead, setIsHead] = useState(false);
   const password = "test1234";
   const [indiv, setIndiv] = useState({
     firstName: "",
@@ -93,12 +89,13 @@ const Staff = () => {
     });
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        const user = userCredential.user;
+        // const user = userCredential.user;
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+        // const errorCode = error.code;
+        // const errorMessage = error.message;
         // ..
+        alert(error)
       });
     // setTitle("");
     // setDescription("");

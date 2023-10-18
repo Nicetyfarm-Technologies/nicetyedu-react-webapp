@@ -4,7 +4,7 @@ import { FaHome } from "react-icons/fa"
 import './End.css';
 
 const End = () => {
-    const { gameState, setGameState } = useContext(QuizContext);
+    const setGameState  = useContext(QuizContext);
     const { score, setScore } = useContext(QuizContext);
     const { counter, setCounter } = useContext(QuizContext);
 

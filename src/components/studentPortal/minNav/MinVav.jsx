@@ -1,4 +1,3 @@
-import react from "react";
 import { useRef } from "react";
 import { NavLink } from 'react-router-dom';
 
@@ -10,7 +9,7 @@ const StudentsMinNav = () => {
         <div className="portal-navigation">
         <ul className="portal-navigation-inner" ref={navRef2}>
           <li className="nav-element">
-            <NavLink to="/studentsdashboard" activestyle="true" className="element">
+            <NavLink to="/studentsdashboard/dashboard" activestyle="true" className="element">
               Library
             </NavLink>
             
@@ -19,7 +18,7 @@ const StudentsMinNav = () => {
           
           <li className="nav-element">
             <NavLink to="/studentsdashboard/results" activestyle="true" className="element">
-              Results
+              Results/Attendance
             </NavLink>
           </li>
           <hr />

@@ -1,8 +1,6 @@
 import React from 'react';
 // import { getAuth } from "firebase/auth";
-import 'react-slideshow-image/dist/styles.css'
-// import './Dashboard.css'
-import StudentsMinNav from '../minNav/MinVav';
+import 'react-slideshow-image/dist/styles.css';
 import { Link } from 'react-router-dom';
 
 const Skills = () => {

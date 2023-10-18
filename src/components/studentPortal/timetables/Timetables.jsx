@@ -1,5 +1,4 @@
 import React from "react";
-import StudentsMinNav from "../minNav/MinVav";
 
 const Timetables2 = () => {
 

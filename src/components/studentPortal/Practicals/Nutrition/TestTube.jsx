@@ -61,10 +61,10 @@ const TestTube = () => {
     console.log(substances);
   }
 
-  const clearReagents = () => {
-    setCellCounts(0);
-    setSubstances({});
-  }
+  // const clearReagents = () => {
+  //   setCellCounts(0);
+  //   setSubstances({});
+  // }
 
   return (
     <div className="food-sam">

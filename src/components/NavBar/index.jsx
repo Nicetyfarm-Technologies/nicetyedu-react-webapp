@@ -40,25 +40,10 @@ function NavBar() {
 					<div ref={navRef}
 						className="primary-nav"
 					>
-						<ul className="pages-nav" ref={navRef2}>
-							<button className="close btn" onClick={showNavContent}>
+						<ul className="pages-nav" onClick={showNavContent} ref={navRef2}>
+							<button className="close btn">
 							{close}
 							</button>
-							<li className="">
-								<NavLink to="/" activestyle="true">Home</NavLink>
-							</li>
-							<li className="">
-								<NavLink to="/about" activestyle="true">About Us</NavLink>
-							</li>
-							<li className="">
-								<NavLink to="/products" activestyle="true">Products</NavLink>
-							</li>
-							<li className="">
-								<NavLink to="/traction" activestyle="true">Traction</NavLink>
-							</li>
-							<NavLink to="/contact" activestyle="true">
-								<li className="">Contact Us</li>
-							</NavLink>
 						</ul>
 						<div className="">
 							<NavLink
