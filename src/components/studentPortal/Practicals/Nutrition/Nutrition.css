@@ -1,0 +1,289 @@
+/* src/App.css */
+
+.App2 {
+    text-align: center;
+  }
+  
+  .container2 {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    /* justify-content: space-between; */
+    margin-top: 20px;
+    align-items: center;
+  }
+  
+  .cell-container {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+  }
+
+  .cell {
+    width: 20px;
+    height: 180px;
+    background-color: transparent;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 0;
+    border: 1px solid;
+  }
+  
+  .iodine {
+    width: 20px;
+    height: 160px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: rgb(153, 153, 5);
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .benedict {
+    width: 20px;
+    height: 160px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: rgb(36, 136, 243);
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .biuret {
+    width: 20px;
+    height: 160px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .ethanol {
+    width: 20px;
+    height: 160px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-top: 1px dashed black;
+  }
+
+  .sodium {
+    width: 20px;
+    height: 160px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: purple;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .mealie {
+    width: 20px;
+    height: 160px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: rgb(176, 172, 176);
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .fish {
+    width: 20px;
+    height: 160px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: rgb(50, 49, 50);
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .cheese {
+    width: 20px;
+    height: 160px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: yellow;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .coffee {
+    width: 20px;
+    height: 160px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: rgb(40, 8, 8);
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .milk {
+    width: 20px;
+    height: 160px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: cornsilk;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .blue-black {
+    background-color: rgb(2, 2, 31);
+    width: 80px;
+    padding: 20px;
+    border: 2px dashed #34495e;
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: #fff;
+  }
+
+  .yellow-brown {
+    background-color: rgb(153, 153, 5);
+    width: 80px;
+    padding: 20px;
+    border: 2px dashed #34495e;
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: #fff;
+  }
+
+  .lightblue {
+    background-color:  rgb(36, 136, 243);
+    width: 80px;
+    padding: 20px;
+    border: 2px dashed #34495e;
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: #fff;
+  }
+
+  .blue {
+    background-color: blue;
+    width: 80px;
+    padding: 20px;
+    border: 2px dashed #34495e;
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: #fff;
+  }
+
+  .oranged  {
+    background-color: orangered;
+    width: 80px;
+    padding: 20px;
+    border: 2px dashed #34495e;
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: #fff;
+  }
+
+  .violet  {
+    background-color: purple;
+    width: 80px;
+    padding: 20px;
+    border: 2px dashed #34495e;
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: #fff;
+  }
+
+  .cel p {
+    font-size: 10px;
+    width: 40px;
+  }
+  
+  .petri-dish {
+    width: 80px;
+    padding: 20px;
+    border: 2px dashed #34495e;
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    /* border-radius: 50%; */
+  }
+  
+  .cell-counts {
+    margin-top: 20px;
+  }
+
+  .test-sub {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .cell-counts p {
+    font-size: 10px;
+  }
+
+  .food-sam {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  
+
+  @media  (min-width: 768px) {
+    .container2 {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+}

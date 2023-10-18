@@ -7,14 +7,11 @@
 }
 
 .nav {
-    padding: 3%;
-    background-color: rgb(118, 156, 240);
     width: 100%;
-    /* position: fixed; */
 }
 
 .logo {
-    color: #000;
+    color: #fff;
 }
 
 span {
@@ -26,6 +23,8 @@ span {
     justify-content: space-between;
     width: 100%;
     align-items: center;
+    background-color: rgb(1, 13, 37);
+    padding: 3%;
 }
 
 .btn  {
@@ -34,11 +33,11 @@ span {
 }
 
 a {
-    color: #fff;
+    color: #000;
 }
 
 a:hover {
-    color: blue;
+    color: orangered;
 }
 
 .primary-nav {
@@ -55,14 +54,13 @@ a:hover {
     gap: 50px;
     width: 100%;
     transition: 2s;
-    /* transform: translateY(-100vh); */
 }
 
 .block {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    background-color: rgb(91, 141, 250);
+    background-color: rgb(1, 13, 37);
     align-items: center;
     padding: 20px 0;
     text-align: center;
@@ -71,6 +69,14 @@ a:hover {
 
 .humburger, .close {
     font-size: 25px;
+    color: #fff;
+}
+
+.humburger2 {
+    font-size: 25px;
+    color: blue;
+    width: 100%;
+    text-align: right;
 }
 
 .none {
@@ -85,16 +91,14 @@ a:hover {
 
 .login-btn {
     background-color: #fff;
-    padding: 10px 50px;
-    border-radius: 15px;
+    padding: 15px 50px;
+    border-radius: 35px;
     color: #000;
+    font-weight: bold;
 }
 
 
 @media  (min-width: 768px) {
-    .nav {
-        background-color: #bbb;
-    }
     .primary-nav {
         display: flex;
         justify-content: space-between;
@@ -103,5 +107,8 @@ a:hover {
     }
     .humburger, .close {
         display: none;
+    }
+    .main-nav {
+        padding: 2.5%;
     }
 }
